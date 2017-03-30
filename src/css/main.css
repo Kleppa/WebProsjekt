@@ -30,3 +30,6 @@
 #stayOnScreen{
     position: fixed;
 }
+.navbuttons{
+    padding: 0;
+}

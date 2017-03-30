@@ -25,14 +25,23 @@
     </div>
   <h1 class="col-md-offset-4" id="name">WESTERDALS EKSAMEN</h1>
 
-
-
 </nav>
 <div class="row container">
     <div class="col-lg-6 col-md-2 col-md-offset-4" id="centerDiv">
         <img src="20100902_img-test.jpg">
 </div>
+    <div class="col-lg-4 col-md-8 col-sm-12 navButtons">
 
+        Test
+    </div>
+    <div class="col-lg-4 col-md-8 col-sm-12 navButtons">
+
+        Test
+    </div>
+    <div class="col-lg-4 col-md-8 col-sm-12 navButtons">
+
+        Test
+    </div>
 
 </body>
 </html>
