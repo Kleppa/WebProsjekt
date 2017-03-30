@@ -10,6 +10,10 @@
 
 </head>
 <body>
+<nav class="navbar fixed-top navbar-inverse bg-primary">
+    <h1 id="name">NameOfWebPage</h1>
+    <a class="navbar-brand" href="#">Fixed top</a>
+</nav>
 
 
 </body>
