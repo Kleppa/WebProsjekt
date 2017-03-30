@@ -11,8 +11,9 @@
 </head>
 <body>
 <nav class="navbar fixed-top navbar-inverse bg-primary">
-    <h1 id="name">NameOfWebPage</h1>
-    <a class="navbar-brand" href="#">Fixed top</a>
+    <div class="col-xs-6"><h1 id="name">NameOfWebPage</h1></div>
+    <div class="col-xs-6"><h1 id="name">topic</h1></div>
+
 </nav>
 
 
