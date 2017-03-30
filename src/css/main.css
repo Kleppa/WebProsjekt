@@ -27,3 +27,6 @@
 #dropMeny{
     color: #0f0f0f;
 }
+#stayOnScreen{
+    position: fixed;
+}

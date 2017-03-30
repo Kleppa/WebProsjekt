@@ -15,7 +15,7 @@
 <script src ="css/js/dropdown.js"></script>
 <nav class="navbar fixed-top navbar-inverse bg-primary" id="navbar">
     <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Meny
+        <button class="btn btn-primary dropdown-toggle" style="background-color: #000000" type="button" data-toggle="dropdown">Meny
             <span class="caret"></span></button>
         <ul class="dropdown-menu">
             <li><a href="#">drinks</a></li>
@@ -23,7 +23,7 @@
             <li><a href="#">map</a></li>
         </ul>
     </div>
-  <h1 class="col-md-offset-5" id="name">NameOfWebPage</h1>
+  <h1 class="col-md-offset-4" id="name">WESTERDALS EKSAMEN</h1>
 
 
 
