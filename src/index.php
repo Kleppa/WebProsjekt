@@ -3,7 +3,8 @@
 <head>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
-    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 
     <title>Title</title>
 
@@ -11,9 +12,20 @@
 </head>
 <body>
 
+<script src ="css/js/dropdown.js"></script>
 <nav class="navbar fixed-top navbar-inverse bg-primary" id="navbar">
-    <div class="col-xs-6"><h1 id="name">NameOfWebPage</h1></div>
-    <div class="col-xs-6"><h1 id="name">topic</h1></div>
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Meny
+            <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">drinks</a></li>
+            <li><a href="#">events</a></li>
+            <li><a href="#">map</a></li>
+        </ul>
+    </div>
+  <h1 class="col-md-offset-5" id="name">NameOfWebPage</h1>
+
+
 
 </nav>
 <div class="row container">
