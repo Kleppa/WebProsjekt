@@ -29,10 +29,15 @@
 <div class="row c">
     <div class="col-lg-6 col-md-2 col-md-offset-3" id="centerDiv">
         <img src="20100902_img-test.jpg">
+    </div>
 </div>
+<div id="imageContainer">
     <div class="imageHolder" id="drinkImg"></div>
-    <div class="imageHolder" id="eventImg"></div>
-    <div class="imageHolder" id="mapImg"></div>
+    <div class="imageHolder" id="TasteImg"></div>
+    <div class="imageHolder" id="StreetImg"></div>
+    <div class="imageHolder" id="chillImg"></div>
+</div>
+
 
 </body>
 </html>

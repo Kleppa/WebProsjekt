@@ -33,19 +33,34 @@
 .navbuttons{
     padding: 0;
 }
+#imageContainer{
+    position: relative;
+    max-width: 50%;
+    min-width: 30em;
+    height: 10em;
+    bottom:30%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .imageHolder{
     position: absolute;
-    width: 7em;
+    max-width: 50%;
+    min-width: 5em;
+    max-height: 50%;
     height: 7em;
     background-color: #0f0f0f;
-    top: 25em;
-    left: 25em;
-    padding: 0;
-    margin: 0;
+
+
 }
-#mapImg{
-    left:35em;
+#chillImg{
+    left: 10em;
 }
-#eventImg{
-    left: 50em;
+#StreetImg{
+    left: 20em;
+
+}
+#TasteImg{
+    left: 30em;
+
 }
