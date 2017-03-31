@@ -44,6 +44,7 @@
     <p class="btnTxt" id="tasteTxt">Taste</p>
     <p class="btnTxt" id="streetTxt">Street art(?) </p>
     <p class="btnTxt" id="chillTxt">Chill </p>
+
 </div>
 
 

@@ -67,10 +67,21 @@
 
 }
 .btnTxt{
-    bottom:0;
-    left: 20em;
+    bottom: 2em;
 }
 #drinkText{
+    left:1em;
 
-
+}
+.btnTxt{
+    position: absolute;
+}
+#chillTxt{
+    left: 11em;
+}
+#streetTxt{
+    left: 20em;
+}
+#tasteTxt{
+    left: 31em;
 }
