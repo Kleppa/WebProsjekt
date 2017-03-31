@@ -1,9 +1,35 @@
 .btn{
     border-radius: 0;
+
+}
+.caret{
+    color: white;
+}
+.dropdown-menu{
+    color: #000;
 }
 .navbar {
     border-radius: 0;
 }
 #navbar{
     width: 100%;
+}
+#name{
+    align-content: center;
+}
+#centerDiv{
+    padding:0;
+}
+.navbar-inner{
+    float: none;
+    margin: 0;
+}
+#dropMeny{
+    color: #0f0f0f;
+}
+#stayOnScreen{
+    position: fixed;
+}
+.navbuttons{
+    padding: 0;
 }
