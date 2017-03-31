@@ -2,4 +2,5 @@
 
 ## Dependencies
 Composer
->composer require "illuminate/database"
+
+`composer require "illuminate/database"`
