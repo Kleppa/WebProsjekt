@@ -32,7 +32,7 @@
         <img src="20100902_img-test.jpg">
     </div>
 </div>
-
+<!-- -->
 <div id="imageContainer">
 
     <div class="imageHolder" id="drinkImg"></div>
