@@ -35,10 +35,12 @@
 <!-- -->
 <div id="imageContainer">
 
-    <div class="imageHolder" id="drinkImg"></div>
-    <div class="imageHolder" id="TasteImg"></div>
-    <div class="imageHolder" id="StreetImg"></div>
-    <div class="imageHolder" id="chillImg"></div>
+    <!-- setup clickable images-->
+
+    <div class="imageHolder" id="drinkImg"><a href=""><!--Image--></a> </div>
+    <div class="imageHolder" id="TasteImg"><a href=""><!--Image--></a></div>
+    <div class="imageHolder" id="StreetImg"><a href=""><!--Image--></a></div>
+    <div class="imageHolder" id="chillImg"><a href=""><!--Image--></a></div>
 
     <p class="btnTxt" id="drinkText">Drinks</p>
     <p class="btnTxt" id="tasteTxt">Taste</p>
