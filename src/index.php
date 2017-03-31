@@ -26,22 +26,13 @@
   <h1 class="col-md-offset-4" id="name">WESTERDALS EKSAMEN</h1>
 
 </nav>
-<div class="row container">
-    <div class="col-lg-6 col-md-2 col-md-offset-4" id="centerDiv">
+<div class="row c">
+    <div class="col-lg-6 col-md-2 col-md-offset-3" id="centerDiv">
         <img src="20100902_img-test.jpg">
 </div>
-    <div class="col-lg-4 col-md-8 col-sm-12 navButtons">
-
-        Test
-    </div>
-    <div class="col-lg-4 col-md-8 col-sm-12 navButtons">
-
-        Test
-    </div>
-    <div class="col-lg-4 col-md-8 col-sm-12 navButtons">
-
-        Test
-    </div>
+    <div class="imageHolder" id="drinkImg"></div>
+    <div class="imageHolder" id="eventImg"></div>
+    <div class="imageHolder" id="mapImg"></div>
 
 </body>
 </html>

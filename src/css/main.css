@@ -33,3 +33,19 @@
 .navbuttons{
     padding: 0;
 }
+.imageHolder{
+    position: absolute;
+    width: 7em;
+    height: 7em;
+    background-color: #0f0f0f;
+    top: 25em;
+    left: 25em;
+    padding: 0;
+    margin: 0;
+}
+#mapImg{
+    left:35em;
+}
+#eventImg{
+    left: 50em;
+}
