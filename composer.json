@@ -1,0 +1,9 @@
+{
+  "name": "gr12/web-prosjekt",
+  "require": {
+    "illuminate/database": "^5.4"
+  },
+  "autoload": {
+    "psr-4": { "": "src/" }
+  }
+}
