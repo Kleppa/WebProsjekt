@@ -23,19 +23,27 @@
             <li><a href="#">map</a></li>
         </ul>
     </div>
-  <h1 class="col-md-offset-4" id="name">WESTERDALS EKSAMEN</h1>
+  <h1 class="col-md-offset-5" id="name">Wenture</h1>
 
 </nav>
+
 <div class="row c">
     <div class="col-lg-6 col-md-2 col-md-offset-3" id="centerDiv">
         <img src="20100902_img-test.jpg">
     </div>
 </div>
+
 <div id="imageContainer">
+
     <div class="imageHolder" id="drinkImg"></div>
     <div class="imageHolder" id="TasteImg"></div>
     <div class="imageHolder" id="StreetImg"></div>
     <div class="imageHolder" id="chillImg"></div>
+
+    <p class="btnTxt" id="drinkText">Drinks</p>
+    <p class="btnTxt" id="tasteTxt">Taste</p>
+    <p class="btnTxt" id="streetTxt">Street art(?) </p>
+    <p class="btnTxt" id="chillTxt">Chill </p>
 </div>
 
 

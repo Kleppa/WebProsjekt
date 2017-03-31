@@ -34,16 +34,18 @@
     padding: 0;
 }
 #imageContainer{
-    position: relative;
+    position: absolute;
     max-width: 50%;
     min-width: 30em;
     height: 10em;
-    bottom:30%;
+    bottom:0;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    left: 26em;
 }
 .imageHolder{
+
     position: absolute;
     max-width: 50%;
     min-width: 5em;
@@ -62,5 +64,13 @@
 }
 #TasteImg{
     left: 30em;
+
+}
+.btnTxt{
+    bottom:0;
+    left: 20em;
+}
+#drinkText{
+
 
 }
