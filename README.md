@@ -2,8 +2,9 @@
 
 ## Dependencies
 #### Composer
+`composer init` in the root folder (NOT `src/`)
 
->composer require "illuminate/database"
+``composer require "illuminate/database``
 
 #### php.ini
 
