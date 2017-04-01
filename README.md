@@ -1,11 +1,11 @@
 # WebProsjekt
 
 ## Dependencies
-####Composer
+#### Composer
 
 >composer require "illuminate/database"
 
-####php.ini
+#### php.ini
 
 Enable the following extensions:
 >php_mbstring.dll
@@ -16,4 +16,8 @@ Enable the following extensions:
 
 *Windows: May need to change the path to the ext directory `extension_dir =` or prepend ext/ to the extensions like so: `ext/extension`.*
 
-####Database initializing script
+## Setup
+
+#### Database initializing script
+
+run the sql script `src/dbscript.sql`
