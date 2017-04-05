@@ -2,8 +2,8 @@
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $port = 3306;
-$username = 'root';
-$password = 'password';
+$username = 'wenture';
+$password = 'gruppe12wenture';
 $name = 'database';
 
 $capsule = new Capsule();
