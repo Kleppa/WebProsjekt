@@ -21,7 +21,7 @@ require "../header.php";
         <h3>Where to go for a drink?</h3>
         <div id="map" style="width: 100%; height: 400px;"></div>
 
-        <!-- Replace the value of the key parameter with your own API key. -->
+        <!-- https://developers.google.com/maps/documentation/javascript/adding-a-google-map. -->
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
         </script>
