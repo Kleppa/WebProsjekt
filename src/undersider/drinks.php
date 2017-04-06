@@ -1,44 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <>
 
     <title>Drinks</title>
 
 
-</head>
-<body>
+    </head>
+    <body>
+        <?php require "../header.php"; ?>
 
-<?php
-require "../header.php";
-?>
+        <div class="container">
 
-<div class="container">
+            <h3>Where to go for a drink?</h3>
+                <div id="map" style="width: 100%; height: 400px;">
 
-        <h3>Where to go for a drink?</h3>
-        <div id="map" style="width: 100%; height: 400px;"></div>
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
+                    </script>
+                     <script src="googlemaps.js"></script>
 
-        <!-- https://developers.google.com/maps/documentation/javascript/adding-a-google-map. -->
-        <script async defer
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
-        </script>
-</div>
-<script>
-    function initMap() {
-        var westerdals = {lat: 59.9159279, lng: 10.7608717};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: westerdals
-        });
-        var marker = new google.maps.Marker({
-            position: westerdals,
-            map: map
-        });
-    }
-</script>
+                 </div>
 
-</body>
+        </div>
+
+
+    </body>
 </html>
