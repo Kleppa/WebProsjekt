@@ -17,4 +17,9 @@ $capsule->addConnection([
     'collation' => 'utf8_general_ci',
     'database' => $name,
 ]);
-$capsule->bootEloquent();
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
