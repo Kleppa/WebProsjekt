@@ -7,8 +7,12 @@ use Carbon\Carbon;
 
 Carbon::setLocale('no');
 
-// Test-connection: $connection = new PDO("mysql:host=localhost;dbname=database;port=3306", 'wenture', 'gruppe12wenture');
-$events = Event::all();
+$sql  = "SELECT title, place, datetime, description, is_free, price ";
+$sql .= "FROM events";
+
+$mysqli->query($sql);
+
+$events =
 
 ?>
 <!DOCTYPE html>
@@ -36,9 +40,15 @@ $events = Event::all();
             <?php
 
             foreach ($events as $event) {
-                if ($event['datetime']->isFuture()) {
-                    require 'card.php';
-                }
+
+                //print_r($event['starts_at']->isFuture());
+                echo "<br/>";
+                echo "<pre>";
+                print_r($events);
+                echo "</pre>";
+                //if ($event['datetime']->isFuture()) {
+                //    require 'card.php';
+                //}
             }
 
             ?>

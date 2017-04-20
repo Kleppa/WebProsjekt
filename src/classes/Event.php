@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model {
     protected $dates = [
-        'datetime'
+        'starts_at'
     ];
     public $timestamps = false;
 }
