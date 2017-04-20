@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['field1']) && isset($_POST['field2'])) {
+if (isset($_POST['user']) && isset($_POST['pass'])) {
 
 }
 ?>
