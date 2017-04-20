@@ -13,21 +13,21 @@
 <?php
 require "header.php";
 ?>
+<form action="sendInfo.php" method="get">
+    <div id="loginContainer">
 
-<div id="loginContainer">
-    <form action="sendInfo.php" method="post">
-    <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon1">Username</span>
-        <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" name="user">
-    </div>
-    <div class="input-group input-group-lg">
-        <span class="input-group-addon" id="sizing-addon1">Password</span>
-        <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" name="pass">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">Username</span>
+            <input type="text" class="form-control" placeholder="Username" aria-describedby="sizing-addon1" name="user">
+        </div>
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="sizing-addon1">Password</span>
+            <input type="text" class="form-control" placeholder="Password" aria-describedby="sizing-addon1" name="pass">
 
+        </div>
+        <input type="submit" value="Submit">
     </div>
-    <input type="submit" value="Submit">
-    </form>
-</div>
+</form>
 
 </body>
 </html>

@@ -1,8 +1,9 @@
 <?php
 require 'phpscripts/db_connector.php';
-echo "required php passed";
+
+
 echo $_GET['user'];
-if (isset($_POST["user"]) && isset($_POST["pass"])) {
+if (isset($_GET["user"]) && isset($_GET["pass"])) {
     echo "Ifcheck passed";
     $sql = "SELECT username, password FROM Users";
     $result = $conn->query($sql);
