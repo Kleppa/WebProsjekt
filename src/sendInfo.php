@@ -1,8 +1,9 @@
 <?php
-$path =  "db_connector.php";
-
+require 'phpscripts/db_connector.php';
+echo "TEST";
 if (isset($_POST['user']) && isset($_POST['pass'])) {
-    $sql = "SELECT username, password FROM MyGuests";
+    echo "TEST";
+    $sql = "SELECT username, password FROM Users";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -13,5 +14,6 @@ if (isset($_POST['user']) && isset($_POST['pass'])) {
     } else {
         echo "0 results";
     }
+    mysqli_close($con);
 }
 ?>

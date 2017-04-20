@@ -14,22 +14,3 @@ if($mysqli->connect_errno) {
     echo "Error: " . $mysqli->connect_error . "\n";
     exit;
 }
-
-
-
-/*
-use Illuminate\Database\Capsule\Manager as Capsule;
-
-
-$capsule = new Capsule();
-$capsule->addConnection([
-    'driver' => 'mysql',
-    'host' => $host,
-    'port' => $port,
-    'username' => $username,
-    'password' => $password,
-    'collation' => 'utf8_general_ci',
-    'database' => $name,
-]);
-$capsule->bootEloquent();
-*/
