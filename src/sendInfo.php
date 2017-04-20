@@ -1,12 +1,10 @@
 <?php
-require 'phpscripts/db_connector.php';
 
-
+$con=mysqli_connect('tek.westerdals.no','gabreve1_admin','QMdZOxXBi','gabreve1_pro101v17gr12');
 echo $_GET['user'];
 if (isset($_GET["user"]) && isset($_GET["pass"])) {
-    echo "Ifcheck passed";
-    $sql = "SELECT username, password FROM Users";
-    $result = $conn->query($sql);
+
+    //$result = mysqli_query("SELECT username, password FROM Users");
 
     if ($result->num_rows > 0) {
         // output data of each row
