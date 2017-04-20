@@ -20,7 +20,7 @@ require "header.php";
     </div>
 </div>
 <!--Fix posistioning and scaleability -->
-<div id="imageContainer">
+<div class="imageContainer">
 
     <!-- setup clickable images from database-->
 
@@ -28,7 +28,8 @@ require "header.php";
     <div class="imageHolder" id="TasteImg"><a href=""><!--Image--></a></div>
     <div class="imageHolder" id="StreetImg"><a href=""><!--Image--></a></div>
     <div class="imageHolder" id="chillImg"><a href=""><!--Image--></a></div>
-
+</div>
+<div class="txtContainerIndex">
     <p class="btnTxt" id="drinkText">Drinks</p>
     <p class="btnTxt" id="tasteTxt">Taste</p>
     <p class="btnTxt" id="streetTxt">Street art(?) </p>

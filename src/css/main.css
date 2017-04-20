@@ -34,7 +34,10 @@
 .navbuttons{
     padding: 0;
 }
-#imageContainer{
+.txtContainerIndex{
+    bottom: -2em;
+}
+.imageContainer, .txtContainerIndex{
     position: relative;
     max-width: 50%;
     min-width: 30em;
@@ -83,4 +86,10 @@
 }
 #tasteTxt{
     left: 31em;
+}
+#loginContainer{
+    position: relative;
+    max-width:50%;
+    min-width: 10em;
+    left:25%;
 }
