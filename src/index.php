@@ -4,9 +4,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
-
-    <title>Title</title>
+    <title>Wenture</title>
 
 
 </head>
@@ -16,21 +14,22 @@
 require "header.php";
 ?>
 
-<div class="row c">
+<div class="row">
     <div class="col-lg-6 col-md-2 col-md-offset-3" id="centerDiv">
         <img src="20100902_img-test.jpg">
     </div>
 </div>
-<!-- -->
-<div id="imageContainer">
+<!--Fix posistioning and scaleability -->
+<div class="imageContainer">
 
-    <!-- setup clickable images-->
+    <!-- setup clickable images from database-->
 
     <div class="imageHolder" id="drinkImg"><a href=""><!--Image--></a> </div>
     <div class="imageHolder" id="TasteImg"><a href=""><!--Image--></a></div>
     <div class="imageHolder" id="StreetImg"><a href=""><!--Image--></a></div>
     <div class="imageHolder" id="chillImg"><a href=""><!--Image--></a></div>
-
+</div>
+<div class="txtContainerIndex">
     <p class="btnTxt" id="drinkText">Drinks</p>
     <p class="btnTxt" id="tasteTxt">Taste</p>
     <p class="btnTxt" id="streetTxt">Street art(?) </p>
