@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php require "header.php"; ?>
 
 
@@ -17,12 +14,13 @@
                     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+
                 </ol>
 
                 <div class="carousel-inner" role="listbox">
 
                     <div class="carousel-item active">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Arnaut_and_his_dog_by_Jean_Leon_gerome.jpg" alt="...">
+                        <img class="d-block img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Arnaut_and_his_dog_by_Jean_Leon_gerome.jpg" alt="...">
                         <div class="carousel-caption">
                             <h3>Arnaut Blowing Smoke in His Dog's Nose,</h3>
                         </div>
@@ -86,11 +84,3 @@
 </div>
 
 <?php require "footer.php"; ?>
-
-<!-- Scripts -->
-<script src="css/bootstrap-4/js/bootstrap.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="css/mdl/material.min.js"></script>
-
-</body>
-</html>
