@@ -1,14 +1,29 @@
-<script src ="css/js/dropdown.js"></script>
-<nav class="navbar fixed-top navbar-inverse bg-primary" id="navbar">
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" style="background-color: #000000" type="button" data-toggle="dropdown">Meny
-            <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-            <li><a href="#">drinks</a></li>
-            <li><a href="#">events</a></li>
-            <li><a href="#">map</a></li>
-        </ul>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Title</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+                <a class="mdl-navigation__link" href="">Link</a>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+            <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
     </div>
-    <h1 class="col-md-offset-5" id="name">Wenture</h1>
-
-</nav>
+    <main class="mdl-layout__content">
+        <div class="page-content"><!-- Your content goes here --></div>
+    </main>
+</div>
