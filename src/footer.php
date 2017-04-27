@@ -1,3 +1,4 @@
+<div id="footer">
 <footer class="mdl-mini-footer">
     <div class="mdl-mini-footer__left-section">
         <div class="mdl-logo">Title</div>
@@ -8,9 +9,6 @@
     </div>
 </footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="css/bootstrap-4/js/bootstrap.min.js"></script>
-<script src="css/mdl/material.min.js"></script>
+</div>
 
-</body>
-</html>
+
