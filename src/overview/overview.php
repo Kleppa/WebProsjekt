@@ -1,5 +1,4 @@
 <?php
-
 require '../../vendor/autoload.php';
 require '../phpscripts/db_connector.php';
 
@@ -7,71 +6,50 @@ use Carbon\Carbon;
 
 Carbon::setLocale('no');
 
-$sql  = "SELECT title, place, datetime, description, is_free, price ";
-$sql .= "FROM events";
+$sql  = "SELECT * ";
+$sql .= "FROM events;";
 
-$mysqli->query($sql);
+if ($result = $mysqli->query($sql)) {
 
-$events =
+}
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Overview</title>
 
-    <!-- Include Material Design Lite library [getmdl.io] -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
-<body class="mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-<div class="mdl-layout">
-    <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
+<body>
+    <!-- navbar -->
+    <nav class="nav">
+        <div class="navbar">
             <h3>Event Manager Pro</h3>
         </div>
-    </header>
-    <main class="mdl-layout__content">
-        <h4>Kommende events</h4>
-        <div class="grid">
+    </nav>
 
-            <?php
+<div class="container">
 
-            foreach ($events as $event) {
-
-                //print_r($event['starts_at']->isFuture());
-                echo "<br/>";
-                echo "<pre>";
-                print_r($events);
-                echo "</pre>";
-                //if ($event['datetime']->isFuture()) {
-                //    require 'card.php';
-                //}
-            }
-
-            ?>
-
-        </div>
-        <h4>Tidligere events</h4>
-        <div class="grid">
-
-            <?php
-
-            foreach ($events as $event) {
-                if ($event['starts_at']->isPast()) {
+    <h4>Kommende events</h4>
+    <div class="row">
+        <div class="col">
+                <?php
+                foreach($result as $e) {
                     require 'card.php';
                 }
-            }
+                ?>
+        </div> <!-- col -->
+    </div> <!-- row -->
 
-            ?>
-
-        </div>
-    </main>
-
-    <pre>
-        <?php print_r($events) ?>
-    </pre>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php
+$result->free();
+$mysqli->close();
