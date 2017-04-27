@@ -16,4 +16,3 @@ if (isset($_GET["user"]) && isset($_GET["pass"])) {
     }
     mysqli_close($con);
 }
-?>
