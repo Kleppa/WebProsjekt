@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php require "header.php"; ?>a
+<?php require "header.php"; ?>
 
 
         <div class="container">
