@@ -1,8 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/mdl/material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
     <link rel="stylesheet" href="css/bootstrap-4/css/bootstrap.min.css">
 
 
