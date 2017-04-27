@@ -34,16 +34,26 @@ if ($result = $mysqli->query($sql)) {
 
 <div class="container">
 
-    <h4>Kommende events</h4>
-    <div class="row">
-        <div class="col">
-                <?php
-                foreach($result as $e) {
-                    require 'card.php';
-                }
-                ?>
-        </div> <!-- col -->
-    </div> <!-- row -->
+    <div class="card-columns">
+        <?php
+        foreach($result as $e) {
+            $output  = "<div class=\"card mb-3\">";
+            $output .= "<img class=\"card-img-top img-fluid\" src=\"" . $e['image_path'] . "\">";
+            $output .= "<div class=\"card-block\">";
+            $output .= "<h2 class=\"card-title\">" . $e['title'] . "</h2>";
+            $output .= "<p class=\"card-text\">" . $e['description'] . "</p>";
+            $output .= "<a href=\"#\" class=\"btn btn-info\">Edit</a>";
+            $output .= "<a href=\"#\" class=\"btn btn-danger\">Delete</a>";
+            $output .= "</div>"; // card-block
+            $output .= "<div class=\"card-footer text-muted\">";
+            $output .= "<p>" . $e['datetime'] . "</p>";
+            $output .= "</div>"; // card-footer
+            $output .= "</div>"; // card
+
+            echo $output;
+        }
+        ?>
+    </div> <!-- col -->
 
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
