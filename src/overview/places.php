@@ -8,7 +8,7 @@ use Carbon\Carbon;
 Carbon::setLocale('no');
 
 $sql  = "SELECT * ";
-$sql .= "FROM events;";
+$sql .= "FROM places;";
 
 if ($result = $mysqli->query($sql)) {
 
@@ -39,8 +39,8 @@ if ($result = $mysqli->query($sql)) {
     <div class="container">
         <div class="card-columns">
             <?php
-            foreach($result as $e) {
-                echo generateEventCard($e);
+            foreach($result as $p) {
+                echo generatePlaceCard($p);
             }
             ?>
         </div> <!-- card-columns -->
