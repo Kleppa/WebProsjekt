@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--Style/jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/mdl/material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -18,9 +17,12 @@
 </head>
 <body>
 
-<?php require "header.php"; ?> <!-- Header-->
 
-    <!--<div class="container">-->
+
+<?php require "header.php" ?>
+
+        <div class="headline"><h1>HEHEHEHEHE</h1></div>
+
         <div id="karusell" class="carousel" data-ride="carousel">
 
                 <ol class="carousel-indicators">
@@ -34,35 +36,35 @@
                 <div class="carousel-inner" role="listbox">
 
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="http://placehold.it/800x500" alt="...">
+                        <img class="d-block img-fluid" src="http://placehold.it/700x400" alt="...">
                         <div class="carousel-caption">
                             <h3>Chill bar</h3>
                         </div>
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/800x500" alt="...">
+                        <img class="d-block img-fluid" src="http://placehold.it/700x400" alt="...">
                         <div class="carousel-caption">
                             <h3>Hip restaurant</h3>
                         </div>
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/800x500" alt="...">
+                        <img class="d-block img-fluid" src="http://placehold.it/700x400" alt="...">
                         <div class="carousel-caption">
                             <h3> The park</h3>
                         </div>
                     </div>
 
                     <div class="carousel-item">
-                        <img class="d-block img-fluid" src="http://placehold.it/800x500" alt="...">
+                        <img class="d-block img-fluid" src="http://placehold.it/700x400" alt="...">
                         <div class="carousel-caption">
                             <h3>Concert this week!</h3>
                         </div>
                     </div>
 
 
-                </div>
+                </div> <!-- Carousel inner box -->
 
             <!-- Controls -->
             <a class="carousel-control-prev" href="#karusell" role="button" data-slide="prev">
@@ -76,13 +78,13 @@
             </a>
 
 
-
-        </div>
-
+        </div> <!-- Carousel -->
 
 
 
-    <!-- setup clickable images from database -->
+
+
+    <!-- setup clickable images from database
 
         <div class="imageHolder" id="drinkImg"><a href=""> </a> </div>
         <div class="imageHolder" id="TasteImg"><a href=""> </a></div>
@@ -96,16 +98,15 @@
             <p class="btnTxt" id="tasteTxt">Taste</p>
             <p class="btnTxt" id="streetTxt">Street art(?) </p>
             <p class="btnTxt" id="chillTxt">Chill </p>
-
         </div>
+        -->
 
-
-    <!--</div> -->
-<?php require "footer.php"; ?>
+<?php require "footer.php" ?>
 
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="css/bootstrap-4/js/bootstrap.min.js"></script>
 <script src="css/mdl/material.min.js"></script>
+
 </body>
 </html>
