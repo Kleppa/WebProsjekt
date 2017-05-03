@@ -17,9 +17,10 @@
 </head>
 <body>
 
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
 
 <?php require "header.php" ?>
+
         <div class="headline"><h1>HEHEHEHEHE</h1></div>
 
         <div id="karusell" class="carousel" data-ride="carousel">
@@ -63,7 +64,7 @@
                     </div>
 
 
-                </div>
+                </div> <!-- Carousel inner box -->
 
             <!-- Controls -->
             <a class="carousel-control-prev" href="#karusell" role="button" data-slide="prev">
@@ -77,7 +78,7 @@
             </a>
 
 
-        </div>
+        </div> <!-- Carousel -->
 
 
 
@@ -101,8 +102,6 @@
         -->
 
 <?php require "footer.php" ?>
-
-    </div>
 
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
