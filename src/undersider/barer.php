@@ -83,24 +83,25 @@
 <div class="headline"><h1>Hytta Bar</h1></div>
 
 <div class="tab">
-    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    <button class="tablinks" onclick="openCity(event, 'London')">Fine Ord</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Spesialiter</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Kontakt Oss</button>
 </div>
 
 <div id="London" class="tabcontent">
-    <h3>London</h3>
-    <p>London is the capital city of England.</p>
+    <p>Hytta Bar er en fin og attraktiv plass der man føler seg som på hytta. og ja, vi ha utedass.</p>
 </div>
 
 <div id="Paris" class="tabcontent">
-    <h3>Paris</h3>
-    <p>Paris is the capital of France.</p>
+    <p>- Chill bar</p>
+    <p>- Billig HyttePils</p>
+    <p>- Kidza sitter hjemme</p>
 </div>
 
 <div id="Tokyo" class="tabcontent">
-    <h3>Tokyo</h3>
-    <p>Tokyo is the capital of Japan.</p>
+    <p>- Tlf: 999 99 999 </p>
+    <p>- Adresse: Veien 1, 0000 Oslo </p>
+    <p>- E-Post: post@post.no</p>
 </div>
 
 
@@ -113,6 +114,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="../css/bootstrap-4/js/bootstrap.min.js"></script>
 <script src="../css/mdl/material.min.js"></script>
-
+<script src="../css/js/tests/tabsBar.js"></script>
 </body>
 </html>
