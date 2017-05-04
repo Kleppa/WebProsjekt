@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--Style/jquery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/mdl/material.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/mdl/material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="css/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.min.css">
 
     <!--Title, GJØRE DENNE TIL VARIABEL?-->
     <title>Wenture</title>
@@ -18,9 +17,12 @@
 </head>
 <body>
 
-<?php require "header.php"; ?> <!-- Header-->
 
-<!--<div class="container">-->
+
+<?php require "../header.php" ?>
+
+
+
 <div id="karusell" class="carousel" data-ride="carousel">
 
     <ol class="carousel-indicators">
@@ -34,35 +36,35 @@
     <div class="carousel-inner" role="listbox">
 
         <div class="carousel-item active">
-            <img class="d-block img-fluid" src="http://placehold.it/800x500" alt="...">
+            <img class="d-block img-fluid" src="http://placehold.it/700x200" alt="...">
             <div class="carousel-caption">
                 <h3>Fasade</h3>
             </div>
         </div>
 
         <div class="carousel-item">
-            <img class="d-block img-fluid" src="http://placehold.it/800x500" alt="...">
+            <img class="d-block img-fluid" src="http://placehold.it/700x200" alt="...">
             <div class="carousel-caption">
-                <h3>Bar</h3>
+                <h3>Baren</h3>
             </div>
         </div>
 
         <div class="carousel-item">
-            <img class="d-block img-fluid" src="http://placehold.it/800x500" alt="...">
+            <img class="d-block img-fluid" src="http://placehold.it/700x200" alt="...">
             <div class="carousel-caption">
-                <h3> Sitteplasser</h3>
+                <h3>Lokalet</h3>
             </div>
         </div>
 
         <div class="carousel-item">
-            <img class="d-block img-fluid" src="http://placehold.it/800x500" alt="...">
+            <img class="d-block img-fluid" src="http://placehold.it/700x200" alt="...">
             <div class="carousel-caption">
                 <h3>Misc</h3>
             </div>
         </div>
 
 
-    </div>
+    </div> <!-- Carousel inner box -->
 
     <!-- Controls -->
     <a class="carousel-control-prev" href="#karusell" role="button" data-slide="prev">
@@ -76,23 +78,41 @@
     </a>
 
 
+</div> <!-- Carousel -->
 
+<div class="headline"><h1>Hytta Bar</h1></div>
+
+<div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+    <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<div id="London" class="tabcontent">
+    <h3>London</h3>
+    <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+    <h3>Paris</h3>
+    <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+    <h3>Tokyo</h3>
+    <p>Tokyo is the capital of Japan.</p>
 </div>
 
 
 
 
-<!-- setup clickable images from database -->
 
-<
-
-
-<!--</div> -->
-<?php require "footer.php"; ?>
+<?php require "../footer.php" ?>
 
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="css/bootstrap-4/js/bootstrap.min.js"></script>
-<script src="css/mdl/material.min.js"></script>
+<script src="../css/bootstrap-4/js/bootstrap.min.js"></script>
+<script src="../css/mdl/material.min.js"></script>
+
 </body>
 </html>
