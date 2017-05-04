@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--Style/jquery-->
-    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/mdl/material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
 
     <!--Title, GJØRE DENNE TIL VARIABEL?-->
     <title>Wenture</title>
@@ -16,21 +17,17 @@
 
 </head>
 <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> <!--Mdl layout starter-->
+    <?php require "header.php" ?> <!--Header-->
+        <main class="mdl-layout__content"> <!--Main content starter her-->
 
+            <div id="karusell" class="carousel" data-ride="carousel"> <!--Bildekarusell-->
 
-
-<?php require "header.php" ?>
-
-        <div class="headline"><h1>HEHEHEHEHE</h1></div>
-
-        <div id="karusell" class="carousel" data-ride="carousel">
-
-                <ol class="carousel-indicators">
+                <ol class="carousel-indicators"> <!-- Bildeindikatorer-->
                     <li data-target="#karusell" data-slide-to="0" class="active"></li>
                     <li data-target="#karusell" data-slide-to="1"></li>
                     <li data-target="#karusell" data-slide-to="2"></li>
                     <li data-target="#karusell" data-slide-to="3"></li>
-
                 </ol>
 
                 <div class="carousel-inner" role="listbox">
@@ -66,47 +63,45 @@
 
                 </div> <!-- Carousel inner box -->
 
-            <!-- Controls -->
-            <a class="carousel-control-prev" href="#karusell" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
+                <!-- Controls -->
+                <a class="carousel-control-prev" href="#karusell" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
 
-            <a class="carousel-control-next" href="#karusell" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-
-
-        </div> <!-- Carousel -->
+                <a class="carousel-control-next" href="#karusell" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
 
 
+            </div> <!-- Carousel -->
 
 
+            <div id="categoryContainer">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--top"><a href="index.php"><img src="http://placehold.it/50x50"></a></div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--top"><img src="http://placehold.it/50x50"></div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--top"><img src="http://placehold.it/50x50"></div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--top"><img src="http://placehold.it/50x50"></div>
 
-    <!-- setup clickable images from database
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--bottom"><p>Drinks</p></div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--bottom"><p>Food</p></div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--bottom"><p>Street-art</p></div>
+                    <div class="mdl-cell mdl-cell--3-col mdl-cell--bottom"><p>Chill</p></div>
+                </div> <!--kategori-grid-->
+            </div> <!-- Kategoriknapper-->
 
-        <div class="imageHolder" id="drinkImg"><a href=""> </a> </div>
-        <div class="imageHolder" id="TasteImg"><a href=""> </a></div>
-        <div class="imageHolder" id="StreetImg"><a href=""> </a></div>
-        <div class="imageHolder" id="chillImg"><a href=""> </a></div>
 
+        <?php require "footer.php" ?> <!-- Footer -->
 
-
-        <div class="txtContainerIndex">
-            <p class="btnTxt" id="drinkText">Drinks</p>
-            <p class="btnTxt" id="tasteTxt">Taste</p>
-            <p class="btnTxt" id="streetTxt">Street art(?) </p>
-            <p class="btnTxt" id="chillTxt">Chill </p>
-        </div>
-        -->
-
-<?php require "footer.php" ?>
-
-<!--Scripts-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="css/bootstrap-4/js/bootstrap.min.js"></script>
-<script src="css/mdl/material.min.js"></script>
+        </main><!-- Main content -->
+    </div> <!-- MDL Layout -->
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="css/bootstrap-4/js/bootstrap.min.js"></script>
+    <script src="css/mdl/material.min.js"></script>
 
 </body>
+
 </html>
