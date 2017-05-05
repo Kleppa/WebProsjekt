@@ -1,11 +1,33 @@
 <?php
 use Carbon\Carbon;
 
+function redirect($url)
+{
+    if (headers_sent() === false) {
+        header('Location: ' . $url, false);
+    }
+
+    exit();
+}
+
+function loggedIn() {
+    if(isset($_SESSION['username'])) {
+        return true;
+    }
+    return false;
+}
+
+function mysqlPrep($string) {
+    global $mysqli;
+    $escaped_string = mysqli_real_escape_string($mysqli, $string);
+    return $escaped_string;
+}
+
 function generateEventCard($row)
 {
     $date = new Carbon($row['datetime']);
 
-$output = <<<HTML
+    $output = <<<HTML
     <div class="card mb-3">
         <img class="card-img-top img-fluid" src="{$row['image_path']}"/>
         <div class="card-block">
@@ -24,13 +46,13 @@ $output = <<<HTML
     </div>
 HTML;
 
-return $output;
+    return $output;
 }
 
 function generatePlaceCard($row)
 {
 
-$output = <<<HTML
+    $output = <<<HTML
     <div class="card mb-3">
         <img class="card-img-top img-fluid" src="{$row['image_path']}"/>
         <div class="card-block">
@@ -51,6 +73,5 @@ $output = <<<HTML
     </div> <!-- card -->
 HTML;
 
-return $output;
+    return $output;
 }
-
