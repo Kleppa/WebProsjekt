@@ -2,6 +2,7 @@
 require '../../vendor/autoload.php';
 require '../phpscripts/db_connector.php';
 require '../phpscripts/functions.php';
+require '../phpscripts/validation_functions.php';
 
 if (isset($_POST['submit'])) {
 
