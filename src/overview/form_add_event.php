@@ -9,22 +9,25 @@ loggedIn();
 <html>
 <head>
     <title>Add Food..</title>
-    <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"/>
 </head>
 <body>
 <div class="container">
 
-    <form name="test" method="post" action="add_food.php">
+    <form name="test" method="post" action="add_event.php">
         <div class="form-group row">
-            <label for="name">Name:</label>
-            <input type="text" name="name" class="form-control" id="name" value="">
+            <label for="title">Title:</label>
+            <input type="text" name="title" class="form-control" id="title" value="">
         </div>
 
         <div class="form-group row">
             <label for="place-select">Place</label>
             <select class="custom-select" name="place" id="place-select">
                 <option selected>Choose...</option>
-                <?php $result = $mysqli->query("SELECT id, name FROM places");
+                <?php $result = $mysqli->query("SELECT id, name FROM places;");
                 $count = 1;
                 foreach($result as $value) {
                     echo "<option name=\"place\" value=\"{$value['id']}\">{$value['name']}</option>";
@@ -33,19 +36,17 @@ loggedIn();
             </select>
         </div>
 
-        <div class="form-group row">
-            <label for="description">Description:</label>
-            <textarea class="form-control" name="description" rows="5" id="description"></textarea>
+        <div class="input-group date" data-provide="datepicker">
+            <label for="datepicker">Date:</label>
+            <input type="text" class="form-control" id="datepicker">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
         </div>
 
         <div class="form-group row">
-            <label class="mr-sm-2" for="price-select">Price</label>
-            <select class="custom-select mb-2" name="price" id="price-select">
-                <option selected>Choose...</option>
-                <option value="1">$</option>
-                <option value="2">$$</option>
-                <option value="3">$$$</option>
-            </select>
+            <label for="description">Description:</label>
+            <textarea class="form-control" name="description" rows="5" id="description"></textarea>
         </div>
 
         <div class="row">
@@ -54,5 +55,15 @@ loggedIn();
     </form>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
 </body>
 </html>
