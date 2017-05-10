@@ -1,4 +1,3 @@
-<?php define('ROOTPATH', $_SERVER['DOCUMENT_ROOT'])?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,10 +12,11 @@
           crossorigin="anonymous">
 </head>
 <body>
+
 <nav class="navbar navbar-toggleable-sm" id="custom-navbar">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="<?php echo ROOTPATH . '/img/logo2.png' ?>" style="width: 70px">
+            <img src="/WebProsjekt/src/img/logo2.png" style="width: 70px">
             Wenture
         </a>
         <div class="navbar-nav">
