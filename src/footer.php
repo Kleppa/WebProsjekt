@@ -5,11 +5,6 @@
     </div>
 </footer>
 
-<!--Scripts-->
-<script src="css/bootstrap-4/js/bootstrap.min.js"></script>
 
-
-</body>
-</html>
 
 

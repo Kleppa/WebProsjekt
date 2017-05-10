@@ -1,17 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
+    <title>Wenture</title>
 
     <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.css"/>
     <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap-grid.css"/>
     <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap-reboot.css"/>
     <link rel="stylesheet" href="../css/main.css"/>
-    <link rel="stylesheet" href="../css/main.css"/>
+
 
 </head>
 <body>
 
-<?php require '../header.php'; ?>
+<?php require '../navbar.php'; ?>
+
 
 <div id="fasade-døgnvill"> Bilde av bar / resturant med knapp som gjør om til til kart. </div>
 
@@ -29,7 +31,12 @@
 <div id="sted2-døgnvill"></div>
 <div id="sted3-døgnvill"></div>
 
+
 <?php require '../footer.php'; ?>
+
+<!--Scripts-->
+<script src="css/bootstrap-4/js/bootstrap.min.js"></script>
+
 
 </body>
 </html>
