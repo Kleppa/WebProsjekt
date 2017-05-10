@@ -8,10 +8,11 @@ loggedIn();
 ?>
 <html>
 <head>
-    <title>Add Food..</title>
+    <title>Add Category..</title>
     <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.min.css"/>
 </head>
 <body>
+<?php require '../navbar.php'?>
 <div class="container">
 
     <form name="test" method="post" action="add_category.php">

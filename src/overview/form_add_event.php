@@ -8,13 +8,15 @@ loggedIn();
 ?>
 <html>
 <head>
-    <title>Add Food..</title>
+    <title>Add Event..</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"/>
 </head>
 <body>
+<?php require '../navbar.php'?>
 <div class="container">
 
     <form name="test" method="post" action="add_event.php">
@@ -29,10 +31,10 @@ loggedIn();
                 <option selected>Choose...</option>
                 <?php $result = $mysqli->query("SELECT id, name FROM places;");
                 $count = 1;
-                foreach($result as $value) {
+                foreach ($result as $value) {
                     echo "<option name=\"place\" value=\"{$value['id']}\">{$value['name']}</option>";
                     $count++;
-                }?>
+                } ?>
             </select>
         </div>
 

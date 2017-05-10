@@ -8,24 +8,25 @@ loggedIn();
 ?>
 <html>
 <head>
-    <title>Add Food..</title>
+    <title>Add Admin..</title>
     <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.min.css"/>
 </head>
 <body>
+<?php require '../navbar.php'?>
 <div class="container">
 
     <form name="test" method="post" action="add_admin.php">
         <div class="form-group row">
             <label for="username">Username:</label>
-            <input type="text" name="username" class="form-control" id="username" value="">
+            <input type="text" name="username" class="form-control" id="username" placeholder="Username">
         </div>
 
         <div class="form-group row">
             <label for="password">Password:</label>
-            <input type="password" name="password" class="form-control" id="password" value="">
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
 
             <label for="password_repeat">Repeat password:</label>
-            <input type="password" name="password_repeat" class="form-control" id="password_repeat" value="">
+            <input type="password" name="password_repeat" class="form-control" id="password_repeat" placeholder="Password">
         </div>
 
         <div class="row">
