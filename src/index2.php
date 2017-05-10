@@ -1,5 +1,6 @@
 <?php require "header.php" ?> <!--header-->
 
+    <!-- <div class="container ">-->
     <div id="customCarousel" class="carousel" data-ride="carousel"> <!--Bildekarusell-->
 
         <ol class="carousel-indicators"> <!-- Bildeindikatorer-->
