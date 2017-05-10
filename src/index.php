@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--Style/Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap-4/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
 <body>
 
-<?php require "navbar.php" ?> <!--Header-->
+<?php require "header.php" ?> <!--Header-->
 
     <!-- <div class="container ">-->
     <div id="customCarousel" class="carousel" data-ride="carousel"> <!--Bildekarusell-->
@@ -48,7 +48,7 @@
             </div>
 
             <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/700x400" alt="...">
+                <img class="d-block img-fluid" src="http://placehold.it/1000x600" alt="...">
                 <div class="carousel-caption">
                     <h3>Concert this week!</h3>
                 </div>
@@ -74,5 +74,6 @@
 
 <?php require "footer.php" ?>
 
+<script src="css/bootstrap-4/js/bootstrap.min.js"></script>
 </body>
 </html>
