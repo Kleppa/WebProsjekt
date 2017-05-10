@@ -1,16 +1,16 @@
 <?php
-require '../../vendor/autoload.php';
-require '../phpscripts/db_connector.php';
-require '../phpscripts/functions.php';
+require '/WebProsjekt/vendor/autoload.php';
+require '/WebProsjekt/src/private/phpscripts/db_connector.php';
+require '/WebProsjekt/src/private/phpscripts/functions.php';
 
 loggedIn();
 
-$pagetitle = 'Add Food..';
+$pagetitle = 'Add Place..';
 require '../header.php'; ?>
 
     <div class="container">
 
-        <form name="test" method="post" action="add_food.php">
+        <form name="test" method="post" action="../private/form_processors/add_food.php">
             <div class="form-group row">
                 <label for="name">Name:</label>
                 <input type="text" name="name" class="form-control" id="name" value="">

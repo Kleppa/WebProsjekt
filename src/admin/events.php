@@ -1,7 +1,7 @@
 <?php
-require '../../vendor/autoload.php';
-require '../phpscripts/db_connector.php';
-require '../phpscripts/functions.php';
+require '/WebProsjekt/vendor/autoload.php';
+require '/WebProsjekt/src/private/phpscripts/db_connector.php';
+require '/WebProsjekt/src/private/phpscripts/functions.php';
 
 $pagetitle = 'Events';
 require '../header.php'; ?>

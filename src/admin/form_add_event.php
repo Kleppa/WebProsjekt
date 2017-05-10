@@ -1,7 +1,7 @@
 <?php
-require '../../vendor/autoload.php';
-require '../phpscripts/db_connector.php';
-require '../phpscripts/functions.php';
+require '/WebProsjekt/vendor/autoload.php';
+require '/WebProsjekt/src/private/phpscripts/db_connector.php';
+require '/WebProsjekt/src/private/phpscripts/functions.php';
 
 loggedIn(); ?>
 
@@ -38,7 +38,7 @@ loggedIn(); ?>
 
 <div class="container">
 
-    <form name="test" method="post" action="add_event.php">
+    <form name="test" method="post" action="../private/form_processors/add_event.php">
         <div class="form-group row">
             <label for="title">Title:</label>
             <input type="text" name="title" class="form-control" id="title" value="">
