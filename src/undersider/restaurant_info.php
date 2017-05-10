@@ -1,12 +1,12 @@
 <!doctype html>
 <html>
-<header>
+<head>
 
-<link rel="stylesheet" src="../css/bootstrap-4/css/bootstrap.css"> </link>
-    <link rel="stylesheet" src="../css/bootstrap-4/css/bootstrap-grid.css"> </link>
-    <link rel="stylesheet" src="../css/bootstrap-4/css/bootstrap-rebot.css"> </link>
-    <link rel="stylesheet" src="./css/main.css"> </link>
-
+    <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap-grid.css"/>
+    <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap-reboot.css"/>
+    <link rel="stylesheet" href="../css/main.css"/>
+</head>
 <body>
 
 <?php require '../header.php'; ?>
