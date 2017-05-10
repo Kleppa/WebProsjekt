@@ -20,7 +20,7 @@
 <h3 id="meny-døgnvill">Oversikt | Spesial | Kontakt</h3>
 
 <p id="fine-ord-døgnvill">
-    Døgnvill - Bar og burger byr på god mat og drikke. Prøv de forskjellige burgerene, eller om du bare ønsker deg en milkshake, har de det og.
+    Døgnvill - Bar og burger byr på god mat og drikke. Prøv de forskjellige burgerene, eller om du bare ønsker en milkshake, har de det og.
 </p>
 
 <h3 id="andre-steder-døgnvill">Andre steder i området</h3>
