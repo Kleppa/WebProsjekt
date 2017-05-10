@@ -11,7 +11,7 @@
 
 <?php require '../header.php'; ?>
 
-<div id="fasade-døgnvill"> Bilde av bar / resturant som blir til kart. </div>
+<div id="fasade-døgnvill"> Bilde av bar / resturant med knapp som gjør om til til kart. </div>
 
 <h3 id="Spisested-døgnvill">Døgnvill - Bar og burger</h3>
 
