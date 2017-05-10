@@ -1,25 +1,29 @@
-    <header class="mdl-layout__header">
-        <div id="headerRow" class="mdl-layout__header-row">
-            <!-- Title -->
-            <span id="headerTitle" class="mdl-layout-title">Wenture</span>
-            <!-- Add spacer, to align navigation to the right -->
-            <div class="mdl-layout-spacer"></div>
-            <!-- Navigation. We hide it in small screens. -->
-            <nav class="mdl-navigation mdl-layout--large-screen-only">
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-                <a class="mdl-navigation__link" href="">Link</a>
-            </nav>
-        </div>
-    </header>
-    <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Title</span>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-            <a class="mdl-navigation__link" href="">Link</a>
-        </nav>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Wenture</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Style-->
+    <link rel="stylesheet" href="css/bootstrap-4/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main2.css">
+</head>
+<body>
+<nav class="navbar navbar-toggleable-sm" id="custom-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="logo2.png" style="width: 70px">
+            Wenture
+        </a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Drink</a>
+            <a class="nav-item nav-link" href="#">Eat</a>
+            <a class="nav-item nav-link" href="#">Chill</a>
+        </div> <!--Navbar-nav-->
+    </div><!--Container-->
+</nav><!--Navbar -->
+
+<!-- <div class="container ">-->
 
