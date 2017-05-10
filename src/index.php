@@ -13,7 +13,7 @@
         <div class="carousel-inner" role="listbox">
 
             <div class="carousel-item active">
-                <img class="d-block img-fluid" src="http://placehold.it/700x400" alt="...">
+                <img class="d-block img-fluid" src="http://placehold.it/1280x800" alt="Places to drink">
                 <div class="carousel-caption">
                     <h3>Chill bar</h3>
                 </div>
@@ -59,7 +59,3 @@
 <!--<div/>--> <!--Container-->
 
 <?php require "footer.php" ?>
-
-<script src="css/bootstrap-4/js/bootstrap.min.js"></script>
-</body>
-</html>
