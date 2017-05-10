@@ -3,12 +3,17 @@ require '../../vendor/autoload.php';
 require '../phpscripts/db_connector.php';
 require '../phpscripts/functions.php';
 
-loggedIn();
+loggedIn(); ?>
 
-?>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Add Event..</title>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wenture - Add Event..</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
           crossorigin="anonymous">
@@ -16,7 +21,21 @@ loggedIn();
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"/>
 </head>
 <body>
-<?php require '../navbar.php'?>
+<nav class="navbar navbar-toggleable-sm" id="custom-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../img/logo2.png" style="width: 70px">
+            Wenture
+        </a>
+        <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Home</a>
+            <a class="nav-item nav-link" href="#">Drink</a>
+            <a class="nav-item nav-link" href="#">Eat</a>
+            <a class="nav-item nav-link" href="#">Chill</a>
+        </div> <!--Navbar-nav-->
+    </div><!--Container-->
+</nav><!--Navbar -->
+
 <div class="container">
 
     <form name="test" method="post" action="add_event.php">
@@ -69,3 +88,7 @@ loggedIn();
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
 </body>
 </html>
+
+<?php
+$result->free();
+$mysqli->close();

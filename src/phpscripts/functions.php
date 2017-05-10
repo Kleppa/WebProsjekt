@@ -1,5 +1,6 @@
 <?php
 use Carbon\Carbon;
+Carbon::setLocale('no');
 
 function redirect($url)
 {

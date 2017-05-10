@@ -5,35 +5,30 @@ require '../phpscripts/functions.php';
 
 loggedIn();
 
-?>
-<html>
-<head>
-    <title>Add Admin..</title>
-    <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.min.css"/>
-</head>
-<body>
-<?php require '../navbar.php'?>
-<div class="container">
+$pagetitle = 'Add Admin..';
+require '../header.php' ?>
 
-    <form name="test" method="post" action="add_admin.php">
-        <div class="form-group row">
-            <label for="username">Username:</label>
-            <input type="text" name="username" class="form-control" id="username" placeholder="Username">
-        </div>
+    <div class="container">
 
-        <div class="form-group row">
-            <label for="password">Password:</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+        <form name="test" method="post" action="add_admin.php">
+            <div class="form-group row">
+                <label for="username">Username:</label>
+                <input type="text" name="username" class="form-control" id="username" placeholder="Username">
+            </div>
 
-            <label for="password_repeat">Repeat password:</label>
-            <input type="password" name="password_repeat" class="form-control" id="password_repeat" placeholder="Password">
-        </div>
+            <div class="form-group row">
+                <label for="password">Password:</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password">
 
-        <div class="row">
-            <input type="submit" name="submit" class="btn btn-primary" id="submit"/>
-        </div>
-    </form>
-</div>
+                <label for="password_repeat">Repeat password:</label>
+                <input type="password" name="password_repeat" class="form-control" id="password_repeat"
+                       placeholder="Password">
+            </div>
 
-</body>
-</html>
+            <div class="row">
+                <input type="submit" name="submit" class="btn btn-primary" id="submit"/>
+            </div>
+        </form>
+    </div>
+
+<?php require '../footer.php';

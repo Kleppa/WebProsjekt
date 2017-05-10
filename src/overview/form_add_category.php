@@ -5,27 +5,21 @@ require '../phpscripts/functions.php';
 
 loggedIn();
 
-?>
-<html>
-<head>
-    <title>Add Category..</title>
-    <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.min.css"/>
-</head>
-<body>
-<?php require '../navbar.php'?>
-<div class="container">
+$pagetitle = 'Add Category..';
+require '../header.php' ?>
 
-    <form name="test" method="post" action="add_category.php">
-        <div class="form-group row">
-            <label for="name">Category:</label>
-            <input type="text" name="name" class="form-control" id="name" value="">
-        </div>
+    <div class="container">
 
-        <div class="row">
-            <input type="submit" name="submit" class="btn btn-primary" id="submit"/>
-        </div>
-    </form>
-</div>
+        <form name="test" method="post" action="add_category.php">
+            <div class="form-group row">
+                <label for="name">Category:</label>
+                <input type="text" name="name" class="form-control" id="name" value="">
+            </div>
 
-</body>
-</html>
+            <div class="row">
+                <input type="submit" name="submit" class="btn btn-primary" id="submit"/>
+            </div>
+        </form>
+    </div>
+
+<?php require '../footer.php';
