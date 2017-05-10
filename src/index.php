@@ -73,3 +73,6 @@
 <!--<div/>--> <!--Container-->
 
 <?php require "footer.php" ?>
+
+</body>
+</html>
