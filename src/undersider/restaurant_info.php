@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap-grid.css"/>
     <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap-reboot.css"/>
     <link rel="stylesheet" href="../css/main.css"/>
+    <link rel="stylesheet" href="../css/main2.css"/>
+
 </head>
 <body>
 
@@ -27,6 +29,7 @@
 <div id="sted2-døgnvill"></div>
 <div id="sted3-døgnvill"></div>
 
+<?php require '../footer.php'; ?>
 
 </body>
 </html>
