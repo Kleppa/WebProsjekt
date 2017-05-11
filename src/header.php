@@ -17,7 +17,7 @@
 <nav class="navbar navbar-toggleable-sm" id="custom-navbar">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="/WebProsjekt/src/img/logo2.png" style="width: 70px">
+            <img src="<?php echo $_SERVER['DOCUMENT_ROOT'] ?>/WebProsjekt/src/img/logo2.png" style="width: 70px">
             Wenture
         </a>
         <div class="navbar-nav">

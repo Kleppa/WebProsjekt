@@ -1,8 +1,8 @@
 <?php
-require '/WebProsjekt/vendor/autoload.php';
-require '/WebProsjekt/src/private/phpscripts/db_connector.php';
-require '/WebProsjekt/src/private/phpscripts/functions.php';
-require '/WebProsjekt/src/private/phpscripts/validation_functions.php';
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/db_connector.php';
+require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/functions.php';
+require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/validation_functions.php';
 
 if (isset($_POST['submit'])) {
     if ($_POST['password'] === $_POST['password_repeat']) {

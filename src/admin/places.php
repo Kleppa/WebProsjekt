@@ -1,7 +1,7 @@
 <?php
-require '/WebProsjekt/vendor/autoload.php';
-require '/WebProsjekt/src/private/phpscripts/db_connector.php';
-require '/WebProsjekt/src/private/phpscripts/functions.php';
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/db_connector.php';
+require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/functions.php';
 
 $pagetitle = 'Places';
 require '../header.php'; ?>
