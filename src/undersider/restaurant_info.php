@@ -25,7 +25,7 @@
 
         <div class="row justify-content-center"> <h6> Andre steder i området </h6> </div>
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center text-center">
 
             <div class="col-3">
                 <img class="img-fluid" src="http://placehold.it/200x300">
