@@ -41,75 +41,7 @@ nav{
 
 /* DANIEL CSS */
 
-#fasade-døgnvill {
-    position: absolute;
-    width: 600px;
-    height: 150px;
-    border-width: 2px;
-    border-color: #000;
-    top: 55px;
-    left: 300px;
-    border-style: solid;
+#bildeboks {
+    max-height: 300px;
 }
 
-#spisested-døgnvill{
-    position: absolute;
-    font-size: 170%;
-    top: 200px;
-    left: 530px;
-}
-
-#meny-døgnvill{
-    position: absolute;
-    top: 275px;
-    left: 475px;
-    font-size: 130%;
-}
-
-#fine-ord-døgnvill{
-    position: absolute;
-    top: 330px;
-    max-width: 450px;
-    left: 365px;
-    font-size: 100%;
-}
-
-#andre-steder-døgnvill{
-    position: absolute;
-    top: 430px;
-    font-size: 130%;
-    left: 465px;
-}
-
-#sted1-døgnvill {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-width: 2px;
-    border-color: #000;
-    top: 500px;
-    left: 300px;
-    border-style: solid;
-}
-
-#sted2-døgnvill {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-width: 2px;
-    border-color: #000;
-    top: 500px;
-    left: 600px;
-    border-style: solid;
-}
-
-#sted3-døgnvill {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-width: 2px;
-    border-color: #000;
-    top: 500px;
-    left: 800px;
-    border-style: solid;
-}
