@@ -11,9 +11,11 @@ require '../header.php'; ?>
         <div class="card-columns mt-4">
             <?php
             $sql = "SELECT * FROM places;";
+
             if ($result = $mysqli->query($sql)) {
-                foreach ($result as $p) {
-                    echo generatePlaceCard($p);
+                foreach ($result as $row) {
+                    $row = ['type' => 'place'];
+                    require '../include/cards.php';
                 }
             } ?>
         </div> <!-- card-columns -->
