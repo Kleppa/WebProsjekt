@@ -22,7 +22,7 @@
         </div>
 
 
-        <div class="row justify-content-center"> <h5> Andre steder i området </h5> </div>
+        <div class="row justify-content-center"> <h6> Andre steder i området </h6> </div>
 
         <div class="row justify-content-center">
 
