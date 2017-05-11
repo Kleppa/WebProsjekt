@@ -11,9 +11,10 @@ require '../header.php'; ?>
         <div class="card-columns mt-4">
             <?php
             $sql = "SELECT * FROM events;";
+
             if ($result = $mysqli->query($sql)) {
-                foreach ($result as $e) {
-                    echo generateEventCard($e);
+                foreach ($result as $row) {
+                    require "../include/cards.php";
                 }
             } ?>
         </div> <!-- card-columns -->

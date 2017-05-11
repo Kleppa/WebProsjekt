@@ -21,6 +21,7 @@ require '../header.php'; ?>
                         <?php $result = $mysqli->query("SELECT id, name FROM places;");
                         $count = 1;
                         foreach ($result as $value) {
+
                             echo "<option name=\"place\" value=\"{$value['id']}\">{$value['name']}</option>";
                             $count++;
                         } ?>
