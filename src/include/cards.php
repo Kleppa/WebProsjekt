@@ -27,20 +27,24 @@ Carbon::setLocale('no');
         <div class="text-right">
             <div class="btn-group">
                 <?php
-                if(loggedIn()) {
-                    if(isset($row['food_places_id_fk'])){
+                if(true) {
+                    if($row['type'] === 'food'){
                         $hrefLinkVar='form_add_food.php';
                     }
-                    if(issset($row['events_places_id_fk'])){
+                    if($row['type']==='place'){
                         $hrefLinkVar='form_add_place.php';
                     }
-                    if(isset($row['places_categories_id_fk'])){
+                    if($row['type']==='categories'){
                         $hrefLinkVar='form_add_place.php';
+                    }
+                    if($row['type']==='event'){
+                        $hrefLinkVav='form_add_event.php';
                     }
 
 
-                    echo '<a href='.'../admin/' . $hrefLinkVar.' class="btn btn-info" id="edit">Edit</a>';
-                    echo '<a href='.'../admin/'. $hrefLinkVar .' class="btn btn-danger" >Delete</a>';
+
+                    echo '<a href="' . '../admin/form_add_' . $row['type'] . '.php" class="btn btn-info" id="edit">Edit</a>';
+                    echo '<a href="' . '../admin/form_add_' . $row['type'] . '.php" class="btn btn-danger" >Delete</a>';
 
                     if (isset($row['address'])) {
 

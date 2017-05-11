@@ -21,7 +21,10 @@ require '../header.php'; ?>
                     <label for="place-select">Place</label>
                     <select class="custom-select" name="place" id="place-select">
                         <option selected>Choose...</option>
-                        <?php $result = $mysqli->query("SELECT id, name FROM places;");
+
+                        <?php
+
+                        $result = $mysqli->query("SELECT id, name FROM places;");
                         $count = 1;
                         foreach ($result as $value) {
                             echo "<option name=\"place\" value=\"{$value['id']}\">{$value['name']}</option>";
@@ -32,7 +35,7 @@ require '../header.php'; ?>
 
                 <div class="input-group date" data-provide="datepicker">
                     <label for="datepicker">Date:</label>
-                    <input type="text" class="form-control" id="datepicker">
+                    <input type="text" class="form-control" id="datepicker" >
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
