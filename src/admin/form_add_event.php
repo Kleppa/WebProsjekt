@@ -6,8 +6,8 @@ require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/functions.php';
 $pagetitle = 'Add Event..';
 $extra_links = ['datepicker' => '<link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"/>'];
-
-require '../header.php' ?>
+$extra_scripts = ['datepicker' => '<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>'];
+require '../header.php'; ?>
 
     <div class="container">
         <div class="mt-4">
@@ -59,10 +59,5 @@ require '../header.php' ?>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
             integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
-    </body>
-    </html>
 
-<?php
-$result->free();
-$mysqli->close();
+<?php require '../footer.php';
