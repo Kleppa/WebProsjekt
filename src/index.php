@@ -1,6 +1,5 @@
 <?php require "header.php" ?> <!--Header-->
 
-    <!-- <div class="container ">-->
     <div id="customCarousel" class="carousel" data-ride="carousel"> <!--Bildekarusell-->
 
         <ol class="carousel-indicators"> <!-- Bildeindikatorer-->
@@ -45,7 +44,7 @@
 
         <!-- Controls -->
         <a class="carousel-control-prev" href="#customCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
         </a>
 
@@ -53,9 +52,38 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
-
-
     </div> <!-- Carousel -->
-<!--<div/>--> <!--Container-->
+
+<div class="container">
+    <div class="jumbotron-fluid">
+        <h2>Trending places right now:</h2>
+        <p>See the most popular places by category</p>
+    </div>
+    <section class
+    <div class="flex-row">
+        <div class="col-3">
+            <img src="http://placehold.it/200x200" alt="qwe">
+            <h4>Place #1</h4>
+            <p>Keywords about the place</p>
+            </div>
+        <div class="col-3">
+            <img src="http://placehold.it/200x200" alt="qwe">
+            <h4>Place</h4>
+            <p>Keywords about the place</p>
+        </div>
+        <div class="col-3">
+            <img src="http://placehold.it/200x200" alt="qwe">
+            <h4>Place</h4>
+            <p>Keywords about the place</p>
+        </div>
+        <div class="col-1">
+            <img src="http://placehold.it/200x200" alt="qwe">
+            <h4>Place</h4>
+            <p>Keywords about the place</p>
+        </div>
+
+    </div>
+
+</div>
 
 <?php require "footer.php" ?>
