@@ -8,7 +8,7 @@ require '../header.php'; ?>
 
     <!-- content -->
     <div class="container">
-        <div class="card-columns">
+        <div class="card-columns mt-4">
             <?php
             $sql = "SELECT * FROM events;";
             if ($result = $mysqli->query($sql)) {

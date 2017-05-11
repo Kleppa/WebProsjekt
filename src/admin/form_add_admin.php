@@ -28,7 +28,7 @@ require '../header.php' ?>
                     <input type="submit" name="submit" class="btn btn-primary" id="submit"/>
                 </div>
             </form>
-        </div>
+        </div> <!-- mt-4 -->
 
     </div>
 

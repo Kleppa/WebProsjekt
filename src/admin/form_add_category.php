@@ -7,6 +7,7 @@ $pagetitle = 'Add Category..';
 require '../header.php' ?>
 
     <div class="container">
+
         <div class="mt-4">
             <form name="test" method="post" action="../private/form_processors/add_category.php">
                 <div class="form-group row">
@@ -18,7 +19,8 @@ require '../header.php' ?>
                     <input type="submit" name="submit" class="btn btn-primary" id="submit"/>
                 </div>
             </form>
-        </div>
-    </div>
+        </div> <!-- mt-4 -->
+
+    </div> <!-- container -->
 
 <?php require '../footer.php';
