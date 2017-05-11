@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
           crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/WebProsjekt/src/css/main.css">
+    <link rel="stylesheet" type="text/css" href="/src/css/main.css">
 </head>
 <body>
 
 <nav class="navbar navbar-toggleable-sm" id="custom-navbar">
     <div class="container">
         <a class="navbar-brand" href="#">
-            <img src="<?php echo $_SERVER['DOCUMENT_ROOT'] ?>/WebProsjekt/src/img/logo2.png" style="width: 70px">
+            <img src="/src/img/logo2.png" style="width: 70px">
             Wenture
         </a>
         <div class="navbar-nav">
