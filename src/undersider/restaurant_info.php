@@ -12,6 +12,7 @@
 
         <div class="row justify-content-center"> <h3> Navn på sted </h3> </div>
 
+
         <div class="row justify-content-center"> <h5> Oversikt | Spesial | Kontakt </h5> </div>
 
 
