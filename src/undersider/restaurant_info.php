@@ -25,18 +25,23 @@
         <div class="row justify-content-center"> <h5> Andre steder i området </h5> </div>
 
         <div class="row">
+
             <div class="col-3">
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
+
             <div class="col-3">
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
+
             <div class="col-3">
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
+
             <div class="col-3">
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
+
         </div>
 
 
