@@ -2,6 +2,16 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/db_connector.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/functions.php';
+if(isset($_GET['id'])){
+
+    $sql='SELECT * FROM events LEFT JOIN types on types.id=events.id where events.id=' .  $_GET['id'].';';
+
+    if ($editResult = $mysqli->query($sql)) {
+
+    }
+
+
+}
 
 $pagetitle = 'Add Event..';
 $extra_links = ['datepicker' => '<link rel="stylesheet"
@@ -20,22 +30,34 @@ require '../header.php'; ?>
                 <div class="form-group row">
                     <label for="place-select">Place</label>
                     <select class="custom-select" name="place" id="place-select">
-                        <option selected>Choose...</option>
+
 
                         <?php
 
                         $result = $mysqli->query("SELECT id, name FROM places;");
                         $count = 1;
                         foreach ($result as $value) {
-                            echo "<option name=\"place\" value=\"{$value['id']}\">{$value['name']}</option>";
+                            $out  = "<option name=\"place\" value=\"{$value['id']}\"";
+                            if($value['id'] === $_GET['id']) {
+                                $out .= ' selected';
+                            }
+                            $out .= ">{$value['name']}</option>";
+                            echo $out;
                             $count++;
                         } ?>
+
                     </select>
                 </div>
 
                 <div class="input-group date" data-provide="datepicker">
                     <label for="datepicker">Date:</label>
-                    <input type="text" class="form-control" id="datepicker" >
+                    <input type="text" class="form-control" id="datepicker" <?php
+                    if (!empty($editResult)){
+                        foreach ($editResult as $item){
+                            echo 'value='.$item['datetime'];}
+                    }
+
+                    ?>>
                     <div class="input-group-addon">
                         <span class="glyphicon glyphicon-th"></span>
                     </div>
@@ -43,7 +65,13 @@ require '../header.php'; ?>
 
                 <div class="form-group row">
                     <label for="description">Description:</label>
-                    <textarea class="form-control" name="description" rows="5" id="description"></textarea>
+                    <textarea class="form-control" name="description" rows="5" id="description"><?php
+                        if (!empty($editResult)){
+                        foreach ($editResult as $item){
+                            echo $item['description'];}
+                        }
+
+                       ?> </textarea>
                 </div>
 
                 <div class="row">
