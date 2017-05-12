@@ -4,18 +4,24 @@
 
         <div class="row justify-content-center">
             <div class="col-9">
-                <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#" id="bilde">Bilde</a>
-                </li>
-                <li class="nav-item" id="kart">
-                    <a class="nav-link" href="#">Kart</a>
-                </li>
-                </ul>
-                <?php
 
-                echo '<img class="img-fluid" id="bildeboks" src="http://placehold.it/900x300"> '
-                    ?>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Bilde</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Kart</a>
+                    </li>
+
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane  in active" id="profile"><img class="img-fluid" id="bildeboks" src="http://placehold.it/900x300"></div>
+                    <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
+
+                </div>
+
             </div>
             </div>
 
