@@ -7,14 +7,14 @@ $pagetitle = 'Events';
 require '../header.php'; ?>
 
     <!-- content -->
-    <div class="container">
+    <div class="container" style="margin-top: 100px">
         <div class="card-columns mt-4">
             <?php
             $sql = "SELECT events.*,types.type FROM events LEFT JOIN types ON types.id = events.type;";
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
-                    require "../include/cards.php";
+                    require '../include/cards.php';
                 }
             } ?>
         </div> <!-- card-columns -->
