@@ -7,7 +7,7 @@ $pagetitle = 'Events';
 require '../header.php'; ?>
 
     <!-- content -->
-    <div class="container" style="margin-top: 100px">
+    <div class="container margin-adder">
         <div class="card-columns mt-4">
             <?php
             $sql = "SELECT events.*,types.type FROM events LEFT JOIN types ON types.id = events.type;";
@@ -18,10 +18,13 @@ require '../header.php'; ?>
                 }
             } ?>
         </div> <!-- card-columns -->
-        <div class="btn-group">
-            <i class="material-icons" style="color: cyan;">add_circle</i>
-        </div>
 
+        <a href="form_add_event.php">
+            <div class="float-button circle d-flex align-content-between">
+                <!-- <i class="material-icons md-48" style="color: deeppink;">add_circle</i> -->
+                <i class="material-icons" style="color: white;">add</i>
+            </div>
+        </a>
     </div> <!-- container -->
 
 <?php require '../footer.php';

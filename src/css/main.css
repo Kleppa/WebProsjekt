@@ -62,17 +62,21 @@
 }
 
 /* EVEN CSS */
-body {
-    width: 100%;
-    height: 100%;
+.material-icons.md-48 {
+    font-size: 48px;
 }
 
-.btn-group-sm .btn-fab {
-    position: fixed !important;
-    right: 29px;
+.circle {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
 }
 
-.btn-group .btn-fab {
-    position: fixed !important;
-    right: 20px;
+.float-button {
+    position: fixed;
+    right: 19px;
+    bottom: 24px;
+    background-color: deeppink;
+    align-items: center;
+    justify-content: center;
 }

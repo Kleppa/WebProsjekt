@@ -18,6 +18,12 @@ require '../header.php'; ?>
                 }
             } ?>
         </div> <!-- card-columns -->
+        <a href="form_add_event.php">
+            <div class="float-button circle d-flex align-content-between">
+                <!-- <i class="material-icons md-48" style="color: deeppink;">add_circle</i> -->
+                <i class="material-icons" style="color: white;">create</i>
+            </div>
+        </a>
     </div> <!-- container -->
 
 <?php require '../footer.php';

@@ -48,9 +48,8 @@ if (isset($row['datetime'])) {
                     }
 
 
-
-                    echo '<a href="' . '../admin/form_add_' . $row['type'] . '.php?id=' . $row['id'] . '" class="btn btn-info" id="edit">Edit</a>';
-                    echo '<a href="' . '../admin/form_add_' . $row['type'] . '.php" class="btn btn-danger" >Delete</a>';
+                    echo '<a href="' . '../admin/form_add_' . $row['type'] . '.php?id=' . $row['id'] . '" class="btn btn-info" id="edit"><i class="material-icons" style="color: white;">edit</i></a>';
+                    echo '<a href="' . '../admin/form_add_' . $row['type'] . '.php" class="btn btn-danger" ><i class="material-icons" style="color: white;">delete</i></a>';
 
                     if (isset($row['address'])) {
 
