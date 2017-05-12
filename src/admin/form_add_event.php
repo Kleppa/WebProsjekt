@@ -24,7 +24,20 @@ require '../header.php'; ?>
             <form name="test" method="post" action="../private/form_processors/save_event.php">
                 <div class="form-group row">
                     <label for="title">Title:</label>
-                    <input type="text" name="title" class="form-control" id="title" value="">
+                    <input type="text" name="title" class="form-control" id="title" value=" <?php
+                    if(isset($_GET['id'])) {
+                        $editResult2 = $mysqli->query("SELECT id, title FROM events;");
+
+                        foreach ($editResult2 as $item) {
+                            if ($_GET['id'] === $item['id']) {
+                                echo $item['title'];
+                            }
+                        }
+                    }
+                    ?>">
+
+
+
                 </div>
 
                 <div class="form-group row">
@@ -53,8 +66,8 @@ require '../header.php'; ?>
                     <label for="datepicker">Date:</label>
                     <input type="text" class="form-control" id="datepicker" <?php
                     if (!empty($editResult)) {
-                        foreach ($editResult as $item) {
-                            echo 'value=' . $item['datetime'];
+                        foreach ($editResult as $newitem) {
+                            echo 'value=' . $newitem['datetime'];
                         }
                     }
 
