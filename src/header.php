@@ -21,7 +21,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-toggleable-sm fixed-top" id="custom-navbar">
+<nav class="navbar navbar-toggleable-sm" id="custom-navbar">
     <div class="container">
         <a class="navbar-brand" href="#">
             <img src="/src/img/logo2.png" style="width: 70px">
@@ -35,4 +35,3 @@
         </div> <!--Navbar-nav-->
     </div><!--Container-->
 </nav><!--Navbar -->
-<div class="push-content"></div>

@@ -1,6 +1,5 @@
 /* Header.php */
 .navbar{
-    opacity: 0.7;
     background-color: white;
 }
 
@@ -12,9 +11,6 @@
     background-color: #FC5185;
 }
 
-.push-content {
-    height: 87px;
-}
 /*
 #custom-navbar {
     -webkit-box-shadow: 5px 5px 5px #364F6B;
