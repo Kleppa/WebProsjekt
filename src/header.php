@@ -12,7 +12,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
           crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="/src/css/main.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost/src/css/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <?php if (isset($extra_links)) {
         foreach ($extra_links as $link => $v) {
             echo $v;

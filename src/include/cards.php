@@ -29,8 +29,7 @@ if (isset($row['datetime'])) {
         }
         if (isset($date)) {
             echo '<p>' . $date->diffForHumans() . '</p>';
-        }
-        ?>
+        } ?>
         <div class="text-right">
             <div class="btn-group">
                 <?php

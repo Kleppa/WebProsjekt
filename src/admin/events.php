@@ -18,6 +18,10 @@ require '../header.php'; ?>
                 }
             } ?>
         </div> <!-- card-columns -->
+        <div class="btn-group">
+            <i class="material-icons" style="color: cyan;">add_circle</i>
+        </div>
+
     </div> <!-- container -->
 
 <?php require '../footer.php';
