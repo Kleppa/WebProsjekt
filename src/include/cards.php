@@ -2,15 +2,20 @@
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 $hrefLinkVar='';
 
-
 use Carbon\Carbon;
-$date = new Carbon($row['datetime']);
-Carbon::setLocale('no');
+
+if (isset($row['datetime'])) {
+
+    $date = new Carbon($row['datetime']);
+    Carbon::setLocale('no');
+}
 
 ?>
 
 <div class="card mb-3">
-    <img class="card-img-top img-fluid" src="<?php echo $row['image_path'] ?>"/>
+    <?php if (isset($row['image_path'])) {
+        echo '<img class="card-img-top img-fluid" src="' . $row['image_path'] . '"/>';
+    } ?>
     <div class="card-block">
         <h2 class="card-title"><?php echo $row['title'] ?></h2>
         <p class="card-text"><?php echo $row['description'] ?></p>
@@ -22,8 +27,10 @@ Carbon::setLocale('no');
             echo '<p>' . $row['address'] . '</p>';
             echo '<p>' . 'Opening Hours:' . $row['opening_hours'] . '</p>';
         }
+        if (isset($date)) {
+            echo '<p>' . $date->diffForHumans() . '</p>';
+        }
         ?>
-        <p><?php echo $date->diffForHumans() ?></p>
         <div class="text-right">
             <div class="btn-group">
                 <?php
