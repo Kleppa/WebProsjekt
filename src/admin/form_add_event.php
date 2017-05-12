@@ -19,7 +19,7 @@ $extra_links = ['datepicker' => '<link rel="stylesheet"
 $extra_scripts = ['datepicker' => '<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>'];
 require '../header.php'; ?>
 
-    <div class="container" style="margin-top: 100px;">
+    <div class="container margin-adder">
         <div class="mt-4">
             <form name="test" method="post" action="../private/form_processors/save_event.php">
                 <div class="form-group row">

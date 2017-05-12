@@ -1,7 +1,7 @@
 /* Header.php */
 .navbar{
     opacity:0.7;
-    background-color: white;
+    background-color: greenyellow;
 }
 
 .nav-item, .navbar-brand{
@@ -12,6 +12,9 @@
     background-color: #FC5185;
 }
 
+.margin-adder{
+    margin-top: 100px;
+}
 /*
 #custom-navbar {
     -webkit-box-shadow: 5px 5px 5px #364F6B;
@@ -49,6 +52,7 @@
 .footer{
     background-color: #E3E3E3;
 }
+
 
 
 /* DANIEL CSS */
