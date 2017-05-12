@@ -2,7 +2,14 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/db_connector.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/functions.php';
+if (isset($_GET['id'])) {
 
+    $sql = 'SELECT * FROM food ';
+
+    if ($editResult = $mysqli->query($sql)) {
+
+    }
+}
 $pagetitle = 'Add Food..';
 require '../header.php'; ?>
 
@@ -11,7 +18,17 @@ require '../header.php'; ?>
             <form name="test" method="post" action="../private/form_processors/save_food.php">
                 <div class="form-group row">
                     <label for="name">Name:</label>
-                    <input type="text" name="name" class="form-control" id="name" value="">
+                    <input type="text" name="name" class="form-control" id="name" value=" <?php
+                    if(isset($_GET['id'])) {
+                        $editResult2 = $mysqli->query("SELECT id, name FROM food;");
+
+                        foreach ($editResult2 as $item) {
+                            if ($_GET['id'] === $item['id']) {
+                                echo $item['name'];
+                            }
+                        }
+                    }
+                    ?>">
                 </div>
 
                 <div class="form-group row">
@@ -29,7 +46,14 @@ require '../header.php'; ?>
 
                 <div class="form-group row">
                     <label for="description">Description:</label>
-                    <textarea class="form-control" name="description" rows="5" id="description"></textarea>
+                    <textarea class="form-control" name="description" rows="5" id="description"><?php
+                        if (!empty($editResult)) {
+                            foreach ($editResult as $item) {
+                                echo $item['description'];
+                            }
+                        }
+
+                        ?></textarea>
                 </div>
 
                 <div class="form-group row">
