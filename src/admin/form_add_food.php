@@ -17,13 +17,20 @@ require '../header.php'; ?>
                 <div class="form-group row">
                     <label for="place-select">Place</label>
                     <select class="custom-select" name="place" id="place-select">
-                        <option selected>Choose...</option>
-                        <?php $result = $mysqli->query("SELECT id, name FROM places;");
+                        <option>Choose...</option>
+                        <?php $result = $mysqli->query("SELECT places.id AS placeID, places.name AS placeName, food.id AS foodID FROM places LEFT JOIN food ON food.place = places.id;");
                         $count = 1;
                         foreach ($result as $value) {
-                            echo "<option name=\"place\" value=\"{$value['id']}\">{$value['name']}</option>";
+                            $out = '<option name=\"place\" value=\"';
+                            $out .= $value['placeID'] . '\"';
+                            if ($_GET['id'] === $value['foodID']) {
+                                $out .= ' selected';
+                            }
+                            $out .= '>' . $value['placeName'] . '</option>';
+                            echo $out;
                             $count++;
                         } ?>
+
                     </select>
                 </div>
 
