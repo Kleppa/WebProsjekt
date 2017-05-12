@@ -6,10 +6,7 @@ if (isset($_GET['id'])) {
 
     $sql = 'SELECT * FROM events LEFT JOIN types ON types.id=events.id WHERE events.id=' . $_GET['id'] . ';';
 
-    if ($editResult = $mysqli->query($sql)) {
-
-    }
-
+    if ($editResult = $mysqli->query($sql));
 
 }
 
