@@ -19,7 +19,7 @@
             </div>
 <!---->
             <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/700x400" alt="...">
+                <img class="d-block img-fluid" src="http://placehold.it/1280x800" alt="...">
                 <div class="carousel-caption">
                     <h3>Hip restaurant</h3>
                 </div>
@@ -54,36 +54,36 @@
         </a>
     </div> <!-- Carousel -->
 
-<div class="container">
-    <div class="jumbotron-fluid">
-        <h2>Trending places right now:</h2>
-        <p>See the most popular places by category</p>
-    </div>
-    <section class
-    <div class="flex-row">
-        <div class="col-3">
-            <img src="http://placehold.it/200x200" alt="qwe">
-            <h4>Place #1</h4>
-            <p>Keywords about the place</p>
+    <div class="container" id="trending-wrapper">
+        <div class="jumbotron-fluid">
+            <h2>Trending places right now:</h2>
+            <p>See the most popular places by category</p>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <img src="http://placehold.it/200x200" alt="qwe">
+                <h4>Place #1</h4>
+                <p>Keywords about the place</p>
+                </div>
+            <div class="col-3">
+                <img src="http://placehold.it/200x200" alt="qwe">
+                <h4>Place</h4>
+                <p>Keywords about the place</p>
             </div>
-        <div class="col-3">
-            <img src="http://placehold.it/200x200" alt="qwe">
-            <h4>Place</h4>
-            <p>Keywords about the place</p>
-        </div>
-        <div class="col-3">
-            <img src="http://placehold.it/200x200" alt="qwe">
-            <h4>Place</h4>
-            <p>Keywords about the place</p>
-        </div>
-        <div class="col-1">
-            <img src="http://placehold.it/200x200" alt="qwe">
-            <h4>Place</h4>
-            <p>Keywords about the place</p>
-        </div>
+            <div class="col-3">
+                <img src="http://placehold.it/200x200" alt="qwe">
+                <h4>Place</h4>
+                <p>Keywords about the place</p>
+            </div>
+            <div class="col-3">
+                <img src="http://placehold.it/200x200" alt="qwe">
+                <h4>Place</h4>
+                <p>Keywords about the place</p>
+            </div>
 
+        </div>
     </div>
 
-</div>
 
 <?php require "footer.php" ?>

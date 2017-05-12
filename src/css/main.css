@@ -1,15 +1,20 @@
-/* HENRIK CSS */
-nav{
-    background-color:white;
+/* Header.php */
+.navbar{
     opacity: 0.7;
+    background-color: white;
 }
+
 .nav-item, .navbar-brand{
     color:black;
 }
+
 .nav-link:active{
     background-color: #FC5185;
 }
 
+.push-content {
+    height: 87px;
+}
 /*
 #custom-navbar {
     -webkit-box-shadow: 5px 5px 5px #364F6B;
@@ -18,11 +23,11 @@ nav{
 }
 */
 
+/* Index.php */
+
 #customCarousel {
     width:100%;
     max-height: 500px;
-    margin-top: 100px;
-    margin-bottom: 20px;
 }
 
 .carousel-inner{
@@ -37,6 +42,14 @@ nav{
     max-height: 500px;
 }
 
+#trending-wrapper{
+    width:100%;
+    padding-top:15px;
+}
+
+.footer{
+    background-color: #E3E3E3;
+}
 
 
 /* DANIEL CSS */
@@ -44,3 +57,4 @@ nav{
 #bildeboks {
     max-height: 300px;
 }
+
