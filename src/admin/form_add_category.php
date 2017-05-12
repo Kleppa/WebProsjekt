@@ -9,7 +9,7 @@ require '../header.php' ?>
     <div class="container">
 
         <div class="mt-4">
-            <form name="test" method="post" action="../private/form_processors/add_category.php">
+            <form name="test" method="post" action="../private/form_processors/save_category.php">
                 <div class="form-group row">
                     <label for="name">Category:</label>
                     <input type="text" name="name" class="form-control" id="name" value="">
