@@ -29,7 +29,7 @@
 
 
         <div class="row justify-content-center">
-            <div class="col-sm-10">
+            <div class="col-sm-9">
 
                 <ul class="nav nav-tabs">
 
