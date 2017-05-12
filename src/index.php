@@ -17,7 +17,7 @@
                     <h3>Chill bar</h3>
                 </div>
             </div>
-<!---->
+
             <div class="carousel-item">
                 <img class="d-block img-fluid" src="http://placehold.it/1280x800" alt="...">
                 <div class="carousel-caption">
