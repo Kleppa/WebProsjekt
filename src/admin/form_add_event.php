@@ -2,9 +2,9 @@
 require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/db_connector.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/functions.php';
-if(isset($_GET['id'])){
+if (isset($_GET['id'])) {
 
-    $sql='SELECT * FROM events LEFT JOIN types on types.id=events.id where events.id=' .  $_GET['id'].';';
+    $sql = 'SELECT * FROM events LEFT JOIN types ON types.id=events.id WHERE events.id=' . $_GET['id'] . ';';
 
     if ($editResult = $mysqli->query($sql)) {
 
@@ -21,7 +21,7 @@ require '../header.php'; ?>
 
     <div class="container">
         <div class="mt-4">
-            <form name="test" method="post" action="../private/form_processors/add_event.php">
+            <form name="test" method="post" action="../private/form_processors/save_event.php">
                 <div class="form-group row">
                     <label for="title">Title:</label>
                     <input type="text" name="title" class="form-control" id="title" value="">
@@ -37,8 +37,8 @@ require '../header.php'; ?>
                         $result = $mysqli->query("SELECT id, name FROM places;");
                         $count = 1;
                         foreach ($result as $value) {
-                            $out  = "<option name=\"place\" value=\"{$value['id']}\"";
-                            if($value['id'] === $_GET['id']) {
+                            $out = "<option name=\"place\" value=\"{$value['id']}\"";
+                            if ($value['id'] === $_GET['id']) {
                                 $out .= ' selected';
                             }
                             $out .= ">{$value['name']}</option>";
@@ -52,9 +52,10 @@ require '../header.php'; ?>
                 <div class="input-group date" data-provide="datepicker">
                     <label for="datepicker">Date:</label>
                     <input type="text" class="form-control" id="datepicker" <?php
-                    if (!empty($editResult)){
-                        foreach ($editResult as $item){
-                            echo 'value='.$item['datetime'];}
+                    if (!empty($editResult)) {
+                        foreach ($editResult as $item) {
+                            echo 'value=' . $item['datetime'];
+                        }
                     }
 
                     ?>>
@@ -66,12 +67,13 @@ require '../header.php'; ?>
                 <div class="form-group row">
                     <label for="description">Description:</label>
                     <textarea class="form-control" name="description" rows="5" id="description"><?php
-                        if (!empty($editResult)){
-                        foreach ($editResult as $item){
-                            echo $item['description'];}
+                        if (!empty($editResult)) {
+                            foreach ($editResult as $item) {
+                                echo $item['description'];
+                            }
                         }
 
-                       ?> </textarea>
+                        ?> </textarea>
                 </div>
 
                 <div class="row">

@@ -1,7 +1,7 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/db_connector.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/functions.php';
 
 $pagetitle = 'Places';
 require '../header.php'; ?>
@@ -10,7 +10,7 @@ require '../header.php'; ?>
     <div class="container">
         <div class="card-columns mt-4">
             <?php
-            $sql = "SELECT places.*,types.type FROM places LEFT JOIN types on places.type=types.id;";
+            $sql = "SELECT places.*,types.type FROM places LEFT JOIN types ON places.type=types.id;";
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
@@ -20,4 +20,4 @@ require '../header.php'; ?>
         </div> <!-- card-columns -->
     </div> <!-- container -->
 
-<?php  require '../footer.php';
+<?php require '../footer.php';

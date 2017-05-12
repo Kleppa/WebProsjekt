@@ -1,10 +1,10 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'].'/src/private/phpscripts/functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/db_connector.php';
+require $_SERVER['DOCUMENT_ROOT'] . '/src/private/phpscripts/functions.php';
 
 $pagetitle = 'Events';
- require '../header.php'; ?>
+require '../header.php'; ?>
 
     <!-- content -->
     <div class="container">

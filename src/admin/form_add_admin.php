@@ -9,7 +9,7 @@ require '../header.php' ?>
     <div class="container">
 
         <div class="mt-4">
-            <form name="test" method="post" action="../private/form_processors/add_admin.php">
+            <form name="test" method="post" action="../private/form_processors/save_admin.php">
                 <div class="form-group row">
                     <label for="username">Username:</label>
                     <input type="text" name="username" class="form-control" id="username" placeholder="Username">
