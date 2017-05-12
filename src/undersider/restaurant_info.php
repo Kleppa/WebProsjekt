@@ -1,10 +1,21 @@
 <?php require '../header.php'; ?>
 
-    <div class="container">
+    <div class="container margin-adder">
 
         <div class="row justify-content-center">
             <div class="col-9">
-                <img class="img-fluid" id="bildeboks" src="http://placehold.it/900x300"> <!--Bildet skal fetches -->
+                <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" id="bilde">Bilde</a>
+                </li>
+                <li class="nav-item" id="kart">
+                    <a class="nav-link" href="#">Kart</a>
+                </li>
+                </ul>
+                <?php
+
+                echo '<img class="img-fluid" id="bildeboks" src="http://placehold.it/900x300"> '
+                    ?>
             </div>
             </div>
 
