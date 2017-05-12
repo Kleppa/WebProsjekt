@@ -6,7 +6,6 @@
 
     <!--Style/jquery-->
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/mdl/material.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.min.css">
 
@@ -18,11 +17,14 @@
 <body>
 
 
+<div id="contentContainer">
+
+    <div id="body">
 
 <?php require "../header.php" ?>
 
 
-<div id="contentContainer">
+
 
 
 <div class="headline"><h1>Hytta Bar</h1></div>
@@ -40,7 +42,7 @@
 <div id="Paris" class="tabcontent">
     <p>- Chill bar</p>
     <p>- Billig HyttePils</p>
-    <p>- Kidza sitter hjemme</p>
+    <p>- Kidza sitter igjen hjemme</p>
 </div>
 
 <div id="Tokyo" class="tabcontent">
@@ -50,11 +52,12 @@
 </div>
 
 
-</div>
-
 
 <?php require "../footer.php" ?>
 
+    </div>
+
+</div>
 <!--Scripts-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script src="../css/bootstrap-4/js/bootstrap.min.js"></script>
