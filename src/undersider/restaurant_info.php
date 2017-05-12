@@ -18,9 +18,7 @@
                 <!-- Tab panes -->
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane  in active" id="profile"><img class="img-fluid" id="bildeboks" src="http://placehold.it/900x300"></div>
-                    <div role="tabpanel" class="tab-pane" id="buzz">
-                        <div id="map" style="width: 900px; height: 300px;"> </div>
-                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
 
                 </div>
 
@@ -29,16 +27,44 @@
 
         <div class="row justify-content-center"> <h3> Navn på sted </h3> </div>
 
-        <div class="row justify-content-center"> <h5> Oversikt | Spesial | Kontakt </h5> </div>
 
         <div class="row justify-content-center">
-            <div class="col-8">
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-            </div> <!-- Her skal det stå pene ord om stedet, blir fethcet fra databasen.-->
+            <div class="col-sm-8">
+
+                <ul class="nav nav-tabs">
+
+                    <li class="nav-item">
+                        <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Spesialiter</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#kontakt" class="nav-link" role="tab" data-toggle="tab">Kontakt Oss</a>
+                    </li>
+
+
+                </ul>
+
+
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="info">1 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="spesial">2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="kontakt">3 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <div class="row justify-content-center"> <h6> Andre steder i området </h6> </div>
 
+        <div class="row justify-content-center">
+            <h6> Andre steder i området </h6> </div>
         <!--Bilder skal fetches-->
 
         <div class="row justify-content-center text-center">
@@ -58,10 +84,8 @@
             <!-- Alle bildene her skal fetches -->
 
         </div>
+    </div>
+    <script src="../css/js/tests/tabsBar.js"></script>
 
-    </div> <!-- container -->
-<script src="googlemaps.js"></script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
-    </script>
 
 <?php require '../footer.php';
