@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!--Style/jquery-->
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="../css/bootstrap-4/css/bootstrap.min.css">
-
-    <!--Title, GJØRE DENNE TIL VARIABEL?-->
-    <title>Wenture</title>
-
-
-</head>
-<body>
-
-
-<div id="contentContainer">
-
-    <div id="body">
-
 <?php require "../header.php" ?>
-
-
-
-
 
 <div class="headline"><h1>Hytta Bar</h1></div>
 
@@ -53,15 +26,4 @@
 
 
 
-<?php require "../footer.php" ?>
-
-    </div>
-
-</div>
-<!--Scripts-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="../css/bootstrap-4/js/bootstrap.min.js"></script>
-<script src="../css/mdl/material.min.js"></script>
-<script src="../css/js/tests/tabsBar.js"></script>
-</body>
-</html>
+<?php require "../footer.php";
