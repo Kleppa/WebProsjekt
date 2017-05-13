@@ -30,9 +30,9 @@ ini_set('display_errors', 1); ?>
         </a>
         <div class="navbar-nav">
             <a class="nav-item nav-link <?php //TODO check if active ?>" href="/">Home</a>
-            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/places/places.php?category=drink">Drink</a>
-            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/places/places.php?category=food">Eat</a>
-            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/events/events.php">Chill</a>
+            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/places.php?category=drink">Drink</a>
+            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/places.php?category=food">Eat</a>
+            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/events.php">Chill</a>
         </div> <!--Navbar-nav-->
     </div><!--Container-->
 </nav><!--Navbar -->

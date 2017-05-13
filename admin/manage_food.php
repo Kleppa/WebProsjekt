@@ -19,7 +19,7 @@ require '../header.php'; ?>
                 <div class="form-group row">
                     <label for="name">Name:</label>
                     <input type="text" name="name" class="form-control" id="name" value=" <?php
-                    if(isset($_GET['id'])) {
+                    if (isset($_GET['id'])) {
                         $editResult2 = $mysqli->query("SELECT id, name FROM food;");
 
                         foreach ($editResult2 as $item) {

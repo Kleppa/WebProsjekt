@@ -1,8 +1,8 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/validation_functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . 'vendor/autoload.php';
+require $_SERVER['DOCUMENT_ROOT'] . 'private/phpscripts/db_connector.php';
+require $_SERVER['DOCUMENT_ROOT'] . 'private/phpscripts/functions.php';
+require $_SERVER['DOCUMENT_ROOT'] . 'private/phpscripts/validation_functions.php';
 
 if (isset($_POST['submit'])) {
 
@@ -27,11 +27,11 @@ if (isset($_POST['submit'])) {
     if ($result = $mysqli->query($sql)) {
         $result->free();
         $mysqli->close();
-        redirect('/src/admin/admin.php');
+        redirect('admin/admin.php');
     } else {
         $mysqli->close();
-        redirect('/src/admin/manage_place.php');
+        redirect('admin/manage_place.php');
     }
 } else {
-    redirect('/src/admin/manage_place.php');
+    redirect('admin/manage_place.php');
 }

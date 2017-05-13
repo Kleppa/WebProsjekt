@@ -4,7 +4,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
 
 $pagetitle = 'Places';
-require '../header.php'; ?>
+require 'header.php'; ?>
 
     <!-- content -->
     <div class="container">
@@ -14,7 +14,7 @@ require '../header.php'; ?>
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
-                    require '../private/includes/cards.php';
+                    require 'private/includes/cards.php';
                 }
             } ?>
         </div> <!-- card-columns -->
@@ -25,7 +25,7 @@ require '../header.php'; ?>
                 Thank to pop me out of that button, but now i'm done so you can close this window.
             </div>
         </div>
-        <a href="../admin/manage_event.php">
+        <a href="admin/manage_event.php">
             <div class="float-button circle d-flex align-content-between">
                 <!-- <i class="material-icons md-48" style="color: deeppink;">add_circle</i> -->
                 <i class="material-icons" style="color: white;">create</i>
@@ -33,4 +33,4 @@ require '../header.php'; ?>
         </a>
     </div> <!-- container -->
 
-<?php require '../footer.php';
+<?php require 'footer.php';

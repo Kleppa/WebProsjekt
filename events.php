@@ -4,7 +4,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
 require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
 
 $pagetitle = 'Events';
-require '../header.php'; ?>
+require 'header.php'; ?>
 
     <!-- content -->
     <div class="container margin-adder">
@@ -19,7 +19,7 @@ require '../header.php'; ?>
             } ?>
         </div> <!-- card-columns -->
 
-        <a href="../admin/manage_event.php">
+        <a href="admin/manage_event.php">
             <div class="float-button circle d-flex align-content-between">
                 <!-- <i class="material-icons md-48" style="color: deeppink;">add_circle</i> -->
                 <i class="material-icons" style="color: white;">add</i>
@@ -27,4 +27,4 @@ require '../header.php'; ?>
         </a>
     </div> <!-- container -->
 
-<?php require '../footer.php';
+<?php require 'footer.php';

@@ -18,7 +18,7 @@ require '../header.php'; ?>
                     <label for="place-select">Place</label>
                     <select class="custom-select" name="place" id="place-select">
                         <option selected>Choose...</option>
-                        <?php $result = $mysqli->query("SELECT id, name FROM places;");
+                        <?php $result = $mysqli->query("SELECT id, `name` FROM places;");
                         $count = 1;
                         foreach ($result as $value) {
 
