@@ -2,15 +2,13 @@
 
 ## Dependencies
 #### Composer
-`composer init` in the root folder (NOT `src/`)
+`composer init` in the root project folder (not `src/`)
 
-``composer require "illuminate/database``
+This project requires the Carbon library for date handling.
+
+>composer require "nesbot/carbon"
 
 ## Setup
-
-#### Database initializing script
-
-run the sql script `src/dbscript.sql`
 
 #### php.ini
 
@@ -19,6 +17,6 @@ Enable the following extensions:
 
 >php_openssl.dll
 
->php_pdo_mysql.dll
+>php_pdo_mysqli.dll
 
 *Windows: May need to change the path to the ext directory `extension_dir =` or prepend ext/ to the extensions like so: `ext/extension`.*

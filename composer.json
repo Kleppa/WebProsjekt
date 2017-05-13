@@ -1,7 +1,5 @@
 {
   "require": {
-    "illuminate/database": "^5.4",
-    "Illuminate/database": "^5.4",
     "nesbot/carbon": "^1.22"
   },
   "autoload": {

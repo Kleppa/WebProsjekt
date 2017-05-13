@@ -1,0 +1,101 @@
+/* Page */
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+}
+
+/* Header.php */
+.navbar {
+    opacity: 0.7;
+    background-color: white;
+}
+
+.nav-item, .navbar-brand {
+    color: black;
+}
+
+.nav-link:active {
+    background-color: #FC5185;
+}
+
+.margin-adder {
+    margin-top: 100px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+    /* background-color: #E3E3E3; */
+}
+
+/*
+#custom-navbar {
+    -webkit-box-shadow: 5px 5px 5px #364F6B;
+    -moz-box-shadow:    5px 5px 5px #364F6B;
+    box-shadow:         5px 5px 5px #364F6B;
+}
+*/
+
+/* Index.php */
+
+#customCarousel {
+    width: 100%;
+    max-height: 500px;
+    margin-top: 86px;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+}
+
+.carousel-inner .img-fluid {
+    width: 100%;
+    height: 100%;
+    max-height: 500px;
+}
+
+/* DANIEL CSS */
+
+#bildeboks {
+    max-height: 300px;
+}
+
+/* EVEN CSS */
+.material-icons.md-48 {
+    font-size: 48px;
+}
+
+.circle {
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+}
+
+.float-button {
+    position: fixed;
+    z-index: 1;
+    right: 19px;
+    bottom: 24px;
+    background-color: deeppink;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+}
