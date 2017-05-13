@@ -1,7 +1,7 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
 
 $pagetitle = 'Events';
 require 'header.php'; ?>
@@ -27,4 +27,4 @@ require 'header.php'; ?>
         </a>
     </div> <!-- container -->
 
-<?php require 'footer.php';
+<?php require_once 'footer.php';
