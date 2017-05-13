@@ -19,11 +19,11 @@ if (isset($_POST['submit'])) {
     if ($result = $mysqli->query($sql)) {
         $result->free();
         $mysqli->close();
-        redirect('/src/admin/admin.php');
+        redirect('/admin/admin.php');
     } else {
         $mysqli->close();
-        redirect('/src/admin/manage_food.php');
+        redirect('/admin/manage_food.php');
     }
 } else {
-    redirect('/src/admin/manage_food.php');
+    redirect('/admin/manage_food.php');
 }

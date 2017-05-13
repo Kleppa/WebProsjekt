@@ -27,11 +27,11 @@ if (isset($_POST['submit'])) {
     if ($result = $mysqli->query($sql)) {
         $result->free();
         $mysqli->close();
-        redirect('admin/admin.php');
+        redirect('/admin/admin.php');
     } else {
         $mysqli->close();
-        redirect('admin/manage_place.php');
+        redirect('/admin/manage_place.php');
     }
 } else {
-    redirect('admin/manage_place.php');
+    redirect('/admin/manage_place.php');
 }

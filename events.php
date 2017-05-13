@@ -8,13 +8,13 @@ require 'header.php'; ?>
 
     <!-- content -->
     <div class="container margin-adder">
-        <div class="card-columns mt-4">
+        <div class="row">
             <?php
             $sql = "SELECT events.*,types.type FROM events LEFT JOIN types ON types.id = events.type;";
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
-                    require $_SERVER['DOCUMENT_ROOT'] . '/private/includes/cards.php';
+                    require $_SERVER['DOCUMENT_ROOT'] . '/private/includes/event_card.php';
                 }
             } ?>
         </div> <!-- card-columns -->

@@ -11,11 +11,11 @@ if (isset($_GET['id'])) {
     if ($result = $mysqli->query($sql)) {
         $result->free();
         $mysqli->close();
-        redirect('/src/admin/admin.php');
+        redirect('/admin/admin.php');
     } else {
         $mysqli->close();
-        redirect('/src/admin/admin.php');
+        redirect('/admin/admin.php');
     }
 } else {
-    redirect('/src/events.php');
+    redirect('/events.php');
 }

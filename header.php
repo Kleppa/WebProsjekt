@@ -1,5 +1,3 @@
-<?php error_reporting(E_ALL);
-ini_set('display_errors', 1); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -20,6 +18,7 @@ ini_set('display_errors', 1); ?>
         }
     } ?>
 </head>
+
 <body>
 
 <nav class="navbar navbar-toggleable-sm fixed-top" id="custom-navbar">
