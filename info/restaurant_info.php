@@ -52,11 +52,10 @@ require '../header.php'; ?>
         <div class="row justify-content-center"><h3 class="card-title">
                 <?php echo $row['name'] ?></h3></div>
 
-
         <div class="row justify-content-center">
             <div class="col-sm-8">
 
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs centered">
 
                     <li class="nav-item">
                         <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>
@@ -100,20 +99,26 @@ require '../header.php'; ?>
 
 
         <div class="row justify-content-center">
-            <h6> Andre steder i området </h6></div>
+            <h6> - Andre steder i området - </h6></div>
         <!--Bilder skal fetches-->
 
         <div class="row justify-content-center text-center">
 
             <div class="col-3">
+                <h5 class="card-title">
+                    <?php echo $row['name'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 
             <div class="col-3">
+                <h5 class="card-title">
+                    <?php echo $row['name'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 
             <div class="col-3">
+                <h5 class="card-title">
+                    <?php echo $row['name'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 
