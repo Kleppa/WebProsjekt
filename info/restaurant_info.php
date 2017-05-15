@@ -20,7 +20,7 @@
                     <div role="tabpanel" class="tab-pane  in active" id="profile"><img class="img-fluid" id="bildeboks"
                                                                                        src="http://placehold.it/900x300">
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
+                    <div role="tabpanel" class="tab-pane fade" id="buzz"><div id="map" style="height: 300px; width: 100%;"></div></div>
 
                 </div>
 
@@ -98,6 +98,21 @@
 
         </div>
     </div>
+    <script> function initMap() {
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: uluru
+    });
+    var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+    });
+    }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
+    </script>
     <script src="../css/js/tests/tabsBar.js"></script>
 
 
