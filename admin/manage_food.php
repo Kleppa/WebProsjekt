@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
 $pagetitle = 'Add Food..';
 require '../header.php'; ?>
 
-    <div class="container">
+    <div class="container margin-adder">
         <div class="mt-4">
             <form name="test" method="post" action="../private/form_processors/save_food.php">
                 <div class="form-group row">
