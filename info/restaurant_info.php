@@ -26,7 +26,7 @@ require '../header.php'; ?>
         <div class="row justify-content-center">
             <div class="col-9">
 
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs" role="tablist" id="tabs">
                     <li class="nav-item">
                         <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Bilde</a>
                     </li>
@@ -42,7 +42,7 @@ require '../header.php'; ?>
                         <img class="img-fluid" id="bildeboks"
                              src="<?php echo $row['image_path']; ?>"/>
                     </div>
-                    <div role="tabpanel" class="tab-pane fade" id="buzz">bbb</div>
+                    <div role="tabpanel" class="tab-pane fade" id="buzz"><div id="map" style="width: 100%; height: 300px;"></div></div>
 
                 </div>
 
@@ -121,6 +121,32 @@ require '../header.php'; ?>
 
         </div>
     </div>
+<script>
+            function initMap() {
+            var westerdals = {lat: 59.9159279, lng: 10.7608717};
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: westerdals
+            });
+
+            var marker = new google.maps.Marker({
+                position: westerdals,
+                map: map,
+                title: "Fjerdingen"
+            });
+
+                $(document).ready(function() {
+                    google.maps.event.addListener(map, "idle", function () {
+                        google.maps.event.trigger(map, 'resize');
+                    });
+                });
+        }
+
+</script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
+    </script>
     <script src="../css/js/tests/tabsBar.js"></script>
 
 

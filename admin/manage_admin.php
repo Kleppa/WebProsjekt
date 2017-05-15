@@ -6,7 +6,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
 $pagetitle = 'Add Admin..';
 require '../header.php' ?>
 
-    <div class="container">
+    <div class="container margin-adder">
 
         <div class="mt-4">
             <form name="test" method="post" action="../private/form_processors/save_admin.php">
