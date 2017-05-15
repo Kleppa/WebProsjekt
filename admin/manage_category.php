@@ -7,40 +7,39 @@ $pagetitle = 'Add Category..';
 require '../header.php' ?>
 
     <div class="container margin-adder">
+        <form method="post" action="../private/form_processors/save_category.php">
 
-        <div class="mt-4">
-            <form name="test" method="post" action="../private/form_processors/save_category.php">
-
-                <div class="form-group row">
-                    <label class="form-control-label" for="category-select">Category:</label>
-                    <select class="custom-select" name="place" id="category-select">
-                        <?php
-
-                        $result = $mysqli->query("SELECT id, name FROM categories;");
+            <!-- CATEGORY -->
+            <div class="form-group row">
+                <label for="category-select" class="col-12 col-md-3 col-form-label">Edit category</label>
+                <div class="col">
+                    <select class="custom-select" name="category" id="category-select">
+                        <option selected>Choose...</option>
+                        <?php $result = $mysqli->query("SELECT * FROM categories;");
                         $count = 1;
                         foreach ($result as $value) {
-                            $out = "<option name=\"name\" value=\"{$value['id']}\"";
-                            if ($value['id'] === $_GET['id']) {
-                                $out .= ' selected';
-                            }
-                            $out .= ">{$value['name']}</option>";
-                            echo $out;
+                            echo "<option name=\"category\" value=\"{$value['id']}\">{$value['name']}</option>";
                             $count++;
                         } ?>
                     </select>
-
                 </div>
+            </div>
 
-                <div class="form-group row">
-                    <label class="form-control-label" for="name">New Category:</label>
+            <!-- NEW CATEGORY -->
+            <div class="form-group row">
+                <label class="col-12 col-md-3 col-form-label" for="name">New category</label>
+                <div class="col">
                     <input type="text" name="name" class="form-control" id="name" value="">
                 </div>
+            </div>
 
-                <div class="row">
+            <!-- SUBMIT -->
+            <div class="row">
+                <div class="col offset-md-3 mb-3">
                     <input type="submit" name="submit" class="btn btn-primary" id="submit"/>
                 </div>
-            </form>
-        </div> <!-- mt-4 -->
+            </div>
+        </form>
 
     </div> <!-- container -->
 
