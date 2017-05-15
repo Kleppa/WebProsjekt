@@ -2,29 +2,17 @@
 
     <div class="container margin-adder">
 
-        <div class="row justify-content-center">
-            <div class="col-9">
+        <div class="row justify-content-center no-gutters">
+            <div class="col-7">
 
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Bilde</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Kart</a>
-                    </li>
-
-                </ul>
-
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane  in active" id="profile"><img class="img-fluid" id="bildeboks"
-                                                                                       src="http://placehold.it/900x300">
-                    </div>
-                    <div role="tabpanel" class="tab-pane fade" id="buzz"><div id="map" style="height: 300px; width: 100%;"></div></div>
-
-                </div>
+                <img class="img-fluid" id="bildeboks" src="http://placehold.it/900x300">
 
             </div>
+
+                <div class ="col-3">
+                    <div id="map"></div>
+                </div>
+
         </div>
 
         <div class="row justify-content-center"><h3> Navn på sted </h3></div>
@@ -98,18 +86,24 @@
 
         </div>
     </div>
-    <script> function initMap() {
-    var uluru = {lat: -25.363, lng: 131.044};
-    var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: uluru
-    });
-    var marker = new google.maps.Marker({
-    position: uluru,
-    map: map
-    });
-    }
-    </script>
+<script>
+            function initMap() {
+            var westerdals = {lat: 59.9160168, lng: 10.7597406};
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: westerdals
+            });
+
+            var marker = new google.maps.Marker({
+                position: westerdals,
+                map: map,
+                title: "Fjerdingen"
+            });
+
+        }
+
+</script>
+
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
     </script>
