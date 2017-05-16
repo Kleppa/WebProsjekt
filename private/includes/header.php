@@ -21,7 +21,7 @@
         foreach ($extra_links as $link => $v) {
             echo $v;
         }
-    } ?>
+    }//test ?>
 </head>
 
 <body>
