@@ -1,7 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
 require_once 'private/phpscripts/functions.php';
-
+require_once 'private/phpscripts/db_connector.php';
 require_once 'private/includes/header.php';  // Header
 ?>
     <!--Bildekarusell-->
@@ -18,14 +18,36 @@ require_once 'private/includes/header.php';  // Header
         <div class="carousel-inner" role="listbox">
 
             <div class="carousel-item active">
-                <img class="d-block img-fluid" src="http://placehold.it/1280x800" alt="Places to drink">
+                <img class="d-block img-fluid"
+                    <?php
+
+                    $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        foreach ($result as $row){
+                            echo 'src="'.$row['image_path'] . '"'.' alt="'.$row['title'].'"';
+                            }
+
+                        }
+                    ?>>
+
                 <div class="carousel-caption">
                     <h3>Chill bar</h3>
                 </div>
             </div>
 
             <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/1280x800" alt="...">
+                <img class="d-block img-fluid"
+                    <?php
+                    // KLARER IKKE å BRUKE WESTERDALS FJERDING BILDET??? prøvd alt aner ikke hva som er feil.
+                    $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        foreach ($result as $row){
+                            echo 'src="'.$row['image_path'] . '"'.' alt="'.$row['title'].'"';
+                        }
+
+                    }
+                    ?>>
+
                 <div class="carousel-caption">
                     <h3>Hip restaurant</h3>
                 </div>
@@ -70,9 +92,20 @@ require_once 'private/includes/header.php';  // Header
 
         <div class="row">
             <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
-                <img class="mb-3" src="http://placehold.it/200x200" alt="qwe" style="min-width: 100%;">
-                <h4>Place #1</h4>
-                <p>Keywords about the place</p>
+                <img class="mb-3"   <?php
+
+                $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
+                if ($result = $mysqli->query($sql)) {
+                    foreach ($result as $row){
+                        echo 'src="'.$row['image_path'] . '"'.' alt="'.$row['title'].'"style="height:218px;width:218px"';
+                    }
+                    echo 'style="min-width: 100%;">';
+                    echo '<h4>'.$row['title'].'</h4>';
+                    echo '<p>'.$row['description'].'</p>';
+
+                }
+
+                ?>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
                 <img class="mb-3" src="http://placehold.it/200x200" alt="qwe" style="min-width: 100%;">
