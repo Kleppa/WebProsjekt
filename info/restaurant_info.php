@@ -1,7 +1,7 @@
 <?php require '../header.php'; ?>
 
     <div class="container margin-adder">
-
+        <div class="row justify-content-center"><h3> Navn på sted </h3></div>
         <div class="row justify-content-center no-gutters">
             <div class="col-7">
 
@@ -10,18 +10,18 @@
             </div>
 
                 <div class ="col-3">
-                    <div id="map"></div>
+                    <div id="map" style="height: 216px;"></div>
                 </div>
 
         </div>
 
-        <div class="row justify-content-center"><h3> Navn på sted </h3></div>
+
 
 
         <div class="row justify-content-center">
-            <div class="col-sm-8">
+            <div class="col-sm-10">
 
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs justify-content-centers d-flex">
 
                     <li class="nav-item">
                         <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>

@@ -105,3 +105,11 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.area .nav {
+    text-align:center;
+}
+
+.area .nav-tabs>li {
+    float: none;
+    display:inline-block;
+}
