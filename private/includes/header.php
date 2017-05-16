@@ -43,7 +43,7 @@
 
     </div><!--Container-->
     <?php
-    if (loggedIn()) {
+    if (!loggedIn()) {
         echo '<div class="pull-right float-button circle" id="key">
 <i class="material-icons" id="vpnKey">vpn_key</i> </div>';
     }
