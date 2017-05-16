@@ -9,25 +9,42 @@ body {
     margin-bottom: 60px;
 }
 
-/* Header.php */
-.navbar {
-    opacity: 0.7;
-    background-color: white;
-}
-
-.nav-item, .navbar-brand {
-    color: black;
-}
-
-.nav-link:active {
-    background-color: #FC5185;
-}
-
-
 .margin-adder {
     margin-top: 100px;
 }
 
+/* Header.php */
+.navbar {
+    opacity: 0.8;
+    background-color: rgba(255,255,255,.9);
+}
+.nav>a{
+
+    display: inline-block;
+    -webkit-transition: all .3s ease;
+}
+
+.nav-item, .navbar-brand{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover {
+    background-color: #FC5185;
+    color: rgba(255,255,255,.9);
+}
+
+
+/*
+#custom-navbar {
+    -webkit-box-shadow: 5px 5px 5px #364F6B;
+    -moz-box-shadow:    5px 5px 5px #364F6B;
+    box-shadow:         5px 5px 5px #364F6B;
+}
+*/
+
+
+/* FOOTER */
 .footer {
     position: absolute;
     bottom: 0;
@@ -38,14 +55,14 @@ body {
     background-color: #f5f5f5;
     /* background-color: #E3E3E3; */
 }
-
-/*
-#custom-navbar {
-    -webkit-box-shadow: 5px 5px 5px #364F6B;
-    -moz-box-shadow:    5px 5px 5px #364F6B;
-    box-shadow:         5px 5px 5px #364F6B;
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
 }
-*/
+
+
 
 /* Index.php */
 
@@ -95,12 +112,7 @@ body {
     justify-content: center;
 }
 
-footer {
-    position: fixed;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
-}
+
 #key{
 
     bottom: 900px;
