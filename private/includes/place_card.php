@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . server_root() . 'vendor/autoload.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . server_root() . 'private/phpscripts/functions.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . server_root() . '/vendor/autoload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . server_root() . '/private/phpscripts/functions.php';
 ?>
 
 <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-3">
