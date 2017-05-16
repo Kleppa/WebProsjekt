@@ -1,6 +1,10 @@
 <?php
-require "../private/includes/header.php";
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/functions.php';
+
+require_once '../private/includes/header.php';  // Header
 ?>
+
 
     <div class="margin-adder">
         <div class="container mt-5">
@@ -91,4 +95,4 @@ require "../private/includes/header.php";
                 </div>
             </div>
             <script src="../css/js/tests/tabsBar.js"></script>
-<?php require "../footer.php";
+<?php require_once "../footer.php";

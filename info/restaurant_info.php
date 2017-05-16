@@ -1,5 +1,8 @@
 <?php
-require '../private/includes/header.php';
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/functions.php';
+
+require_once '../private/includes/header.php';  // Header
 ?>
 
     <div class="container margin-adder">
@@ -110,4 +113,4 @@ require '../private/includes/header.php';
     <script src="<?php echo server_root() ?>/css/js/tests/tabsBar.js"></script>
 
 
-<?php require '../footer.php';
+<?php require_once'../footer.php';
