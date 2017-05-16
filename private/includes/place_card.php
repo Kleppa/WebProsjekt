@@ -5,7 +5,7 @@ require_once '../../private/phpscripts/functions.php';
 
 <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-3">
     <div class="card mb-3">
-        <img class="card-img-top img-fluid" src="<?php echo $row['image_path']; ?>"/>
+        <img class="card-img-top img-fluid" src="<?php echo $row['image_path']; echo $row['imgtext']; ?>"/>
 
         <div class="card-block">
             <h2 class="card-title"><?php echo $row['name'] ?></h2>

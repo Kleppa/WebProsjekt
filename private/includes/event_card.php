@@ -10,7 +10,7 @@ Carbon::setLocale('no');
 
 <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-3">
     <div class="card">
-        <img class="card-img-top img-fluid" src="<?php echo $row['image_path']; ?>"/>
+        <img class="card-img-top img-fluid" src="<?php echo $row['image_path']; echo $row['imgtext']/*MULIGENS DETTE MAA HENTES FRA IMG TABLE DA ER TOW NAVN alt*/;?>"/>
 
         <div class="card-block">
             <h2 class="card-title"><?php echo $row['title'] ?></h2>
