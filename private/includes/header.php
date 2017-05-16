@@ -32,13 +32,11 @@
             <img src="<?php echo server_root() . '/img/logo2.png'; ?>" style="width: 70px">
             Wenture
         </a>
-        <div class="navbar-nav ml-auto">
+        <div class="navbar-nav ml-auto hidden-sm-down">
             <a class="nav-item nav-link" href="<?php echo server_root() . '/'; ?>">Home</a>
             <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=drink'; ?>">Drink</a>
             <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=food'; ?>">Eat</a>
             <a class="nav-item nav-link" href="<?php echo server_root() . '/events.php'; ?>">Chill</a>
-
-
         </div> <!--Navbar-nav-->
 
     </div><!--Container-->
