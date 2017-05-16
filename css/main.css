@@ -3,13 +3,14 @@ html {
     position: relative;
     min-height: 100%;
 }
-#map{
-    height:900px;
-    width: 300px;
-}
+
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+}
+
+.margin-adder {
+    margin-top: 100px;
 }
 
 /* Header.php */
@@ -26,8 +27,12 @@ body {
     background-color: #FC5185;
 }
 
-.margin-adder {
-    margin-top: 100px;
+
+/*
+#custom-navbar {
+    -webkit-box-shadow: 5px 5px 5px #364F6B;
+    -moz-box-shadow:    5px 5px 5px #364F6B;
+    box-shadow:         5px 5px 5px #364F6B;
 }
 
 .footer {
@@ -40,12 +45,11 @@ body {
     background-color: #f5f5f5;
     /* background-color: #E3E3E3; */
 }
-
-/*
-#custom-navbar {
-    -webkit-box-shadow: 5px 5px 5px #364F6B;
-    -moz-box-shadow:    5px 5px 5px #364F6B;
-    box-shadow:         5px 5px 5px #364F6B;
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
 }
 */
 
@@ -92,7 +96,6 @@ body {
 }
 
 .float-button {
-    position: fixed;
     z-index: 1;
     right: 19px;
     bottom: 30px;
@@ -101,9 +104,28 @@ body {
     justify-content: center;
 }
 
-footer {
+
+#key{
+
+    bottom: 900px;
+    background-color: lightblue;
+    border: 1px solid black;
+}
+#vpnKey{
+    position: absolute;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+    bottom: 32px;
+    right: 32px;
+
+}
+#addbtn{
     position: fixed;
     height: 100px;
     bottom: 0;
     width: 100%;
 }
+

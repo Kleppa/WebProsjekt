@@ -1,7 +1,12 @@
-<?php require '../header.php'; ?>
+<?php
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/functions.php';
+
+require_once '../private/includes/header.php';  // Header
+?>
 
     <div class="container margin-adder">
-
+        <div class="row justify-content-center"><h3> Navn på sted </h3></div>
         <div class="row justify-content-center no-gutters">
             <div class="col-7">
 
@@ -9,18 +14,17 @@
 
             </div>
 
-                <div class ="col-3">
-                    <div id="map"></div>
-                </div>
+            <div class="col-3">
+                <div id="map" style="height: 216px;"></div>
+            </div>
 
         </div>
 
-        <div class="row justify-content-center"><h3> Navn på sted </h3></div>
 
         <div class="row justify-content-center">
-            <div class="col-sm-8">
+            <div class="col-8">
 
-                <ul class="nav nav-tabs centered">
+                <ul class="nav nav-tabs "id="paddingcenter">
 
                     <li class="nav-item">
                         <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>
@@ -64,26 +68,20 @@
 
 
         <div class="row justify-content-center">
-            <h6> - Andre steder i området - </h6></div>
+            <h6> Andre steder i området </h6></div>
         <!--Bilder skal fetches-->
 
         <div class="row justify-content-center text-center">
 
             <div class="col-3">
-                <h5 class="card-title">
-                    <?php echo $row['name'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 
             <div class="col-3">
-                <h5 class="card-title">
-                    <?php echo $row['name'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 
             <div class="col-3">
-                <h5 class="card-title">
-                    <?php echo $row['name'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 
@@ -91,8 +89,8 @@
 
         </div>
     </div>
-<script>
-            function initMap() {
+    <script>
+        function initMap() {
             var westerdals = {lat: 59.9160168, lng: 10.7597406};
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
@@ -107,12 +105,12 @@
 
         }
 
-</script>
+    </script>
 
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
     </script>
-    <script src="../css/js/tests/tabsBar.js"></script>
+    <script src="<?php echo server_root() ?>/css/js/tests/tabsBar.js"></script>
 
 
-<?php require '../footer.php';
+<?php require_once'../footer.php';

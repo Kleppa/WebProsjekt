@@ -1,8 +1,8 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/validation_functions.php';
+require_once '../../vendor/autoload.php';
+require_once '../phpscripts/db_connector.php';
+require_once '../phpscripts/functions.php';
+require_once '../phpscripts/validation_functions.php';
 
 if (isset($_GET['id'])) {
 
@@ -11,11 +11,11 @@ if (isset($_GET['id'])) {
     if ($result = $mysqli->query($sql)) {
         $result->free();
         $mysqli->close();
-        redirect('/admin/admin.php');
+        redirect(server_root() . '/admin/admin.php');
     } else {
         $mysqli->close();
-        redirect('/admin/admin.php');
+        redirect(server_root() . '/admin/admin.php');
     }
 } else {
-    redirect('/events.php');
+    redirect(server_root() . '/events.php');
 }

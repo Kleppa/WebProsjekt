@@ -1,7 +1,7 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/db_connector.php';
+require_once '../private/phpscripts/functions.php';
 if (isset($_GET['id'])) {
 
     $sql = 'SELECT * FROM food ';
@@ -11,10 +11,10 @@ if (isset($_GET['id'])) {
     }
 }
 $pagetitle = 'Add Food..';
-require '../header.php'; ?>
+require '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
-        <form method="post" action="../private/form_processors/save_food.php">
+        <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_food.php">
 
             <!-- NAME -->
             <div class="form-group row">

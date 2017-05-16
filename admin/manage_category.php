@@ -1,13 +1,13 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/db_connector.php';
+require_once '../private/phpscripts/functions.php';
 
 $pagetitle = 'Add Category..';
-require '../header.php' ?>
+require '../private/includes/header.php' ?>
 
     <div class="container margin-adder">
-        <form method="post" action="../private/form_processors/save_category.php">
+        <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_category.php">
 
             <!-- CATEGORY -->
             <div class="form-group row">
