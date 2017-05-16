@@ -28,16 +28,28 @@
 
 <nav class="navbar navbar-toggleable-sm fixed-top" id="custom-navbar">
     <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="#navbar">
+            <i class="material-icons">&#xE5D2;</i>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+
         <a class="navbar-brand" href="<?php echo server_root() . '/'; ?>">
             <img src="<?php echo server_root() . '/img/logo2.png'; ?>" style="width: 70px">
             Wenture
         </a>
-        <div class="navbar-nav ml-auto hidden-sm-down">
-            <a class="nav-item nav-link" href="<?php echo server_root() . '/'; ?>">Home</a>
-            <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=drink'; ?>">Drink</a>
-            <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=food'; ?>">Eat</a>
-            <a class="nav-item nav-link" href="<?php echo server_root() . '/events.php'; ?>">Chill</a>
-        </div> <!--Navbar-nav-->
+        <div id="navbar" class="navbar-collapse collapse">
+            <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link" href="<?php echo server_root() . '/'; ?>">Home</a>
+                <a class="nav-item nav-link"
+                   href="<?php echo server_root() . '/places.php?category=drink'; ?>">Drink</a>
+                <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=food'; ?>">Eat</a>
+                <a class="nav-item nav-link" href="<?php echo server_root() . '/events.php'; ?>">Chill</a>
+            </div> <!--Navbar-nav-->
+        </div>
 
     </div><!--Container-->
     <?php
