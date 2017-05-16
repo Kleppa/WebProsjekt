@@ -24,7 +24,7 @@ require_once '../private/includes/header.php';  // Header
         <div class="row justify-content-center">
             <div class="col-8">
 
-                <ul class="nav nav-tabs "id="paddingcenter">
+                <ul class="nav nav-tabs justify-content-center">
 
                     <li class="nav-item">
                         <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>
