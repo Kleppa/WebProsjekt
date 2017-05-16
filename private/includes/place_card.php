@@ -5,7 +5,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . server_root() . '/private/phpscripts/fu
 
 <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-3">
     <div class="card mb-3">
-        <img class="card-img-top img-fluid" src="<?php echo $row['image_path']; echo $row['imgtext']; ?>"/>
+        <img class="card-img-top img-fluid" <?php  echo 'src="'.$row['image_path'].'"' .'alt="'. $row['name'].'"'?>>
 
         <div class="card-block">
             <h2 class="card-title"><?php echo $row['name'] ?></h2>
