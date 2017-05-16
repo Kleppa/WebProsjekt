@@ -93,8 +93,6 @@ body {
     position: fixed;
     z-index: 1;
     right: 19px;
-    bottom: 30px;
-    background-color: deeppink;
     align-items: center;
     justify-content: center;
 }
@@ -105,11 +103,11 @@ footer {
     bottom: 0;
     width: 100%;
 }
-.area .nav {
-    text-align:center;
-}
+#key{
 
-.area .nav-tabs>li {
-    float: none;
-    display:inline-block;
+    bottom: 900px;
+}
+#addbtn{
+    bottom: 30px;
+    background-color: deeppink;
 }

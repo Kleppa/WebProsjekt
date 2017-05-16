@@ -20,7 +20,7 @@ require 'header.php'; ?>
         </div> <!-- card-columns -->
 
         <a href="admin/manage_event.php">
-            <div class="float-button circle d-flex align-content-between">
+            <div class="float-button circle d-flex align-content-between" id="addbtn">
                 <!-- <i class="material-icons md-48" style="color: deeppink;">add_circle</i> -->
                 <i class="material-icons" style="color: white;">add</i>
             </div>

@@ -12,7 +12,7 @@
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-sm-10">
+                    <div class="col-10">
 
                         <ul class="nav nav-tabs justify-content-center">
 

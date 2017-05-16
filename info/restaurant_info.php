@@ -9,19 +9,17 @@
 
             </div>
 
-                <div class ="col-3">
-                    <div id="map" style="height: 216px;"></div>
-                </div>
+            <div class="col-3">
+                <div id="map" style="height: 216px;"></div>
+            </div>
 
         </div>
 
 
-
-
         <div class="row justify-content-center">
-            <div class="col-sm-10">
+            <div class="col-8">
 
-                <ul class="nav nav-tabs justify-content-centers d-flex">
+                <ul class="nav nav-tabs "id="paddingcenter">
 
                     <li class="nav-item">
                         <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>
@@ -86,8 +84,8 @@
 
         </div>
     </div>
-<script>
-            function initMap() {
+    <script>
+        function initMap() {
             var westerdals = {lat: 59.9160168, lng: 10.7597406};
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
@@ -102,7 +100,7 @@
 
         }
 
-</script>
+    </script>
 
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
