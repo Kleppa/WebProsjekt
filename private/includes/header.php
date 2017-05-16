@@ -45,7 +45,7 @@
     <?php
     if (true) {
         echo '<div class="pull-right float-button circle" id="key">
-<i class="material-icons">vpn_key</i> </div>';
+<i class="material-icons" id="vpnKey">vpn_key</i> </div>';
     }
     ?>
 </nav><!--Navbar -->

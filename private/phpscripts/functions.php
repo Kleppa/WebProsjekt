@@ -3,7 +3,6 @@
 use Carbon\Carbon;
 
 Carbon::setLocale('no');
-
 function redirect($url)
 {
     if (headers_sent() === false) {
