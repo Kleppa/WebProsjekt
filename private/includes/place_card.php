@@ -1,14 +1,7 @@
-<?php function server_root()
-{
-    $out = '';
-    if (isset($_SERVER['CONTEXT_PREFIX'])) {
-        $out .= $_SERVER['CONTEXT_PREFIX'];
-    }
-
-    return $out;
-}
-
-require server_root() . '/vendor/autoload.php'; ?>
+<?php
+require_once '../../vendor/autoload.php';
+require_once '../../private/phpscripts/functions.php';
+?>
 
 <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-3">
     <div class="card mb-3">

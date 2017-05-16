@@ -1,14 +1,6 @@
-<?php function server_root()
-{
-    $out = '';
-    if (isset($_SERVER['CONTEXT_PREFIX'])) {
-        $out .= $_SERVER['CONTEXT_PREFIX'];
-    }
-
-    return $out;
-}
-
-require '../header.php'; ?>
+<?php
+require '../private/includes/header.php';
+?>
 
     <div class="container margin-adder">
         <div class="row justify-content-center"><h3> Navn på sted </h3></div>

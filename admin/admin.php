@@ -1,17 +1,12 @@
-<?php function server_root()
-{
-    $out = '';
-    if (isset($_SERVER['CONTEXT_PREFIX'])) {
-        $out .= $_SERVER['CONTEXT_PREFIX'];
-    }
+<?php
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/db_connector.php';
+require_once '../private/phpscripts/functions.php';
 
-    return $out;
-}
-
-require_once server_root() . '/header.php';
+require_once '../private/includes/header.php';
 
 $pagetitle = 'Admin Dashboard';
 ?>
 
 
-<?php require_once server_root() . '/footer.php';
+<?php require_once '../footer.php';

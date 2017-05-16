@@ -1,19 +1,10 @@
-<?php function server_root()
-{
-    $out = '';
-    if (isset($_SERVER['CONTEXT_PREFIX'])) {
-        $out .= $_SERVER['CONTEXT_PREFIX'];
-    }
-
-    return $out;
-}
-
-require 'vendor/autoload.php';
-require 'private/phpscripts/db_connector.php';
-require 'private/phpscripts/functions.php';
+<?php
+require_once 'vendor/autoload.php';
+require_once 'private/phpscripts/db_connector.php';
+require_once 'private/phpscripts/functions.php';
 
 $pagetitle = 'Places';
-require 'header.php'; ?>
+require_once 'private/includes/header.php'; ?>
 
     <!-- content -->
     <div class="container margin-adder">
@@ -28,11 +19,11 @@ require 'header.php'; ?>
             } ?>
         </div> <!-- card-columns -->
 
-        <a href="admin/manage_place.php">
+        <a href="<?php echo server_root() . '/admin/manage_place.php'; ?>">
             <div class="float-button circle d-flex align-content-between" id="addbtn">
                 <i class="material-icons" style="color: white;">add</i>
             </div>
         </a>
     </div> <!-- container -->
 
-<?php require 'footer.php';
+<?php require_once 'footer.php';

@@ -1,4 +1,6 @@
-<?php require "../header.php" ?>
+<?php
+require "../private/includes/header.php";
+?>
 
     <div class="margin-adder">
         <div class="container mt-5">

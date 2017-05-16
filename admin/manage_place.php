@@ -1,19 +1,10 @@
-<?php function server_root()
-{
-    $out = '';
-    if (isset($_SERVER['CONTEXT_PREFIX'])) {
-        $out .= $_SERVER['CONTEXT_PREFIX'];
-    }
-
-    return $out;
-}
-
-require server_root() . '/vendor/autoload.php';
-require server_root() . '/private/phpscripts/db_connector.php';
-require server_root() . '/private/phpscripts/functions.php';
+<?php
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/db_connector.php';
+require_once '../private/phpscripts/functions.php';
 
 $pagetitle = 'Add Place..';
-require '../header.php'; ?>
+require_once '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
         <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_place.php">

@@ -1,17 +1,8 @@
-<?php function server_root()
-{
-    $out = '';
-    if (isset($_SERVER['CONTEXT_PREFIX'])) {
-        $out .= $_SERVER['CONTEXT_PREFIX'];
-    }
-
-    return $out;
-}
-
-require server_root() . '/vendor/autoload.php';
-require server_root() . '/private/phpscripts/db_connector.php';
-require server_root() . '/private/phpscripts/functions.php';
-require server_root() . '/private/phpscripts/validation_functions.php';
+<?php
+require_once '../../vendor/autoload.php';
+require_once '../phpscripts/db_connector.php';
+require_once '../phpscripts/functions.php';
+require_once '../phpscripts/validation_functions.php';
 
 if (isset($_POST['submit'])) {
 

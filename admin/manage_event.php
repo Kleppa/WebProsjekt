@@ -1,16 +1,7 @@
-<?php function server_root()
-{
-    $out = '';
-    if (isset($_SERVER['CONTEXT_PREFIX'])) {
-        $out .= $_SERVER['CONTEXT_PREFIX'];
-    }
-
-    return $out;
-}
-
-require server_root() . '/vendor/autoload.php';
-require server_root() . '/private/phpscripts/db_connector.php';
-require server_root() . '/private/phpscripts/functions.php';
+<?php
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/db_connector.php';
+require_once '../private/phpscripts/functions.php';
 if (isset($_GET['id'])) {
 
     $sql = 'SELECT * FROM events LEFT JOIN types ON types.id=events.id WHERE events.id=' . $_GET['id'] . ';';
@@ -24,7 +15,7 @@ $extra_links = ['datepicker' => '<link rel="stylesheet"
               href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css"/>'];
 $extra_scripts = ['datepicker' => '<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>'];
 
-require '../header.php'; ?>
+require '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
         <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_event.php">

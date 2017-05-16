@@ -16,7 +16,7 @@
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
           crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo server_root() . '/css/main.css'; ?>">
     <?php if (isset($extra_links)) {
         foreach ($extra_links as $link => $v) {
             echo $v;
@@ -28,25 +28,24 @@
 
 <nav class="navbar navbar-toggleable-sm fixed-top" id="custom-navbar">
     <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="/img/logo2.png" style="width: 70px">
+        <a class="navbar-brand" href="<?php echo server_root() . '/'; ?>">
+            <img src="<?php echo server_root() . '/img/logo2.png'; ?>" style="width: 70px">
             Wenture
         </a>
         <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="/">Home</a>
-            <a class="nav-item nav-link" href="/places.php?category=drink">Drink</a>
-            <a class="nav-item nav-link" href="/places.php?category=food">Eat</a>
-            <a class="nav-item nav-link" href="/events.php">Chill</a>
+            <a class="nav-item nav-link" href="<?php echo server_root() . '/'; ?>">Home</a>
+            <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=drink'; ?>">Drink</a>
+            <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=food'; ?>">Eat</a>
+            <a class="nav-item nav-link" href="<?php echo server_root() . '/events.php'; ?>">Chill</a>
 
 
         </div> <!--Navbar-nav-->
 
     </div><!--Container-->
     <?php
-    require "private/phpscripts/functions.php";
-    if(!loggedIn()) {
-        echo '<a href="#"> <div class="pull-right float-button circle" id="key">
-    <i class="material-icons" id="vpnKey">vpn_key</i> </div></a>';
+    if (true) {
+        echo '<div class="pull-right float-button circle" id="key">
+<i class="material-icons">vpn_key</i> </div>';
     }
     ?>
 </nav><!--Navbar -->

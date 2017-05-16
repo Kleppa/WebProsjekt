@@ -1,10 +1,4 @@
-<?php function server_root()
-{
-    $out = '';
-    if (isset($_SERVER['CONTEXT_PREFIX'])) {
-        $out .= $_SERVER['CONTEXT_PREFIX'];
-    }
-
-    return $out;
-}
-
+<?php
+require_once '../../vendor/autoload.php';
+require_once '../../private/phpscripts/functions.php';
+?>
