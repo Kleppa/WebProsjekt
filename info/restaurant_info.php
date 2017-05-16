@@ -1,4 +1,14 @@
-<?php require '../header.php'; ?>
+<?php function server_root()
+{
+    $out = '';
+    if (isset($_SERVER['CONTEXT_PREFIX'])) {
+        $out .= $_SERVER['CONTEXT_PREFIX'];
+    }
+
+    return $out;
+}
+
+require '../header.php'; ?>
 
     <div class="container margin-adder">
         <div class="row justify-content-center"><h3> Navn på sted </h3></div>
@@ -105,7 +115,7 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
     </script>
-    <script src="../css/js/tests/tabsBar.js"></script>
+    <script src="<?php echo server_root() ?>/css/js/tests/tabsBar.js"></script>
 
 
 <?php require '../footer.php';

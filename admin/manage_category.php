@@ -1,13 +1,22 @@
-<?php
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
+<?php function server_root()
+{
+    $out = '';
+    if (isset($_SERVER['CONTEXT_PREFIX'])) {
+        $out .= $_SERVER['CONTEXT_PREFIX'];
+    }
+
+    return $out;
+}
+
+require server_root() . '/vendor/autoload.php';
+require server_root() . '/private/phpscripts/db_connector.php';
+require server_root() . '/private/phpscripts/functions.php';
 
 $pagetitle = 'Add Category..';
 require '../header.php' ?>
 
     <div class="container margin-adder">
-        <form method="post" action="../private/form_processors/save_category.php">
+        <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_category.php">
 
             <!-- CATEGORY -->
             <div class="form-group row">

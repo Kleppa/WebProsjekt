@@ -1,7 +1,16 @@
-<?php
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
+<?php function server_root()
+{
+    $out = '';
+    if (isset($_SERVER['CONTEXT_PREFIX'])) {
+        $out .= $_SERVER['CONTEXT_PREFIX'];
+    }
+
+    return $out;
+}
+
+require 'vendor/autoload.php';
+require 'private/phpscripts/db_connector.php';
+require 'private/phpscripts/functions.php';
 
 $pagetitle = 'Places';
 require 'header.php'; ?>
@@ -20,7 +29,7 @@ require 'header.php'; ?>
         </div> <!-- card-columns -->
 
         <a href="admin/manage_place.php">
-            <div class="float-button circle d-flex align-content-between">
+            <div class="float-button circle d-flex align-content-between" id="addbtn">
                 <i class="material-icons" style="color: white;">add</i>
             </div>
         </a>

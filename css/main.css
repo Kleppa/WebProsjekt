@@ -90,9 +90,7 @@ body {
 }
 
 .float-button {
-    position: fixed;
     z-index: 1;
-    right: 19px;
     align-items: center;
     justify-content: center;
 }
@@ -104,10 +102,12 @@ footer {
     width: 100%;
 }
 #key{
-
+    right: 19px;
     bottom: 900px;
 }
 #addbtn{
+    position: fixed;
+    right: 19px;
     bottom: 30px;
     background-color: deeppink;
 }

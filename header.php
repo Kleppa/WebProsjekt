@@ -30,10 +30,10 @@
             Wenture
         </a>
         <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/">Home</a>
-            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/places.php?category=drink">Drink</a>
-            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/places.php?category=food">Eat</a>
-            <a class="nav-item nav-link <?php //TODO check if active ?>" href="/events.php">Chill</a>
+            <a class="nav-item nav-link" href="/">Home</a>
+            <a class="nav-item nav-link" href="/places.php?category=drink">Drink</a>
+            <a class="nav-item nav-link" href="/places.php?category=food">Eat</a>
+            <a class="nav-item nav-link" href="/events.php">Chill</a>
 
 
         </div> <!--Navbar-nav-->
@@ -41,8 +41,8 @@
     </div><!--Container-->
     <?php
     if(true) {
-        echo '<div class="pull-right circle " style="background-color: black">
-<i class="material-icons float-button" id="key">vpn_key</i> </div>';
+        echo '<div class="pull-right float-button circle" id="key">
+<i class="material-icons">vpn_key</i> </div>';
     }
     ?>
 </nav><!--Navbar -->

@@ -1,7 +1,16 @@
-<?php
-require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
+<?php function server_root()
+{
+    $out = '';
+    if (isset($_SERVER['CONTEXT_PREFIX'])) {
+        $out .= $_SERVER['CONTEXT_PREFIX'];
+    }
+
+    return $out;
+}
+
+require server_root() . '/vendor/autoload.php';
+require server_root() . '/private/phpscripts/db_connector.php';
+require server_root() . '/private/phpscripts/functions.php';
 if (isset($_GET['id'])) {
 
     $sql = 'SELECT * FROM events LEFT JOIN types ON types.id=events.id WHERE events.id=' . $_GET['id'] . ';';
@@ -18,7 +27,7 @@ $extra_scripts = ['datepicker' => '<script src="https://cdnjs.cloudflare.com/aja
 require '../header.php'; ?>
 
     <div class="container margin-adder">
-        <form method="post" action="../private/form_processors/save_event.php">
+        <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_event.php">
 
             <!-- TITLE -->
             <div class="form-group row">

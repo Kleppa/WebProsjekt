@@ -1,7 +1,16 @@
-<?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
+<?php function server_root()
+{
+    $out = '';
+    if (isset($_SERVER['CONTEXT_PREFIX'])) {
+        $out .= $_SERVER['CONTEXT_PREFIX'];
+    }
+
+    return $out;
+}
+
+require_once server_root() . '/vendor/autoload.php';
+require_once server_root() . '/private/phpscripts/db_connector.php';
+require_once server_root() . '/private/phpscripts/functions.php';
 
 $pagetitle = 'Events';
 require 'header.php'; ?>
@@ -14,7 +23,7 @@ require 'header.php'; ?>
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
-                    require $_SERVER['DOCUMENT_ROOT'] . '/private/includes/event_card.php';
+                    require server_root() . '/private/includes/event_card.php';
                 }
             } ?>
         </div> <!-- card-columns -->

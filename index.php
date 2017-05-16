@@ -1,5 +1,13 @@
-<?php require "header.php" ?> <!--Header-->
+<?php function server_root()
+{
+    $out = '';
+    if (isset($_SERVER['CONTEXT_PREFIX'])) {
+        $out .= $_SERVER['CONTEXT_PREFIX'];
+    }
+    return $out;
+}
 
+require "header.php" ?> <!--Header-->
 <!--Bildekarusell-->
 <div id="customCarousel" class="carousel mb-3" data-ride="carousel">
 

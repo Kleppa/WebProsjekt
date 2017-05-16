@@ -1,4 +1,14 @@
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php'; ?>
+<?php function server_root()
+{
+    $out = '';
+    if (isset($_SERVER['CONTEXT_PREFIX'])) {
+        $out .= $_SERVER['CONTEXT_PREFIX'];
+    }
+
+    return $out;
+}
+
+require server_root() . '/vendor/autoload.php'; ?>
 
 <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-3">
     <div class="card mb-3">
@@ -18,9 +28,10 @@
 
             <div class="text-right">
                 <div class="btn-group">
-                    <a href="/admin/manage_place.php?id=<?php echo $row['id']; ?>" class="btn btn-info"
+                    <a href="<?php echo server_root() ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
+                       class="btn btn-info"
                        id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                    <a href="/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
+                    <a href="<?php echo server_root() ?>/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
                        class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
                     <a href="#" class="btn btn-secondary">+</a>
                 </div> <!-- btn-group -->
