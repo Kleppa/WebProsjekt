@@ -11,9 +11,12 @@ require_once '../private/includes/header.php';  // Header
             <div class="container">
 
                 <div class="row justify-content-center">
-                    <div class="col-10">
+                    <div class="col-7">
                         <img class="img-fluid" id="bildeboks" src="http://placehold.it/900x300">
                         <!--Bildet skal fetches -->
+                    </div>
+                    <div class="col-3">
+                        <div id="map"></div>
                     </div>
                 </div>
 

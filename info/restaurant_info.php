@@ -15,7 +15,7 @@ require_once '../private/includes/header.php';  // Header
             </div>
 
             <div class="col-3">
-                <div id="map" style="height: 216px;"></div>
+                <div id="map"></div>
             </div>
 
         </div>
