@@ -102,8 +102,21 @@ footer {
     width: 100%;
 }
 #key{
-    right: 19px;
+
     bottom: 900px;
+    background-color: lightblue;
+    border: 1px solid black;
+}
+#vpnKey{
+    position: absolute;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: white;
+    margin-left: auto;
+    margin-right:auto;
+    text-align: center;
+    bottom: 32px;
+    right: 32px;
+
 }
 #addbtn{
     position: fixed;
