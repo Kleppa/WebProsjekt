@@ -84,6 +84,10 @@ footer {
     max-height: 300px;
 }
 
+.nav-tabs a:hover{
+    background:#3FC1C9;
+}
+
 /* EVEN CSS */
 .material-icons.md-48 {
     font-size: 48px;
@@ -108,12 +112,11 @@ footer {
 #key{
 
     bottom: 900px;
-    background-color: lightblue;
-    border: 1px solid black;
+
 }
 #vpnKey{
     position: absolute;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
     color: white;
     margin-left: auto;
     margin-right:auto;
