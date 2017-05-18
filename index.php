@@ -20,7 +20,6 @@ require_once 'private/includes/header.php';  // Header
             <div class="carousel-item active">
                 <img class="d-block img-fluid"
                     <?php
-
                     $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
                     if ($result = $mysqli->query($sql)) {
                         foreach ($result as $row){
