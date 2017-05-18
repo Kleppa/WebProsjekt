@@ -115,6 +115,9 @@ footer {
     bottom: 900px;
 
 }
+a{
+    posistion:absolute;
+}
 #vpnKey{
     position: absolute;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
