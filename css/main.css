@@ -135,4 +135,6 @@ a{
     bottom: 0;
     width: 100%;
 }
-
+h3{
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+}

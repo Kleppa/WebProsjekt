@@ -30,7 +30,7 @@ require_once 'private/includes/header.php';  // Header
                     ?>>
 
                 <div class="carousel-caption">
-                    <h3>Chill bar</h3>
+                    <h3>Barer</h3>
                 </div>
             </div>
 
@@ -38,17 +38,17 @@ require_once 'private/includes/header.php';  // Header
                 <img class="d-block img-fluid"
                     <?php
                     // KLARER IKKE å BRUKE WESTERDALS FJERDING BILDET??? prøvd alt aner ikke hva som er feil.
-                    $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
+                    $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                     if ($result = $mysqli->query($sql)) {
                         foreach ($result as $row){
-                            echo 'src="'.$row['image_path'] . '"'.' alt="'.$row['title'].'"';
+                            echo 'src="'.$row['image_path'] . '"'.' alt="'.$row['name'].'"';
                         }
 
                     }
                     ?>>
 
                 <div class="carousel-caption">
-                    <h3>Hip restaurant</h3>
+                    <h3>Steder</h3>
                 </div>
             </div>
 
