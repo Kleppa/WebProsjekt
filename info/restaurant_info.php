@@ -120,7 +120,9 @@ require '../header.php'; ?>
             var westerdals = {lat: 59.9160168, lng: 10.7597406};
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
+                scrollwheel: false,
                 center: westerdals
+
             });
 
             var marker = new google.maps.Marker({

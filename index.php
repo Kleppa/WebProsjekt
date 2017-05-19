@@ -4,6 +4,7 @@ require_once 'private/phpscripts/functions.php';
 require_once 'private/phpscripts/db_connector.php';
 require_once 'private/includes/header.php';  // Header
 ?>
+
     <!--Bildekarusell-->
     <div id="customCarousel" class="carousel mb-3" data-ride="carousel">
 
@@ -80,6 +81,7 @@ require_once 'private/includes/header.php';  // Header
             <span class="sr-only">Next</span>
         </a>
     </div> <!-- Carousel -->
+    </div>
 
     <div class="container" id="trending-wrapper">
         <div class="row">
