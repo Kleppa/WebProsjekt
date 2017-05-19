@@ -28,8 +28,8 @@
 
 <nav class="navbar navbar-toggleable-sm fixed-top" id="custom-navbar">
     <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="#navbar">
-            <i class="material-icons">&#xE5D2;</i>
+        <button type="button" class="navbar-toggle collapsed btn btn-secondary hidden-md-up" id="menyknapp" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="#navbar">
+            Menu
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -48,14 +48,15 @@
                    href="<?php echo server_root() . '/places.php?category=drink'; ?>">Drink</a>
                 <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=food'; ?>">Eat</a>
                 <a class="nav-item nav-link" href="<?php echo server_root() . '/events.php'; ?>">Chill</a>
+                <?php
+                if (!loggedIn()) {
+                    echo '<div class="pull-right float-button circle" id="key">
+<i class="material-icons" id="vpnKey">vpn_key</i> </div>';
+                }
+                ?>
             </div> <!--Navbar-nav-->
         </div>
 
     </div><!--Container-->
-    <?php
-    if (!loggedIn()) {
-        echo '<div class="pull-right float-button circle" id="key">
-<i class="material-icons" id="vpnKey">vpn_key</i> </div>';
-    }
-    ?>
+
 </nav><!--Navbar -->

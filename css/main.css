@@ -26,15 +26,19 @@ body {
 .nav-link:active {
     background-color: #FC5185;
 }
-
-
-
-#custom-navbar {
-    -webkit-box-shadow: 5px 5px 5px #364F6B;
-    -moz-box-shadow:    5px 5px 5px #364F6B;
-    box-shadow:         5px 5px 5px #364F6B;
+.nav-link:hover{
+    background-color: #FC5185;
+    color: white;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
+#custom-navbar {
+    -webkit-box-shadow: 2px 2px 2px #364F6B;
+    -moz-box-shadow:    2px 2px 2px #364F6B;
+    box-shadow:         2px 2px 2px #364F6B;
+}
+
+/*FOOTER*/
 .footer {
     position: absolute;
     bottom: 0;
@@ -44,13 +48,6 @@ body {
     line-height: 60px;  /*Vertically center the text there*/
     background-color: #f5f5f5;
      background-color: #E3E3E3; }
-
-footer {
-    position: fixed;
-    height: 100px;
-    bottom: 0;
-    width: 100%;
-}
 
 
 /* Index.php */
@@ -111,10 +108,8 @@ footer {
 
 
 #key{
-
-    bottom: 900px;
-
 }
+
 a{
     posistion:absolute;
 }
