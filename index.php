@@ -37,7 +37,7 @@ require_once 'private/includes/header.php';  // Header
             <div class="carousel-item">
                 <img class="d-block img-fluid"
                     <?php
-                    // KLARER IKKE å BRUKE WESTERDALS FJERDING BILDET??? prøvd alt aner ikke hva som er feil.
+                    // bildet viser paa alle pcer utenom jarand sin pc........
                     $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                     if ($result = $mysqli->query($sql)) {
                         foreach ($result as $row){
@@ -53,7 +53,18 @@ require_once 'private/includes/header.php';  // Header
             </div>
 
             <div class="carousel-item">
-                <img class="d-block img-fluid" src="http://placehold.it/700x400" alt="...">
+                <img class="d-block img-fluid"
+                    <?php
+                   
+                    $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        foreach ($result as $row){
+
+                            echo 'src="'.$row['image_path'] . '"'.' alt="'.$row['title'].'"';
+                        }
+
+                    }
+                    ?>>
                 <div class="carousel-caption">
                     <h3> The park</h3>
                 </div>
