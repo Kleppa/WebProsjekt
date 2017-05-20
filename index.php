@@ -19,7 +19,7 @@ require_once 'private/includes/header.php';  // Header
         <div class="carousel-inner" role="listbox">
 
             <div class="carousel-item active">
-                <a href="events.php">
+                <a class="fillerTag" href="events.php">
                     <img class="d-block img-fluid"
                         <?php
                         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
@@ -37,7 +37,7 @@ require_once 'private/includes/header.php';  // Header
 
 
             <div class="carousel-item">
-                <a href="events.php?category=places">
+                <a class="fillerTag" href="events.php?category=places">
                     <img class="d-block img-fluid"
                         <?php
                         // bildet viser paa alle pcer utenom jarand sin pc........
@@ -81,7 +81,7 @@ require_once 'private/includes/header.php';  // Header
             </div>
 
             <div class="carousel-item">
-                <a href="events.php?category=food">
+                <a class="fillerTag" href="events.php?category=food">
                     <img class="d-block img-fluid"
                         <?php
 
