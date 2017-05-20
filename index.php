@@ -27,7 +27,6 @@ require_once 'private/includes/header.php';  // Header
                             foreach ($result as $row) {
                                 echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                             }
-
                         }
                         ?>>
                 </a>
@@ -127,7 +126,7 @@ require_once 'private/includes/header.php';  // Header
     </div>
 
     <div class="row">
-        <a style="color: black; text-decoration: none;" href= <?php
+        <a class="margin-adder-bot" style="color: black; text-decoration: none;" href= <?php
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
@@ -164,7 +163,7 @@ require_once 'private/includes/header.php';  // Header
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 margin-adder-bot">
 
                 <img class="mb-3" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
@@ -189,7 +188,7 @@ require_once 'private/includes/header.php';  // Header
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 margin-adder-bot">
 
                 <img class="mb-3" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
@@ -216,7 +215,7 @@ require_once 'private/includes/header.php';  // Header
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 margin-adder-bot">
 
                 <img class="mb-3" <?php $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
@@ -233,4 +232,4 @@ require_once 'private/includes/header.php';  // Header
         </a>
     </div>
 
-<?php require_once 'private/includes/footer.php';
+<?php require_once 'private/includes/footer.php';?>

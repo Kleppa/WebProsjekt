@@ -13,6 +13,9 @@ body {
 .margin-adder {
     margin-top: 100px;
 }
+.margin-adder-bot{
+    margin-bottom: 100px;
+}
 
 /* Header.php */
 .navbar {
