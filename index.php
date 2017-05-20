@@ -125,8 +125,8 @@ require_once 'private/includes/header.php';
         </div>
     </div>
 
-    <div class="row">
-        <a class="margin-adder-bot" style="color: black; text-decoration: none;" href= <?php
+    <div class="row justify-content-center">
+        <a style="color: black; text-decoration: none;" href= <?php
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
@@ -163,7 +163,7 @@ require_once 'private/includes/header.php';
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 margin-adder-bot">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
 
                 <img class="mb-3" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
@@ -188,7 +188,7 @@ require_once 'private/includes/header.php';
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 margin-adder-bot">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
 
                 <img class="mb-3" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
@@ -215,7 +215,7 @@ require_once 'private/includes/header.php';
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 margin-adder-bot">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 ">
 
                 <img class="mb-3" <?php $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {

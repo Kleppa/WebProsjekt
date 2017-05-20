@@ -35,7 +35,7 @@ body {
     color: black;
 }
 
-#navbar .nav-link:not(#active):hover {
+#navbar .nav-link:not(.active-nav):hover {
     background-color: #3FC1C9;
     color: white;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
@@ -99,6 +99,7 @@ body {
 
 #bildeboks {
     max-height: 300px;
+    width:100%;
 
 }
 
@@ -126,7 +127,6 @@ body {
 }
 
 a {
-    posistion: absolute;
     font-family: "Raleway-Regular";
     font-style: normal;
 
@@ -169,7 +169,6 @@ h6 {
 
 #addbtn {
     position: fixed;
-
     bottom: 0;
     background-color: deeppink;
 }
