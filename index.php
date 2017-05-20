@@ -107,7 +107,7 @@ require_once 'private/includes/header.php';  // Header
             $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
-                    echo '"info/barer.php?id=' . $row['id'] . '"';
+                    echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
                 }
             }
 
