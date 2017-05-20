@@ -14,7 +14,7 @@ require_once 'private/includes/header.php'; ?>
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
-                    require $_SERVER['DOCUMENT_ROOT'] . server_root() . '/private/includes/place_card.php';
+                    require 'private/includes/place_card.php';
                 }
             } ?>
         </div> <!-- card-columns -->
