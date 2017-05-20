@@ -13,6 +13,7 @@ body {
 .margin-adder {
     margin-top: 100px;
 }
+
 .margin-adder-bot{
     margin-bottom: 100px;
 }
@@ -22,23 +23,26 @@ body {
     opacity: 0.9;
     background-color: white;
 }
+
 .navbar .nav-link{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     padding-left: 10px;
 }
+
 .nav-item, .navbar-brand {
     color: black;
 }
-.navbar .nav-link{
-    padding-left: 10px;
 
+#navbar .nav-link:not(#active):hover{
+    background-color: #3FC1C9;
+    color: white;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
-
-.navbar .nav-link:hover{
-    background-color:  #364F6B;
+.active-nav{
+    background-color: #364F6B;
     color: white;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
@@ -57,7 +61,6 @@ body {
      /*Set the fixed height of the footer here*/
     height: 60px;
     line-height: 60px;  /*Vertically center the text there*/
-    background-color: #f5f5f5;
      background-color: #E3E3E3; }
 
 

@@ -2,7 +2,7 @@
 require_once 'vendor/autoload.php';
 require_once 'private/phpscripts/functions.php';
 require_once 'private/phpscripts/db_connector.php';
-require_once 'private/includes/header.php';  // Header
+require_once 'private/includes/header.php';
 ?>
 
     <!--Bildekarusell-->
@@ -58,7 +58,7 @@ require_once 'private/includes/header.php';  // Header
 
 
             <div class="carousel-item">
-                <a href="events.php?category=drink">
+                <a class="fillerTag"href="events.php?category=drink">
                     <img class="d-block img-fluid"
                         <?php
 
@@ -94,7 +94,7 @@ require_once 'private/includes/header.php';  // Header
 
                         }
                         ?>>
-                </a>
+                        </a>
                     <div class="carousel-caption">
                         <h3>Concert this week!</h3>
                     </div>
@@ -121,7 +121,7 @@ require_once 'private/includes/header.php';  // Header
     <div class="row">
         <div class="col">
             <h2>Trending places right now:</h2>
-            <p>See the most popular places by category</p>
+            <p>See the most popular places at this moment</p>
         </div>
     </div>
 
