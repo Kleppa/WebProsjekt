@@ -4,7 +4,16 @@ require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
 
 $pagetitle = 'Add Place..';
-require_once '../private/includes/header.php'; ?>
+require_once '../private/includes/header.php';
+
+if (isset($_GET['id'])) {
+
+    $sql = 'SELECT * FROM places WHERE id=' . $_GET['id'] . ';';
+
+    $resultSet = $mysqli->query($sql);
+    $editResult = $resultSet->fetch_assoc();
+
+} ?>
 
     <div class="container margin-adder">
         <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_place.php">
@@ -13,7 +22,10 @@ require_once '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="name" class="col-12 col-md-3 col-form-label">Name:</label>
                 <div class="col-12 col-md-9">
-                    <input type="text" name="name" class="form-control" id="name" value="" placeholder="Name">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" value="<?php
+                    if (isset($editResult)) {
+                        echo $editResult['name'];
+                    } ?>">
                 </div>
             </div>
 
@@ -22,7 +34,10 @@ require_once '../private/includes/header.php'; ?>
                 <label for="description" class="col-12 col-md-3 col-form-label">Description:</label>
                 <div class="col-md-9 col-12">
                         <textarea class="form-control" name="description" rows="4"
-                                  id="description" placeholder="Description"></textarea>
+                                  id="description" placeholder="Description"><?php
+                            if (isset($editResult)) {
+                                echo $editResult['description'];
+                            } ?></textarea>
                 </div>
             </div>
 
@@ -30,18 +45,30 @@ require_once '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="street" class="col-12 col-md-3 col-form-label">Address:</label>
                 <div class="col-md-9 col-sm-12">
-                    <input type="text" name="zip" class="form-control mb-2" id="street" value=""
-                           placeholder="Street">
+                    <input type="text" name="zip" class="form-control mb-2" id="street"
+                           placeholder="Street" value="<?php
+                    if (isset($editResult)) {
+                        $addressPieces = explode(",", $editResult['address']);
+                        echo $addressPieces[0];
+                    } ?>">
                 </div>
 
                 <label for="city" class="col-form-label sr-only">City</label>
                 <div class="col-lg-6 col-md-5 col-8 offset-md-3">
-                    <input type="text" name="name" class="form-control" id="city" value="" placeholder="City">
+                    <input type="text" name="name" class="form-control" id="city" placeholder="City" value="<?php
+                    if (isset($editResult)) {
+                        $addressPieces = explode(",", $editResult['address']);
+                        echo $addressPieces[2];
+                    } ?>">
                 </div>
 
                 <label for="zip" class="col-form-label sr-only">Zipcode</label>
                 <div class="col-lg-3 col-4">
-                    <input type="number" name="name" class="form-control" id="zip" value="" placeholder="Zip">
+                    <input type="number" name="name" class="form-control" id="zip" placeholder="Zip" value="<?php
+                    if (isset($editResult)) {
+                        $addressPieces = explode(",", $editResult['address']);
+                        echo $addressPieces[1];
+                    } ?>">
                 </div>
             </div>
 
@@ -54,7 +81,13 @@ require_once '../private/includes/header.php'; ?>
                         <?php $result = $mysqli->query("SELECT * FROM categories;");
                         $count = 1;
                         foreach ($result as $value) {
-                            echo "<option name=\"category\" value=\"{$value['id']}\">{$value['name']}</option>";
+                            $out = "<option name=\"category\" value=\"{$value['id']}\"";
+                            if (isset($editResult) && $value['id'] === $editResult['category']) {
+                                $out .= ' selected ';
+                            }
+                            $out .= ">{$value['name']}</option>";
+                            echo $out;
+
                             $count++;
                         } ?>
                     </select>
@@ -103,7 +136,10 @@ require_once '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="tel" class="col-12 col-md-3 col-form-label">Phone:</label>
                 <div class="col-12 col-md-9">
-                    <input type="tel" name="tel" class="form-control" id="tel" value="" placeholder="+47 000 00 000">
+                    <input type="tel" name="tel" class="form-control" id="tel" placeholder="+47 000 00 000" value="<?php
+                    if (isset($editResult)) {
+                        echo $editResult['phone'];
+                    } ?>">
                 </div>
             </div>
 
@@ -111,8 +147,11 @@ require_once '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="url" class="col-12 col-md-3 col-form-label">Website:</label>
                 <div class="col-12 col-md-9">
-                    <input type="url" name="url" class="form-control" id="url" value=""
-                           placeholder="http://url">
+                    <input type="url" name="url" class="form-control" id="url"
+                           placeholder="http://url" value="<?php
+                    if (isset($editResult)) {
+                        echo $editResult['url'];
+                    } ?>">
                 </div>
             </div>
 
@@ -120,15 +159,22 @@ require_once '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="img" class="col-12 col-md-3 col-form-label">Website:</label>
                 <div class="col-12 col-md-9">
-                    <input type="url" name="img" class="form-control" id="img" value=""
-                           placeholder="http://url/image.png">
+                    <input type="url" name="img" class="form-control" id="img"
+                           placeholder="http://url/image.png" value="<?php
+                    if (isset($editResult)) {
+                        echo $editResult['image_path'];
+                    } ?>">
                 </div>
             </div>
 
             <!-- U20 -->
             <div class="col-10 offset-md-3 form-check form-check-inline">
                 <label for="u20_check" class="text-muted">Alkoholservering under 20</label>
-                <input class="form-check-input-right text-muted" type="checkbox" id="u20_check">
+                <input class="form-check-input-right text-muted" type="checkbox" id="u20_check"<?php
+                if (isset($editResult) && $editResult['u20'] == true) {
+                    echo ' checked';
+                }
+                ?>>
             </div>
 
             <!-- SUBMIT -->

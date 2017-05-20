@@ -90,6 +90,25 @@ require '../private/includes/header.php'; ?>
                 </div>
             </div>
 
+            <!-- IMAGE -->
+            <div class="form-group row">
+                <label for="img" class="col-12 col-md-3 col-form-label">Title:</label>
+                <div class="col">
+                    <input type="url" name="image_path" class="form-control" id="img" value="<?php
+                    if (isset($_GET['id'])) {
+                        $editResult2 = $mysqli->query("SELECT id, title FROM events;");
+
+                        foreach ($editResult2 as $item) {
+                            if ($_GET['id'] === $item['id']) {
+                                echo $item['image_path'];
+                            }
+                        }
+                    }
+                    ?>">
+                </div>
+
+            </div>
+
             <!-- SUBMIT -->
             <div class="row">
                 <div class="col offset-md-3 mb-3">

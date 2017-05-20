@@ -43,17 +43,12 @@
         </a>
         <div id="navbar" class="navbar-collapse collapse">
             <div class="navbar-nav ml-auto">
-                <a class="nav-item nav-link active" href="<?php echo server_root() . '/'; ?>">Home</a>
+                <a class="nav-item nav-link" href="<?php echo server_root() . '/'; ?>">Home</a>
                 <a class="nav-item nav-link"
                    href="<?php echo server_root() . '/places.php?category=drink'; ?>">Drink</a>
                 <a class="nav-item nav-link" href="<?php echo server_root() . '/places.php?category=food'; ?>">Eat</a>
                 <a class="nav-item nav-link" href="<?php echo server_root() . '/events.php'; ?>">Chill</a>
-                <?php
-                if (!loggedIn()) {
-                    echo '<div class="pull-right float-button circle" id="key">
-<i class="material-icons" id="vpnKey">vpn_key</i> </div>';
-                }
-                ?>
+
             </div> <!--Navbar-nav-->
         </div>
 
