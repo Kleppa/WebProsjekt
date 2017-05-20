@@ -1,15 +1,15 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/db_connector.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/private/phpscripts/functions.php';
+require_once '../vendor/autoload.php';
+require_once '../private/phpscripts/db_connector.php';
+require_once '../private/phpscripts/functions.php';
 
 $pagetitle = 'Restaurant';
 
 if(!(isset($_GET['id']))){
-    redirect('/places.php');
+    redirect('../places.php');
 }
 
-require '../header.php'; ?>
+require '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
         <div class="row">

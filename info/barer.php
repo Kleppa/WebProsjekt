@@ -98,4 +98,4 @@ require_once '../private/includes/header.php';  // Header
                 </div>
             </div>
             <script src="../css/js/tests/tabsBar.js"></script>
-<?php require_once "../footer.php";
+<?php require_once "../private/includes/footer.php";

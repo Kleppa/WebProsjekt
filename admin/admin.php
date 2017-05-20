@@ -9,4 +9,4 @@ $pagetitle = 'Admin Dashboard';
 ?>
 
 
-<?php require_once '../footer.php';
+<?php require_once '../private/includes/footer.php';

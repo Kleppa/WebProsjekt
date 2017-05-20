@@ -43,4 +43,4 @@ require '../private/includes/header.php' ?>
 
     </div> <!-- container -->
 
-<?php require '../footer.php';
+<?php require '../private/includes/footer.php';

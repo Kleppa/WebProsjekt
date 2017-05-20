@@ -110,4 +110,4 @@ require '../private/includes/header.php'; ?>
             integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
 
-<?php require '../footer.php';
+<?php require '../private/includes/footer.php';

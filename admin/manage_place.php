@@ -140,4 +140,4 @@ require_once '../private/includes/header.php'; ?>
         </form>
     </div>
 
-<?php require '../footer.php';
+<?php require '../private/includes/footer.php';

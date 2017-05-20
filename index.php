@@ -169,4 +169,4 @@ require_once 'private/includes/header.php';  // Header
         </div>
     </div>
 
-<?php require_once 'footer.php';
+<?php require_once 'private/includes/footer.php';

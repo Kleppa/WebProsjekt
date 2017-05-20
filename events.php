@@ -27,4 +27,4 @@ require_once 'private/includes/header.php'; ?>
         </a>
     </div> <!-- container -->
 
-<?php require_once 'footer.php';
+<?php require_once 'private/includes/footer.php';
