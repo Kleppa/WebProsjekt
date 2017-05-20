@@ -7,13 +7,14 @@ html {
 body {
     /* Margin bottom by footer height */
     margin-bottom: 60px;
+    background-image: url("../img/crossword.png");
 }
 
 .margin-adder {
     margin-top: 100px;
 }
 
-.margin-adder-bot{
+.margin-adder-bot {
     margin-bottom: 100px;
 }
 
@@ -23,7 +24,7 @@ body {
     background-color: white;
 }
 
-.navbar .nav-link{
+.navbar .nav-link {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
@@ -34,22 +35,22 @@ body {
     color: black;
 }
 
-#navbar .nav-link:not(#active):hover{
+#navbar .nav-link:not(#active):hover {
     background-color: #3FC1C9;
     color: white;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
-.active-nav{
+.active-nav {
     background-color: #364F6B;
     color: white;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
 #custom-navbar {
-    -webkit-box-shadow: 0px 3px 25px rgba(0,0,0,0.2);
-    -moz-box-shadow:    0px 3px 25px rgba(0,0,0,0.2);
-    box-shadow:         0px 3px 25px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 25px rgba(0, 0, 0, 0.2);
 }
 
 /*FOOTER*/
@@ -57,18 +58,19 @@ body {
     position: absolute;
     bottom: 0;
     width: 100%;
-     /*Set the fixed height of the footer here*/
+    /*Set the fixed height of the footer here*/
     height: 60px;
-    line-height: 60px;  /*Vertically center the text there*/
-     background-color: #E3E3E3; }
-
+    line-height: 60px; /*Vertically center the text there*/
+    background-color: #E3E3E3;
+}
 
 /* Index.php */
-.fillerTag{
+.fillerTag {
     width: 100%;
     height: 100%;
     max-height: 500px;
 }
+
 #customCarousel {
     width: 100%;
     max-height: 500px;
@@ -89,18 +91,19 @@ body {
 
 /* Restaurant_info */
 
-#map{
+#map {
     width: 100%;
     height: 300px;
     max-height: 300px;
 }
+
 #bildeboks {
     max-height: 300px;
 
 }
 
-.nav-tabs a:hover{
-    background:#3FC1C9;
+.nav-tabs a:hover {
+    background: #3FC1C9;
 }
 
 /* EVEN CSS */
@@ -118,62 +121,57 @@ body {
     z-index: 1;
     right: 19px;
     bottom: 30px;
-
     align-items: center;
     justify-content: center;
 }
 
-
-#key{
-}
-
-a{
-    posistion:absolute;
-font-family: "Raleway-Regular";
-font-style: normal;
+a {
+    posistion: absolute;
+    font-family: "Raleway-Regular";
+    font-style: normal;
 
 }
 
-p{
-font-family: "Raleway-Regular";
+p {
+    font-family: "Raleway-Regular";
     font-style: normal;
 }
 
-h2{
-   font-family: "PlayfairDisplay-Regular";
+h2 {
+    font-family: "PlayfairDisplay-Regular";
     font-size: 40px;
 }
 
-h3{
+h3 {
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
-h5{
-font-family: "PlayfairDisplay-Regular";
+h5 {
+    font-family: "PlayfairDisplay-Regular";
 }
 
-h6{
-font-family: "Raleway-Regular";
-font-size: large;
+h6 {
+    font-family: "Raleway-Regular";
+    font-size: large;
 }
 
-
-#vpnKey{
-position: absolute;
-text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
-color: white;
-margin-left: auto;
-margin-right:auto;
-text-align: center;
-bottom: 32px;
-right: 32px;
+#vpnKey {
+    position: absolute;
+    text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    bottom: 32px;
+    right: 32px;
 
 }
-#addbtn{
-position: fixed;
 
-bottom: 0;
-background-color: deeppink;
+#addbtn {
+    position: fixed;
+
+    bottom: 0;
+    background-color: deeppink;
 }
 
 @font-face {

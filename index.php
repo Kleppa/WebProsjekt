@@ -5,10 +5,8 @@ require_once 'private/phpscripts/db_connector.php';
 require_once 'private/includes/header.php';
 ?>
 
-
-<div class="margin-adder"
-    <!--Bildekarusell-->
-    <div id="customCarousel" class="carousel mb-3" data-ride="carousel">
+<!--Bildekarusell-->
+<div id="customCarousel" class="carousel mb-3" data-ride="carousel">
 
         <!-- Bildeindikatorer-->
         <ol class="carousel-indicators">
@@ -233,5 +231,6 @@ require_once 'private/includes/header.php';
             </div>
         </a>
     </div>
+</div>
 
 <?php require_once 'private/includes/footer.php';?>
