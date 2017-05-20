@@ -58,7 +58,7 @@ require_once 'private/includes/header.php';  // Header
 
 
             <div class="carousel-item">
-                <a href="events.php?category=drink">
+                <a class="fillerTag"href="events.php?category=drink">
                     <img class="d-block img-fluid"
                         <?php
 
@@ -94,7 +94,7 @@ require_once 'private/includes/header.php';  // Header
 
                         }
                         ?>>
-                </a>
+                        </a>
                     <div class="carousel-caption">
                         <h3>Concert this week!</h3>
                     </div>

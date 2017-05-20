@@ -31,7 +31,7 @@ require '../private/includes/header.php'; ?>
 
                 <!-- Tab panes -->
                         <img class="img-fluid" id="bildeboks"
-                             src="<?php echo $row['image_path']; ?>"/>
+                             src="<?php echo $row['image_path'].'"'.'alt="'.$row['imgtext']; ?>"/>
                         </div>
 
                         <div class="col-3">
@@ -91,7 +91,7 @@ require '../private/includes/header.php'; ?>
             <h6> - Andre steder i området - </h6></div>
         <!--Bilder skal fetches-->
 
-        <div class="row justify-content-center text-center">
+        <div class="row justify-content-center text-center margin-adder-bot">
 
             <div class="col-3">
                 <h5 class="card-title">
