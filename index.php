@@ -30,12 +30,12 @@ require_once 'private/includes/header.php';  // Header
 
                         }
                         ?>>
-
-                    <div class="carousel-caption">
-                        <h3>Barer</h3>
-                    </div>
+                </a>
+                <div class="carousel-caption">
+                    <h3>Barer</h3>
+                </div>
             </div>
-            </a>
+
 
             <div class="carousel-item">
                 <a href="events.php?category=places">
@@ -50,11 +50,11 @@ require_once 'private/includes/header.php';  // Header
 
                         }
                         ?>>
-
-                    <div class="carousel-caption">
-                        <h3>Steder</h3>
-                    </div>
                 </a>
+                <div class="carousel-caption">
+                    <h3>Steder</h3>
+                </div>
+
             </div>
 
 
@@ -72,10 +72,13 @@ require_once 'private/includes/header.php';  // Header
 
                         }
                         ?>>
+
+
+
                     <div class="carousel-caption">
                         <h3> The park</h3>
                     </div>
-                </a>
+
             </div>
 
             <div class="carousel-item">
@@ -92,10 +95,11 @@ require_once 'private/includes/header.php';  // Header
 
                         }
                         ?>>
+                </a>
                     <div class="carousel-caption">
                         <h3>Concert this week!</h3>
                     </div>
-                </a>
+
             </div>
 
 
