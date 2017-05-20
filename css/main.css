@@ -18,20 +18,23 @@ body {
     opacity: 0.9;
     background-color: white;
 }
-.nav-link{
+.navbar .nav-link{
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    padding-left: 10px;
 }
 .nav-item, .navbar-brand {
     color: black;
 }
+.navbar .nav-link{
+    padding-left: 10px;
 
-.nav-link:active {
-    background-color: #FC5185;
 }
-.nav-link:hover{
-    background-color: #FC5185;
+
+
+.navbar .nav-link:hover{
+    background-color:  #364F6B;
     color: white;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
@@ -130,9 +133,8 @@ a{
 }
 #addbtn{
     position: fixed;
-    height: 100px;
+
     bottom: 0;
-    width: 100%;
     background-color: deeppink;
 }
 h3{

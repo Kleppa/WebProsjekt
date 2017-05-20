@@ -103,16 +103,16 @@ require_once 'private/includes/header.php';  // Header
         </div>
 
         <div class="row">
-            <!-- Bildene maa gjores klikkbare!
-            <a href="<?php/*
-
-                $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
-                if ($result = $mysqli->query($sql)) {
-                    echo 'info/restaurant_info?id='.$result['id'].'"';
+            <a style="color: black; text-decoration: none;"href= <?php
+            $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
+            if ($result = $mysqli->query($sql)) {
+                foreach ($result as $row) {
+                    echo '"info/barer.php?id=' . $row['id'] . '"';
                 }
+            }
 
-            */?>
-            -->
+
+            ?>>
             <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
                 <img class="mb-3"   <?php
 
@@ -129,8 +129,20 @@ require_once 'private/includes/header.php';  // Header
 
                 ?>
             </div>
+            </a>
+            <a style="color: black; text-decoration: none;"href= <?php
+            $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
+                     if ($result = $mysqli->query($sql)) {
+                         foreach ($result as $row) {
+                             echo '"info/barer.php?id=' . $row['id'] . '"';
+                         }
+                     }
+
+
+            ?>>
             <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
-                <img class="mb-3"  <?php $sql = "SELECT *, max(score)  FROM places ORDER BY score DESC  LIMIT 1 ;";
+
+                <img class="mb-3"  <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                      if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row){
                 echo 'src="'.$row['image_path'] . '"'.' alt="'.$row['name'].'"style="height:218px;width:218px"';
@@ -142,6 +154,7 @@ require_once 'private/includes/header.php';  // Header
                 }
             ?>
             </div>
+            </a>
             <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
                 <img class="mb-3" src="http://placehold.it/200x200" alt="qwe" style="min-width: 100%;">
                 <h4>Place</h4>
