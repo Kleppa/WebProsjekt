@@ -23,8 +23,8 @@ require '../private/includes/header.php'; ?>
             } ?>
         </div> <!-- card-columns -->
 
-    <div class="row justify-content-center"><h3 class="card-title">
-            <?php echo $row['name'] ?></h3></div>
+    <div class="row justify-content-center"><h2 class="card-title">
+            <?php echo $row['name'] ?></h2></div>
 
         <div class="row justify-content-center no-gutters">
             <div class="col-7">

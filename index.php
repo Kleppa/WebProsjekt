@@ -5,6 +5,8 @@ require_once 'private/phpscripts/db_connector.php';
 require_once 'private/includes/header.php';  // Header
 ?>
 
+
+<div class="margin-adder"
     <!--Bildekarusell-->
     <div id="customCarousel" class="carousel mb-3" data-ride="carousel">
 
