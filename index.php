@@ -121,7 +121,7 @@ require_once 'private/includes/header.php';  // Header
     <div class="row">
         <div class="col">
             <h2>Trending places right now:</h2>
-            <p>See the most popular places by category</p>
+            <p>See the most popular places at this moment</p>
         </div>
     </div>
 
