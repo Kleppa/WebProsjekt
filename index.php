@@ -89,7 +89,7 @@ require_once 'private/includes/header.php';
                         if ($result = $mysqli->query($sql)) {
                             foreach ($result as $row) {
 
-                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['name'] . '"';
                             }
 
                         }
