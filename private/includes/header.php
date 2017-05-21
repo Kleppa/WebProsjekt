@@ -38,7 +38,7 @@
         </button>
 
         <a class="navbar-brand" href="<?php echo server_root(1) . '/'; ?>">
-            <img src="<?php echo server_root(1) . '/img/wenture-logo@0.5x.png'; ?>" style="width: 70px">
+            <img src="<?php echo server_root(1) . '/img/wenture-logo@0.5x.png'; ?>" style="width: 70px; height: 62px;">
             Wenture
         </a>
         <div id="navbar" class="navbar-collapse collapse">
