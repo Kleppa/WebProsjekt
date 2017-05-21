@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
         "UPDATE food SET place = {$_POST['place']}, name = '{$name}', description = '{$desc}', 
         price = {$_POST['price']} WHERE id={$_POST['id']};"
         :
-        "INSERT INTO food (place, name, description, price) 
+        "INSERT INTO food (place, title, description, price) 
         VALUES ({$_POST['place']}, '{$name}', '{$desc}', {$_POST['price']});";
 
     if ($result = $mysqli->query($sql)) {
