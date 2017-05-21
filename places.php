@@ -19,7 +19,7 @@ require_once 'private/includes/header.php'; ?>
             } ?>
         </div> <!-- card-columns -->
 
-        <a href="<?php echo server_root() . '/admin/manage_place.php'; ?>">
+        <a href="<?php echo server_root(1) . '/admin/manage_place.php'; ?>">
             <div class="float-button circle d-flex align-content-between" id="addbtn">
                 <i class="material-icons" style="color: white;">add</i>
             </div>
