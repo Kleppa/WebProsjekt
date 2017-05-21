@@ -130,7 +130,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
+                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
             }
         }
 
@@ -157,7 +157,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
+                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
             }
         }
 
@@ -182,7 +182,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
+                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
             }
         }
 
@@ -209,7 +209,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
+                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
             }
         }
 

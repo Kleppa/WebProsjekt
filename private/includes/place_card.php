@@ -5,7 +5,7 @@ require_once server_root() . '/private/phpscripts/functions.php';
 
 <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-3">
     <div class="card mb-3">
-        <a href="<?php echo server_root() . '/info/restaurant_info.php?id=' . $row['id']; ?>"
+        <a href="<?php echo server_root() . '/info/restaurant_info.php?id=' . $row['id'].'&type='.$row['type']; ?>"
            style="text-decoration:none; color:black;">
             <img class="card-img-top img-fluid" <?php echo 'src="' . $row['image_path'] . '"' . 'alt="' . $row['title'] . '"' ?>>
         </a>

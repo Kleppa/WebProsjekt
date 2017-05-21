@@ -8,30 +8,40 @@ $pagetitle = 'Restaurant';
 if(!(isset($_GET['id']))){
     redirect('../places.php');
 }
+$sql = "SELECT * FROM places WHERE id = {$_GET['id']};";
+$sql2 = "SELECT * FROM events WHERE id = {$_GET['id']};";
+$result=$mysqli->query($sql);
+$result2=$mysqli->query($sql2);
+$finalResult="";
 
 require '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
         <div class="row">
             <?php
-            $sql = "SELECT * FROM places WHERE id = {$_GET['id']};";
-            $row = "";
-            if ($result = $mysqli->query($sql)) {
-                foreach ($result as $value) {
-                    $row = $value;
+            foreach ($result as $row) {
+
+                if ($_GET['id']===$row['id'] && $_GET['type']===$row['type']) {
+                    $finalResult=$row;
                 }
-            } ?>
+            }
+            foreach ($result2 as $row){
+                if ($_GET['id']===$row['id'] && $_GET['type']===$row['type']){
+                    $finalResult=$row;
+                }
+            }
+            ?>
         </div> <!-- card-columns -->
 
     <div class="row justify-content-center"><h2 class="card-title">
-            <?php echo $row['title'] ?></h2></div>
+            <?php echo $finalResult['title'] ?></h2></div>
 
         <div class="row justify-content-center no-gutters">
             <div class="col-7">
 
                 <!-- Tab panes -->
                         <img class="img-fluid" id="bildeboks"
-                             src="<?php echo $row['image_path'].'"'.'alt="'.$row['imgtext']; ?>"/>
+                             src="<?php echo $finalResult['image_path'].'"'.'alt="'.$finalResult['title']; ?>"/>
                         </div>
 
                         <div class="col-3">
@@ -64,7 +74,7 @@ require '../private/includes/header.php'; ?>
 
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="info">
-                        <p class="card-text"><?php echo $row['description'] ?></p>
+                        <p class="card-text"><?php echo $finalResult['description'] ?></p>
                     </div>
 
                     <div role="tabpanel" class="tab-pane" id="spesial">
@@ -75,10 +85,10 @@ require '../private/includes/header.php'; ?>
                             fugiat nulla pariatur. </p>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="kontakt">
-                        <p class="card-text">Adresse: <?php echo $row['address']; ?></p>
-                        <p class="card-text">Telefon: <?php echo $row['phone']; ?></p>
-                        <p class="card-text">Åpningstider: <?php echo $row['opening_hours']; ?></p>
-                        <p class="card-text">Nettsted: <?php echo $row['url']; ?></p>
+                        <p class="card-text">Adresse: <?php echo $finalResult['address']; ?></p>
+                        <p class="card-text">Telefon: <?php echo $finalResult['phone']; ?></p>
+                        <p class="card-text">Åpningstider: <?php echo $finalResult['opening_hours']; ?></p>
+                        <p class="card-text">Nettsted: <?php echo $finalResult['url']; ?></p>
 
                     </div>
                 </div>
