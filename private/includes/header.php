@@ -28,7 +28,8 @@
 
 <nav class="navbar navbar-toggleable-sm fixed-top" id="custom-navbar">
     <div class="container">
-        <button type="button" class="navbar-toggle collapsed btn btn-secondary hidden-md-up" id="menyknapp" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="#navbar">
+        <button type="button" class="navbar-toggle collapsed btn btn-secondary hidden-md-up" id="menyknapp"
+                data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="#navbar">
             Menu
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
@@ -38,7 +39,7 @@
         </button>
 
         <a class="navbar-brand" href="<?php echo server_root() . '/'; ?>">
-            <img src="<?php echo server_root() . '/img/logo2.png'; ?>" style="width: 70px">
+            <img src="<?php echo server_root() . '/img/wenture-logo@0.5x.png'; ?>" style="width: 70px">
             Wenture
         </a>
         <div id="navbar" class="navbar-collapse collapse">

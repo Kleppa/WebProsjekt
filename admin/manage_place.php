@@ -45,7 +45,7 @@ if (isset($_GET['id'])) {
             <div class="form-group row">
                 <label for="street" class="col-12 col-md-3 col-form-label">Address:</label>
                 <div class="col-md-9 col-sm-12">
-                    <input type="text" name="zip" class="form-control mb-2" id="street"
+                    <input type="text" name="street" class="form-control mb-2" id="street"
                            placeholder="Street" value="<?php
                     if (isset($editResult)) {
                         $addressPieces = explode(",", $editResult['address']);
@@ -55,7 +55,7 @@ if (isset($_GET['id'])) {
 
                 <label for="city" class="col-form-label sr-only">City</label>
                 <div class="col-lg-6 col-md-5 col-8 offset-md-3">
-                    <input type="text" name="name" class="form-control" id="city" placeholder="City" value="<?php
+                    <input type="text" name="city" class="form-control" id="city" placeholder="City" value="<?php
                     if (isset($editResult)) {
                         $addressPieces = explode(",", $editResult['address']);
                         echo $addressPieces[2];
@@ -64,7 +64,7 @@ if (isset($_GET['id'])) {
 
                 <label for="zip" class="col-form-label sr-only">Zipcode</label>
                 <div class="col-lg-3 col-4">
-                    <input type="number" name="name" class="form-control" id="zip" placeholder="Zip" value="<?php
+                    <input type="number" name="zip" class="form-control" id="zip" placeholder="Zip" value="<?php
                     if (isset($editResult)) {
                         $addressPieces = explode(",", $editResult['address']);
                         echo $addressPieces[1];
@@ -110,24 +110,33 @@ if (isset($_GET['id'])) {
                         'sunday'
                     ];
 
+                    if (isset($editResult)) $openingHours = openingHoursToAssoc($editResult);
+
                     foreach ($weekdays as $weekday) {
-                        echo '
-                            <label for="' . $weekday . '-time-from" class="col-12 col-md-3 col-form-label" >' . ucfirst($weekday) . ':</label >
-                            <div class="col-4 col-md-3 col-lg-2">
-                                <input type = "time" name = "' . $weekday . '-time-from" class="form-control form-control-sm mb-2" 
-                                id = "' . $weekday . '-time-from" value = "08:00:00">
-                            </div>
-                            <label for="' . $weekday . '-time-to" class="col-form-label sr-only">' . ucfirst($weekday) . 'time to</label >
-                            <div class="col-4 col-md-3 col-lg-2">
-                                <input type = "time" name = "' . $weekday . '-time-to" class="form-control form-control-sm mb-2" 
-                                id = "' . $weekday . '-time-to" value = "20:00:00">
-                            </div>
-                            <div class="col-2 col-md-3 col-lg-5 form-check form-check-inline">
-                                <label for="closed-check-' . $weekday . '" class="text-muted">
-                                    <input class="form-check-input text-muted" type="checkbox" id="closed-check-' . $weekday . '" value="closed"> Stengt
-                                </label>
-                            </div>
-                            ';
+                        $out = '<label for="' . $weekday . '-time-from" class="col-12 col-md-3 col-form-label">' . ucfirst($weekday) . ':</label >';
+                        $out .= '<div class="col-4 col-md-3 col-lg-2">';
+                        $out .= '<input type="time" name="' . $weekday . '-time-from" class="form-control form-control-sm mb-2" 
+                                id="' . $weekday . '-time-from" value="';
+                        if (isset($editResult)) {
+                            $out .= $openingHours[$weekday . '_from'];
+                        } else {
+                            $out .= '08:00:00';
+                        }
+                        $out .= '"></div>';
+                        $out .= '<label for="' . $weekday . '-time-to" class="col-form-label sr-only" > ' . ucfirst($weekday) . 'time to </label>';
+                        $out .= '<div class="col-4 col-md-3 col-lg-2">';
+                        $out .= '<input type="time" name="' . $weekday . '-time-to" class="form-control form-control-sm mb-2"
+                                id="' . $weekday . '-time-to" value="';
+                        if (isset($editResult)) {
+                            $out .= $openingHours[$weekday . '_to'];
+                        } else {
+                            $out .= '20:00:00';
+                        }
+                        $out .= '"></div><div class="col-2 col-md-3 col-lg-5 form-check form-check-inline">';
+                        $out .= '<label for="closed-check-' . $weekday . '" class="text-muted">';
+                        $out .= '<input class="form-check-input text-muted" type="checkbox" id="closed-check-' . $weekday . '" value="closed" > Stengt';
+                        $out .= '</label></div>';
+                        echo $out;
                     } ?>
                 </div>
             </fieldset>
@@ -170,7 +179,7 @@ if (isset($_GET['id'])) {
             <!-- U20 -->
             <div class="col-10 offset-md-3 form-check form-check-inline">
                 <label for="u20_check" class="text-muted">Alkoholservering under 20</label>
-                <input class="form-check-input-right text-muted" type="checkbox" id="u20_check"<?php
+                <input class="form-check-input-right text-muted" name="u20" type="checkbox" id="u20_check"<?php
                 if (isset($editResult) && $editResult['u20'] == true) {
                     echo ' checked';
                 }
