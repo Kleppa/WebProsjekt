@@ -21,7 +21,7 @@ require_once 'private/includes/header.php';
             <div class="carousel-item active">
                 <a class="fillerTag" href="events.php">
                     <img class="d-block img-fluid"
-                        <?php
+                        <?phphttps://www.westerdals.no/content/uploads/2016/10/MH-brenneriveien-vulkan-oktober-15-1-800x600.jpg
                         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
                         if ($result = $mysqli->query($sql)) {
                             foreach ($result as $row) {
@@ -62,7 +62,7 @@ require_once 'private/includes/header.php';
                     <img class="d-block img-fluid"
                         <?php
 
-                        $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
+                        $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
                         if ($result = $mysqli->query($sql)) {
                             foreach ($result as $row) {
 
@@ -89,7 +89,7 @@ require_once 'private/includes/header.php';
                         if ($result = $mysqli->query($sql)) {
                             foreach ($result as $row) {
 
-                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['name'] . '"';
+                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                             }
 
                         }
@@ -130,7 +130,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
+                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
             }
         }
 
@@ -157,7 +157,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
+                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
             }
         }
 
@@ -182,7 +182,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
+                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
             }
         }
 
@@ -209,7 +209,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] . '"';
+                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
             }
         }
 

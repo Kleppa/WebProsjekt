@@ -7,7 +7,7 @@ Carbon::setLocale('no');
 
 <div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mb-3">
     <div class="card">
-        <a href="<?php echo server_root(1) . '/info/restaurant_info.php?id=' . $row['id']; ?>">
+        <a href="<?php echo server_root(1) . '/info/restaurant_info.php?id=' . $row['id'].'&type='.$row['type']; ?>">
             <img class="card-img-top img-fluid" <?php echo 'src="' . $row['image_path'] . '"' . 'alt="' . $row['title'] . '"' ?>>
         </a>
 
