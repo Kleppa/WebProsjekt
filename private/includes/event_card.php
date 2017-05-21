@@ -8,7 +8,7 @@ $date = new Carbon($row['datetime']);
 Carbon::setLocale('no');
 ?>
 
-<div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-xs-12 mb-3">
+<div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mb-3">
     <div class="card">
         <a href="<?php echo server_root() . '/info/restaurant_info.php?id=' . $row['id']; ?>">
             <img class="card-img-top img-fluid" <?php echo 'src="' . $row['image_path'] . '"' . 'alt="' . $row['title'] . '"' ?>>
