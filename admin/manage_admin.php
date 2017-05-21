@@ -7,7 +7,8 @@ $pagetitle = 'Add Admin..';
 require '../private/includes/header.php' ?>
 
     <div class="container margin-adder">
-        <form name="test" method="post" action="<?php echo server_root() ?>/private/form_processors/save_admin.php">
+        <form name="test" method="post"
+              action="<?php echo server_root() ?>/private/form_processors/save_admin.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 
             <!-- USERNAME -->
             <div class="form-group row">

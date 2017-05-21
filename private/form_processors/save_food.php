@@ -10,14 +10,14 @@ if (isset($_POST['submit'])) {
     $desc = mysqlPrep($_POST['description']);
 
     $sql = isset($_GET['id']) ?
-        "UPDATE food SET place = {$_POST['place']}, name = '{$name}', description = '{$desc}', 
-        price = {$_POST['price']} WHERE id={$_POST['id']};"
+        "UPDATE food SET place = {$_POST['place']}, title = '{$name}', description = '{$desc}', 
+        price = {$_POST['price']} WHERE id={$_GET['id']};"
         :
-        "INSERT INTO food (place, name, description, price) 
+        "INSERT INTO food (place, title, description, price) 
         VALUES ({$_POST['place']}, '{$name}', '{$desc}', {$_POST['price']});";
 
     if ($result = $mysqli->query($sql)) {
-        $result->free();
+        mysqli_free_result($result);
         $mysqli->close();
         redirect(server_root() . '/admin/admin.php');
     } else {

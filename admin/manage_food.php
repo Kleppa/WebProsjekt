@@ -14,7 +14,8 @@ $pagetitle = 'Add Food..';
 require '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
-        <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_food.php">
+        <form method="post"
+              action="<?php echo server_root() ?>/private/form_processors/save_food.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 
             <!-- NAME -->
             <div class="form-group row">
@@ -22,11 +23,11 @@ require '../private/includes/header.php'; ?>
                 <div class="col">
                     <input type="text" name="name" class="form-control" id="name" value="<?php
                     if (isset($_GET['id'])) {
-                        $editResult2 = $mysqli->query("SELECT id, name FROM food;");
+                        $editResult2 = $mysqli->query("SELECT id, title FROM food;");
 
                         foreach ($editResult2 as $item) {
                             if ($_GET['id'] === $item['id']) {
-                                echo $item['name'];
+                                echo $item['title'];
                             }
                         }
                     }
@@ -40,11 +41,11 @@ require '../private/includes/header.php'; ?>
                 <div class="col">
                     <select class="custom-select" name="place" id="place-select">
                         <option <?php if (!isset($_GET['id'])) echo 'selected'; ?>>Choose...</option>
-                        <?php $result = $mysqli->query("SELECT places.id AS placeID, places.name AS placeName, food.id AS foodID FROM places LEFT JOIN food ON food.place = places.id;");
+                        <?php $result = $mysqli->query("SELECT places.id AS placeID, places.title AS placeName, food.id AS foodID FROM places LEFT JOIN food ON food.place = places.id;");
                         $count = 1;
                         foreach ($result as $value) {
-                            $out = '<option name=\"place\" value=\"';
-                            $out .= $value['placeID'] . '\"';
+                            $out = '<option name="place" value="';
+                            $out .= $value['placeID'] . '"';
                             if (isset($_GET['id'])) {
                                 if ($_GET['id'] === $value['foodID']) {
                                     $out .= ' selected';

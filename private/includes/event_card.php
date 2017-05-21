@@ -1,7 +1,4 @@
 <?php
-require_once server_root() . '/vendor/autoload.php';
-require_once server_root() . '/private/phpscripts/functions.php';
-
 use Carbon\Carbon;
 
 $date = new Carbon($row['datetime']);
@@ -40,4 +37,4 @@ Carbon::setLocale('no');
         </div> <!-- card-footer -->
 
     </div> <!-- card -->
-</div>
+</div> <!-- col -->

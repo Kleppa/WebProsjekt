@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
     $imagePath = mysqlPrep($_POST['image_path']);
 
     $sql = isset($_GET['id']) ?
-        "UPDATE events SET title = '{$title}', place = {$_POST['place']}, datetime = '{$_POST['datetime']}',
+        "UPDATE events SET title = '{$title}', place = {$_POST['place']}, `datetime` = '{$_POST['datetime']}',
         description = '{$desc}', is_free = {$_POST['is_free']}, price = '{$price}', image_path = '{$imagePath}'
         WHERE id={$_GET['id']};"
         :
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
         '{$price}', '{$imagePath}');";
 
     if ($result = $mysqli->query($sql)) {
-        $result->free();
+        mysqli_free_result($result);
         $mysqli->close();
         redirect(server_root() . '/admin/admin.php');
     } else {

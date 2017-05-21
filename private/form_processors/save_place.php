@@ -21,23 +21,24 @@ if (isset($_POST['submit'])) {
     $openingHours .= ',' . $_POST['sunday-time-from'];
     $openingHours .= ',' . $_POST['sunday-time-to'];
 
-    $name = mysqlPrep($_POST['title']);
+    $title = mysqlPrep($_POST['title']);
     $desc = mysqlPrep($_POST['description']);
     $address = mysqlPrep($_POST['street'] . ',' . $_POST['zip'] . ',' . $_POST['city']);
     $openingHours = mysqlPrep($openingHours);
     $phone = mysqlPrep($_POST['tel']);
     $url = mysqlPrep($_POST['url']);
     $imagePath = mysqlPrep($_POST['img']);
+    $u20 = ($_POST['u20'] == 'on') ? 1 : 0;
 
     $sql = isset($_GET['id']) ?
         "UPDATE places SET title = '{$title}', description = '{$desc}', address = '{$address}', 
         opening_hours = '{$openingHours}', phone = '{$phone}', url = '{$url}', 
-        category = {$_POST['category']}, image_path = '{$imagePath}', u20= {$_POST['u20']}) 
-        WHERE id={$_POST['id']};"
+        category = {$_POST['category']}, image_path = '{$imagePath}', u20= {$_POST['u20']} 
+        WHERE id={$_GET['id']};"
         :
         "INSERT INTO places (title, description, address, opening_hours, phone, url, category, 
         image_path, u20) VALUES ('{$title}', '{$desc}', '{$address}', '{$openingHours}', '{$phone}', 
-        '{$url}', {$_POST['category']}, '{$imagePath}','{$_POST['u20']}');";
+        '{$url}', {$_POST['category']}, '{$imagePath}', {$u20});";
 
     if ($result = $mysqli->query($sql)) {
         mysqli_free_result($result);

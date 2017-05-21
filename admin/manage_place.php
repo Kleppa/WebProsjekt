@@ -16,15 +16,16 @@ if (isset($_GET['id'])) {
 } ?>
 
     <div class="container margin-adder">
-        <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_place.php">
+        <form method="post"
+              action="<?php echo server_root() ?>/private/form_processors/save_place.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 
             <!-- NAME -->
             <div class="form-group row">
                 <label for="name" class="col-12 col-md-3 col-form-label">Name:</label>
                 <div class="col-12 col-md-9">
-                    <input type="text" name="name" class="form-control" id="name" placeholder="Name" value="<?php
+                    <input type="text" name="title" class="form-control" id="name" placeholder="Name" value="<?php
                     if (isset($editResult)) {
-                        echo $editResult['name'];
+                        echo $editResult['title'];
                     } ?>">
                 </div>
             </div>
@@ -117,7 +118,7 @@ if (isset($_GET['id'])) {
                         $out .= '<div class="col-4 col-md-3 col-lg-2">';
                         $out .= '<input type="time" name="' . $weekday . '-time-from" class="form-control form-control-sm mb-2" 
                                 id="' . $weekday . '-time-from" value="';
-                        if (isset($editResult)) {
+                        if (isset($openingHours)) {
                             $out .= $openingHours[$weekday . '_from'];
                         } else {
                             $out .= '08:00:00';
@@ -127,7 +128,7 @@ if (isset($_GET['id'])) {
                         $out .= '<div class="col-4 col-md-3 col-lg-2">';
                         $out .= '<input type="time" name="' . $weekday . '-time-to" class="form-control form-control-sm mb-2"
                                 id="' . $weekday . '-time-to" value="';
-                        if (isset($editResult)) {
+                        if (isset($openingHours)) {
                             $out .= $openingHours[$weekday . '_to'];
                         } else {
                             $out .= '20:00:00';
@@ -179,8 +180,9 @@ if (isset($_GET['id'])) {
             <!-- U20 -->
             <div class="col-10 offset-md-3 form-check form-check-inline">
                 <label for="u20_check" class="text-muted">Alkoholservering under 20</label>
-                <input class="form-check-input-right text-muted" name="u20" type="checkbox" id="u20_check"<?php
-                if (isset($editResult) && $editResult['u20'] == true) {
+                <input class="form-check-input-right text-muted" name="u20" type="checkbox" value="1"
+                       id="u20_check"<?php
+                if (isset($editResult) && ($editResult['u20'] === 1)) {
                     echo ' checked';
                 }
                 ?>>

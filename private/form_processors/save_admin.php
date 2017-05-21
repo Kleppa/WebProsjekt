@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
             VALUES ('{$username}', '{$hashedPassword}');";
 
         if ($result = $mysqli->query($sql)) {
-            $result->free();
+            mysqli_free_result($result);
             $mysqli->close();
             redirect(server_root() . '/admin/admin.php');
         } else {

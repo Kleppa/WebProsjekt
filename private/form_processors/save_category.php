@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
     $name = mysqlPrep($_POST['name']);
 
     $sql = isset($_GET['id']) ?
-        "UPDATE categories SET name '{$name}';"
+        "UPDATE categories SET name '{$name}' WHERE id={$_GET['id']};"
         :
         "INSERT INTO categories (name) VALUES ('{$name}');";
 

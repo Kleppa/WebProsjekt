@@ -7,7 +7,8 @@ $pagetitle = 'Add Category..';
 require '../private/includes/header.php' ?>
 
     <div class="container margin-adder">
-        <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_category.php">
+        <form method="post"
+              action="<?php echo server_root() ?>/private/form_processors/save_category.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 
             <!-- CATEGORY -->
             <div class="form-group row">

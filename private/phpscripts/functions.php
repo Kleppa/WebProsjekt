@@ -25,7 +25,7 @@ function server_root($type = 0)
     $out = '';
     if (isset($_SERVER['CONTEXT_PREFIX'])) {
         $out .= $_SERVER['CONTEXT_PREFIX'];
-    } else if ($type = 0 && ($_SERVER['SERVER_NAME'] == ('localhost' || '127.0.0.1'))) {
+    } else if ($type === 0) {
         $out .= $_SERVER['DOCUMENT_ROOT'];
     }
     return $out;

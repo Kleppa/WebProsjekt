@@ -2,12 +2,16 @@
 require_once '../vendor/autoload.php';
 require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
+use Carbon\Carbon;
 if (isset($_GET['id'])) {
 
-    $sql = 'SELECT * FROM events LEFT JOIN types ON types.id=events.id WHERE events.id=' . $_GET['id'] . ';';
-
-    if ($editResult = $mysqli->query($sql)) ;
-
+    $sql = "SELECT * FROM events WHERE id={$_GET['id']};";
+    $editResult = $mysqli->query($sql);
+    $row = mysqli_fetch_assoc($editResult);
+    echo str_replace(' ', 'T', $row['datetime']);
+    $datetime = new Carbon($row['datetime']);
+    $datetime->format('DD/MM/YYYY/HH/MM'); //TODO: fix;
+    echo $datetime;
 }
 
 $pagetitle = 'Add Event..';
@@ -18,23 +22,20 @@ $extra_scripts = ['datepicker' => '<script src="https://cdnjs.cloudflare.com/aja
 require '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
-        <form method="post" action="<?php echo server_root() ?>/private/form_processors/save_event.php">
+        <form method="post"
+              action="<?php echo server_root() ?>/private/form_processors/save_event.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 
             <!-- TITLE -->
             <div class="form-group row">
                 <label for="title" class="col-12 col-md-3 col-form-label">Title:</label>
                 <div class="col">
                     <input type="text" name="title" class="form-control" id="title" value=" <?php
-                    if (isset($_GET['id'])) {
-                        $editResult2 = $mysqli->query("SELECT id, title FROM events;");
-
-                        foreach ($editResult2 as $item) {
-                            if ($_GET['id'] === $item['id']) {
-                                echo $item['title'];
-                            }
+                    if (isset($editResult)) {
+                        $row = mysqli_fetch_assoc($editResult);
+                        if ($_GET['id'] === $row['id']) {
+                            echo $row['title'];
                         }
-                    }
-                    ?>">
+                    } ?>">
                 </div>
 
             </div>
@@ -45,15 +46,14 @@ require '../private/includes/header.php'; ?>
                 <div class="col">
                     <select class="custom-select" name="place" id="place-select">
                         <?php
-
-                        $result = $mysqli->query("SELECT id, title FROM places;");
+                        $placeResult = $mysqli->query("SELECT id, title FROM places;");
                         $count = 1;
-                        foreach ($result as $value) {
-                            $out = "<option name=\"place\" value=\"{$value['id']}\"";
-                            if ($value['id'] === $_GET['id']) {
+                        foreach ($placeResult as $row) {
+                            $out = "<option name=\"place\" value=\"{$row['id']}\"";
+                            if ($row['id'] === $_GET['id']) {
                                 $out .= ' selected';
                             }
-                            $out .= ">{$value['name']}</option>";
+                            $out .= ">{$row['title']}</option>";
                             echo $out;
                             $count++;
                         } ?>
@@ -65,12 +65,11 @@ require '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="datetime-local" class="col-12 col-md-3 col-form-label">Date:</label>
                 <div class="col">
-                    <input type="datetime-local" class="form-control" id="datetime-local" <?php
-                    if (!empty($editResult)) {
-                        foreach ($editResult as $newitem) {
-                            echo 'value="' . $newitem['datetime'];
-                        }
-                    } ?>>
+                    <input type="datetime-local" class="form-control" id="datetime-local" value="<?php
+                    if (isset($editResult)) {
+                        $row = mysqli_fetch_assoc($editResult);
+                        echo str_replace(' ', 'T', $row['datetime']);
+                    } else echo '2017-01-01T12:00:00'; ?>">
                 </div>
             </div>
 
@@ -79,14 +78,14 @@ require '../private/includes/header.php'; ?>
                 <label for="description" class="col-12 col-md-3 col-form-label">Description:</label>
                 <div class="col-md-9 col-12">
                         <textarea class="form-control" name="description" rows="4"
-                                  id="description" placeholder="Description"><?php
-                            if (!empty($editResult)) {
-                                foreach ($editResult as $item) {
-                                    echo $item['description'];
-                                }
+                                  id="description" placeholder="Description">
+                            <?php
+                            if (isset($editResult)) {
+                                $row = mysqli_fetch_assoc($editResult);
+                                echo $row['description'];
                             }
-
-                            ?></textarea>
+                            ?>
+                        </textarea>
                 </div>
             </div>
 
@@ -95,14 +94,9 @@ require '../private/includes/header.php'; ?>
                 <label for="img" class="col-12 col-md-3 col-form-label">Title:</label>
                 <div class="col">
                     <input type="url" name="image_path" class="form-control" id="img" value="<?php
-                    if (isset($_GET['id'])) {
-                        $editResult2 = $mysqli->query("SELECT id, title FROM events;");
-
-                        foreach ($editResult2 as $item) {
-                            if ($_GET['id'] === $item['id']) {
-                                echo $item['image_path'];
-                            }
-                        }
+                    if (isset($editResult)) {
+                        $row = mysqli_fetch_assoc($editResult);
+                        echo $row['image_path'];
                     }
                     ?>">
                 </div>
