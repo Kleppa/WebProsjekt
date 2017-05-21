@@ -24,7 +24,7 @@ require '../private/includes/header.php'; ?>
         </div> <!-- card-columns -->
 
     <div class="row justify-content-center"><h2 class="card-title">
-            <?php echo $row['name'] ?></h2></div>
+            <?php echo $row['title'] ?></h2></div>
 
         <div class="row justify-content-center no-gutters">
             <div class="col-7">
@@ -95,19 +95,19 @@ require '../private/includes/header.php'; ?>
 
             <div class="col-3">
                 <h5 class="card-title">
-                    <?php echo $row['name'] ?></h5>
+                    <?php echo $row['title'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 
             <div class="col-3">
                 <h5 class="card-title">
-                    <?php echo $row['name'] ?></h5>
+                    <?php echo $row['title'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 
             <div class="col-3">
                 <h5 class="card-title">
-                    <?php echo $row['name'] ?></h5>
+                    <?php echo $row['title'] ?></h5>
                 <img class="img-fluid" src="http://placehold.it/200x300">
             </div>
 

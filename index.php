@@ -44,7 +44,7 @@ require_once 'private/includes/header.php';
                         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                         if ($result = $mysqli->query($sql)) {
                             foreach ($result as $row) {
-                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['name'] . '"';
+                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                             }
 
                         }
@@ -89,7 +89,7 @@ require_once 'private/includes/header.php';
                         if ($result = $mysqli->query($sql)) {
                             foreach ($result as $row) {
 
-                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['name'] . '"';
+                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                             }
 
                         }
@@ -121,7 +121,7 @@ require_once 'private/includes/header.php';
     <div class="row">
         <div class="col">
             <h2>Trending places right now:</h2>
-            <p>See the most popular places at this moment</p>
+            <p>See the most popular places:</p>
         </div>
     </div>
 
@@ -168,10 +168,10 @@ require_once 'private/includes/header.php';
                 <img class="mb-3" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['name'] . '"style="height:218px;width:218px"';
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
                     }
                     echo 'style="min-width: 100%;min-height:100%">';
-                    echo '<h4>' . $row['name'] . '</h4>';
+                    echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
                 }
@@ -193,10 +193,10 @@ require_once 'private/includes/header.php';
                 <img class="mb-3" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['name'] . '"style="height:218px;width:218px"';
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
                     }
                     echo 'style="min-width: 100%;min-height:100%">';
-                    echo '<h4>' . $row['name'] . '</h4>';
+                    echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
                 }
