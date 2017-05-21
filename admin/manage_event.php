@@ -46,7 +46,7 @@ require '../private/includes/header.php'; ?>
                     <select class="custom-select" name="place" id="place-select">
                         <?php
 
-                        $result = $mysqli->query("SELECT id, `name` FROM places;");
+                        $result = $mysqli->query("SELECT id, title FROM places;");
                         $count = 1;
                         foreach ($result as $value) {
                             $out = "<option name=\"place\" value=\"{$value['id']}\"";

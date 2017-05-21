@@ -7,17 +7,17 @@ require_once server_root() . '/private/phpscripts/functions.php';
     <div class="card mb-3">
         <a href="<?php echo server_root() . '/info/restaurant_info.php?id=' . $row['id']; ?>"
            style="text-decoration:none; color:black;">
-            <img class="card-img-top img-fluid" <?php echo 'src="' . $row['image_path'] . '"' . 'alt="' . $row['name'] . '"' ?>>
+            <img class="card-img-top img-fluid" <?php echo 'src="' . $row['image_path'] . '"' . 'alt="' . $row['title'] . '"' ?>>
         </a>
         <div class="card-block">
             <a href="<?php echo server_root() . '/info/restaurant_info.php?id=' . $row['id']; ?>"
                style="text-decoration:none; color:black;">
-                <h2 class="card-title"><?php echo $row['name'] ?></h2>
+                <h2 class="card-title"><?php echo $row['title'] ?></h2>
             </a>
             <p class="card-text"><?php echo $row['description'] ?></p>
 
         </div> <!-- card-block -->
-
+inde
         <div class="card-footer text-muted">
             <p class="card-text"><?php echo $row['address']; ?></p>
             <p class="card-text">
