@@ -46,7 +46,7 @@ require '../private/includes/header.php'; ?>
             </div>
 
             <div class="col-3">
-                <div style="height: 300px; width: 300px" id="map"></div>
+                <div id="map"></div>
             </div>
 
 
@@ -129,7 +129,7 @@ require '../private/includes/header.php'; ?>
 
 
                     ?></h5>
-                <img class="img-fluid" src="<?php echo $row['image_path'] ?>">
+                <img class="img-others" src="<?php echo $row['image_path'] ?>">
             </div>
 
             <div class="col-3">
@@ -148,7 +148,7 @@ require '../private/includes/header.php'; ?>
 
 
                     ?></h5>
-                <img class="img-fluid" src="<?php echo $row['image_path']?>">
+                <img class="img-others" src="<?php echo $row['image_path']?>">
             </div>
 
             <div class="col-3">
@@ -162,11 +162,11 @@ require '../private/includes/header.php'; ?>
                     foreach ($newResult as $row) {
                         echo $row['title'];
                     } ?></h5>
-                <a href=<?php
+                <a href= <?php
 
                 echo '"info/restaurant_info.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
                 ?>>
-                    <img class="img-fluid" src="<?php echo $row['image_path']?>">
+                    <img class="img-others" src="<?php echo $row['image_path']?>">
                 </a>
             </div>
 
@@ -178,7 +178,7 @@ require '../private/includes/header.php'; ?>
         function initMap() {
             var westerdals = {lat: 59.9160168, lng: 10.7597406};
             var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 15,
+                zoom: 14,
                 scrollwheel: false,
                 center: westerdals
 

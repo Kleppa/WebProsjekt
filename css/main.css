@@ -89,22 +89,30 @@ body {
     max-height: 500px;
 }
 
-/* Restaurant_info */
+/* Details.php */
 
 #map {
-    width: 100%;
-    height: 300px;
+    height:100%;
+    width:100%;
     max-height: 300px;
 }
 
 #bildeboks {
     max-height: 300px;
+    height:100%;
     width:100%;
 
 }
 
 .nav-tabs a:hover {
     background: #3FC1C9;
+}
+
+.img-others{
+    width:100%;
+    max-height:180px;
+    height:100%;
+
 }
 
 /* EVEN CSS */
