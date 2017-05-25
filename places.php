@@ -11,8 +11,8 @@ require_once 'private/includes/header.php'; ?>
         <div class="row">
             <?php
             $sql = "SELECT places.*,type FROM places";
-            if (isset($_GET['type'])) {
-                $sql .= " WHERE category = '{$_GET['category']}'";
+            if (isset($_GET['category'])) {
+                $sql .= " WHERE category = {$_GET['category']}";
             }
             $sql .= " ORDER BY score ASC;";
 
