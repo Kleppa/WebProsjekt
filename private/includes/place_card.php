@@ -12,11 +12,9 @@
 
         </div> <!-- card-block -->
 
+        <?php ?>
         <div class="card-footer text-muted">
             <p class="card-text"><?php echo $row['address']; ?></p>
-            <p class="card-text">
-                <small>Opening Hours: <?php echo $row['opening_hours']; ?></small>
-            </p>
 
             <div class="text-right">
                 <div class="btn-group">

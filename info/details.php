@@ -88,7 +88,16 @@ require '../private/includes/header.php'; ?>
                     <div role="tabpanel" class="tab-pane" id="kontakt">
                         <p class="card-text">Adresse: <?php echo $finalResult['address']; ?></p>
                         <p class="card-text">Telefon: <?php echo $finalResult['phone']; ?></p>
-                        <p class="card-text">Åpningstider: <?php echo $finalResult['opening_hours']; ?></p>
+                        <p class="card-text">Åpningstider: <?php
+                            $openingHours = openingHoursToAssoc($finalResult['opening_hours'], 2);
+                            echo 'M:' . $openingHours['monday_from'] . '-' . $openingHours['monday_to'];
+                            echo ' T:' . $openingHours['tuesday_from'] . '-' . $openingHours['tuesday_to'];
+                            echo ' O:' . $openingHours['wednesday_from'] . '-' . $openingHours['wednesday_to'];
+                            echo ' T:' . $openingHours['thursday_from'] . '-' . $openingHours['thursday_to'];
+                            echo ' F:' . $openingHours['friday_from'] . '-' . $openingHours['friday_to'];
+                            echo ' S:' . $openingHours['saturday_from'] . '-' . $openingHours['saturday_to'];
+                            echo ' S:' . $openingHours['sunday_from'] . '-' . $openingHours['sunday_to'];
+                            ?></p>
                         <p class="card-text">Nettsted: <?php echo $finalResult['url']; ?></p>
 
                     </div>
@@ -152,12 +161,7 @@ require '../private/includes/header.php'; ?>
 
                     foreach ($newResult as $row) {
                         echo $row['title'];
-                    }
-
-
-
-
-                    ?></h5>
+                    } ?></h5>
                 <a href=<?php
 
                 echo '"info/restaurant_info.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';

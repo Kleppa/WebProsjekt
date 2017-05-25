@@ -10,9 +10,14 @@ require_once 'private/includes/header.php'; ?>
     <div class="container margin-adder">
         <div class="row">
             <?php
-            $sql = "SELECT places.*,type FROM places";
+            $sql = "SELECT * FROM places";
             if (isset($_GET['category'])) {
-                $sql .= " WHERE category = {$_GET['category']}";
+                $cat = explode(",", $_GET['category']);
+                $sql .= " WHERE category = {$cat[0]}";
+                if (count($cat) > 1) {
+                    for ($i = 1; $i < count($cat); $i++)
+                        $sql .= " OR category = {$cat[$i]}";
+                }
             }
             $sql .= " ORDER BY score ASC;";
 
