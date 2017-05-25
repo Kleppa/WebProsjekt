@@ -3,7 +3,7 @@ require_once '../vendor/autoload.php';
 require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
 
-
+$pagetitle = 'Restaurant';
 
 if (!(isset($_GET['id']))) {
     redirect('../places.php');
@@ -50,7 +50,7 @@ require '../private/includes/header.php'; ?>
             </div>
 
             <div class="col-3">
-                <div style="height: 300px; width: 300px" id="map"></div>
+                <div id="map"></div>
             </div>
 
 
@@ -62,15 +62,15 @@ require '../private/includes/header.php'; ?>
                 <ul class="nav nav-tabs justify-content-center">
 
                     <li class="nav-item">
-                        <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Description</a>
+                        <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Worth Mentioning</a>
+                        <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Spesialiter</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#kontakt" class="nav-link" role="tab" data-toggle="tab">Contact info</a>
+                        <a href="#kontakt" class="nav-link" role="tab" data-toggle="tab">Kontakt Oss</a>
                     </li>
 
 
@@ -93,19 +93,22 @@ require '../private/includes/header.php'; ?>
                         <?php
 
                         if ($boolean) {
-
-
-                            echo '<p class="card-text">Location: ' . $finalResult['address'] . '</p>';
-                            echo '<p class="card-text">Phone: ' . $finalResult['phone'] . '</p>';
-                            echo '<p class="card-text">Opening Hours: ' . $finalResult['opening_hours'] . '</p>';
-                            echo '<p class="card-text">Home-page: '. $finalResult['url'].'</p>';
-
-
+                        <p class="card-text">Adresse: <?php echo $finalResult['address']; ?></p>
+                        <p class="card-text">Telefon: <?php echo $finalResult['phone']; ?></p>
+                        <p class="card-text">Åpningstider: <?php echo $finalResult['opening_hours']; ?></p>
+                        <p class="card-text">Nettsted: <?php echo $finalResult['url']; ?></p>
+                        $openingHours = openingHoursToAssoc($finalResult['opening_hours'], 2);
+                        echo 'M:' . $openingHours['monday_from'] . '-' . $openingHours['monday_to'];
+                        echo ' T:' . $openingHours['tuesday_from'] . '-' . $openingHours['tuesday_to'];
+                        echo ' O:' . $openingHours['wednesday_from'] . '-' . $openingHours['wednesday_to'];
+                        echo ' T:' . $openingHours['thursday_from'] . '-' . $openingHours['thursday_to'];
+                        echo ' F:' . $openingHours['friday_from'] . '-' . $openingHours['friday_to'];
+                        echo ' S:' . $openingHours['saturday_from'] . '-' . $openingHours['saturday_to'];
+                        echo ' S:' . $openingHours['sunday_from'] . '-' . $openingHours['sunday_to'];
                         }else{
-                            echo '<p class="card-text">No Contant info</p>';
+                        echo '<p class="card-text">No Contant info</p>';
                         }
                         ?>
-
                     </div>
                 </div>
 
@@ -119,24 +122,26 @@ require '../private/includes/header.php'; ?>
 
         <div class="row justify-content-center text-center margin-adder-bot">
 
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+            <div class="col-3">
                 <h5 class="card-title">
                     <?php
 
-                    $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
+                        $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
 
-                    $newResult = $mysqli->query($newPlaceQuery);
+                        $newResult = $mysqli->query($newPlaceQuery);
 
-                    foreach ($newResult as $row) {
-                        echo $row['title'];
-                    }
+                        foreach ($newResult as $row) {
+                            echo $row['title'];
+                        }
+
+
 
 
                     ?></h5>
-                <img class="img-fluid fixedSize" src="<?php echo $row['image_path'] ?>">
+                <img class="img-others" src="<?php echo $row['image_path'] ?>">
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+            <div class="col-3">
                 <h5 class="card-title">
                     <?php
 
@@ -149,11 +154,13 @@ require '../private/includes/header.php'; ?>
                     }
 
 
+
+
                     ?></h5>
-                <img class="img-fluid fixedSize" src="<?php echo $row['image_path'] ?>">
+                <img class="img-others" src="<?php echo $row['image_path']?>">
             </div>
 
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+            <div class="col-3">
                 <h5 class="card-title">
                     <?php
 
@@ -163,16 +170,12 @@ require '../private/includes/header.php'; ?>
 
                     foreach ($newResult as $row) {
                         echo $row['title'];
-                    }
-
-
-                    ?></h5>
-                <a href=<?php
+                    } ?></h5>
+                <a href= <?php
 
                 echo '"info/restaurant_info.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
                 ?>>
-                    <img class="img-fluid fixedSize" src="<?php echo $row['image_path']
-                    ?>">
+                    <img class="img-others" src="<?php echo $row['image_path']?>">
                 </a>
             </div>
 
