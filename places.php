@@ -10,7 +10,11 @@ require_once 'private/includes/header.php'; ?>
     <div class="container margin-adder">
         <div class="row">
             <?php
-            $sql = "SELECT places.* FROM places LEFT JOIN types ON places.type=types.id;";
+            $sql = "SELECT places.*,type FROM places";
+            if (isset($_GET['type'])) {
+                $sql .= " WHERE category = '{$_GET['category']}'";
+            }
+            $sql .= " ORDER BY score ASC;";
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {

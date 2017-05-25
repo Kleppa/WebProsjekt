@@ -68,7 +68,6 @@ require_once 'private/includes/header.php';
 
                                 echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                             }
-
                         }
                         ?>>
                 </a>
@@ -130,7 +129,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
+                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             }
         }
 
@@ -148,16 +147,14 @@ require_once 'private/includes/header.php';
                     echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
-                }
-
-                ?>
+                } ?>
             </div>
         </a>
         <a style="color: black; text-decoration: none;" href= <?php
         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
+                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             }
         }
 
@@ -182,7 +179,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
+                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             }
         }
 
@@ -209,7 +206,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
+                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             }
         }
 

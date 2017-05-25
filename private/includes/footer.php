@@ -23,9 +23,3 @@
 
 </body>
 </html>
-
-<?php
-if (isset($result)) {
-    $result->free();
-    $mysqli->close();
-}

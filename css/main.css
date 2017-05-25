@@ -129,7 +129,8 @@ body {
 a {
     font-family: "Raleway-Regular";
     font-style: normal;
-
+    text-decoration: none;
+    color: black;
 }
 
 p {

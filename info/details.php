@@ -196,4 +196,4 @@ require '../private/includes/header.php'; ?>
     <script src="../css/js/tests/tabsBar.js"></script>
 
 
-<?php require '../footer.php';
+<?php require '../private/includes/footer.php';

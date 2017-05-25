@@ -1,11 +1,10 @@
 <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-3">
     <div class="card mb-3">
-        <a href="<?php echo server_root(1) . '/info/restaurant_info.php?id=' . $row['id'].'&type='.$row['type']; ?>"
-           style="text-decoration:none; color:black;">
+        <a href="<?php echo server_root(1); ?>/info/details.php?id=<?php echo $row['id']; ?>&type=<?php echo $row['type']; ?>">
             <img class="card-img-top img-fluid" <?php echo 'src="' . $row['image_path'] . '"' . 'alt="' . $row['title'] . '"' ?>>
         </a>
         <div class="card-block">
-            <a href="<?php echo server_root(1) . '/info/restaurant_info.php?id=' . $row['id']; ?>"
+            <a href="<?php echo server_root(1) . '/info/details.php?id=' . $row['id']; ?>"
                style="text-decoration:none; color:black;">
                 <h2 class="card-title"><?php echo $row['title'] ?></h2>
             </a>
