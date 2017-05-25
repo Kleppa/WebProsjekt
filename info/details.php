@@ -174,7 +174,7 @@ require '../private/includes/header.php'; ?>
         function initMap() {
             var westerdals = {lat: 59.9160168, lng: 10.7597406};
             var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 15,
+                zoom: 14,
                 scrollwheel: false,
                 center: westerdals
 
