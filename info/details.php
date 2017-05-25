@@ -138,7 +138,7 @@ require '../private/includes/header.php'; ?>
 
 
                     ?></h5>
-                <img class="img-others" src="<?php echo $row['image_path'] ?>">
+                <img class="img-fluid img-others" src="<?php echo $row['image_path'] ?>">
             </div>
 
             <div class="col-3">
@@ -157,7 +157,7 @@ require '../private/includes/header.php'; ?>
 
 
                     ?></h5>
-                <img class="img-others" src="<?php echo $row['image_path']?>">
+                <img class="img-fluid img-others" src="<?php echo $row['image_path']?>">
             </div>
 
             <div class="col-3">
@@ -175,7 +175,7 @@ require '../private/includes/header.php'; ?>
 
                 echo '"info/restaurant_info.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
                 ?>>
-                    <img class="img-others" src="<?php echo $row['image_path']?>">
+                    <img class="img-fluid img-others" src="<?php echo $row['image_path']?>">
                 </a>
             </div>
 
