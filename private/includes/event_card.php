@@ -25,14 +25,15 @@ Carbon::setLocale('no');
             <p><?php echo $date->diffForHumans() ?></p>
 
             <div class="text-right">
-                <div class="btn-group">
-                    <a href="<?php echo server_root(1) ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
-                       class="btn btn-info"
-                       id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                    <a href="<?php echo server_root(1) ?>/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
-                       class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
-                    <a href="#" class="btn btn-secondary">+</a>
-                </div> <!-- btn-group -->
+                <div class="btn-group">'
+                <?php
+                if(false) {
+
+                    echo '<a href="'. server_root(1) .'/admin/manage_place.php?id=' . $row['id'] . ';' . '"' . 'class="btn btn-info"id="edit">' . '<i class="material-icons" style="color: white;">edit</i></a>' .
+                        '<a href="' . server_root(1) . '/private/form_processors/remove_entry.php?id=' . $row['id'] .
+                        'class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>' .
+                        '<a href="#" class="btn btn-secondary">+</a>';
+                }?> </div><!-- btn-group -->
             </div> <!-- text-right wrapper -->
 
         </div> <!-- card-footer -->

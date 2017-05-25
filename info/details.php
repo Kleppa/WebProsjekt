@@ -3,7 +3,7 @@ require_once '../vendor/autoload.php';
 require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
 
-$pagetitle = 'Restaurant';
+
 
 if (!(isset($_GET['id']))) {
     redirect('../places.php');
@@ -13,6 +13,7 @@ $sql2 = "SELECT * FROM events WHERE id = {$_GET['id']};";
 $result = $mysqli->query($sql);
 $result2 = $mysqli->query($sql2);
 $finalResult = "";
+$boolean=false;
 
 require '../private/includes/header.php'; ?>
 
@@ -23,11 +24,14 @@ require '../private/includes/header.php'; ?>
 
                 if ($_GET['id'] === $row['id'] && $_GET['type'] === $row['type']) {
                     $finalResult = $row;
+                    $boolean=true;
+                    $pagetitle = $row['title'];
                 }
             }
             foreach ($result2 as $row) {
                 if ($_GET['id'] === $row['id'] && $_GET['type'] === $row['type']) {
                     $finalResult = $row;
+                    $pagetitle = $row['title'];
                 }
             }
 
@@ -46,7 +50,7 @@ require '../private/includes/header.php'; ?>
             </div>
 
             <div class="col-3">
-                <div id="map"></div>
+                <div style="height: 300px; width: 300px" id="map"></div>
             </div>
 
 
@@ -58,15 +62,15 @@ require '../private/includes/header.php'; ?>
                 <ul class="nav nav-tabs justify-content-center">
 
                     <li class="nav-item">
-                        <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>
+                        <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Description</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Spesialiter</a>
+                        <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Worth Mentioning</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#kontakt" class="nav-link" role="tab" data-toggle="tab">Kontakt Oss</a>
+                        <a href="#kontakt" class="nav-link" role="tab" data-toggle="tab">Contact info</a>
                     </li>
 
 
@@ -86,10 +90,21 @@ require '../private/includes/header.php'; ?>
                             fugiat nulla pariatur. </p>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="kontakt">
-                        <p class="card-text">Adresse: <?php echo $finalResult['address']; ?></p>
-                        <p class="card-text">Telefon: <?php echo $finalResult['phone']; ?></p>
-                        <p class="card-text">Åpningstider: <?php echo $finalResult['opening_hours']; ?></p>
-                        <p class="card-text">Nettsted: <?php echo $finalResult['url']; ?></p>
+                        <?php
+
+                        if ($boolean) {
+
+
+                            echo '<p class="card-text">Location: ' . $finalResult['address'] . '</p>';
+                            echo '<p class="card-text">Phone: ' . $finalResult['phone'] . '</p>';
+                            echo '<p class="card-text">Opening Hours: ' . $finalResult['opening_hours'] . '</p>';
+                            echo '<p class="card-text">Home-page: '. $finalResult['url'].'</p>';
+
+
+                        }else{
+                            echo '<p class="card-text">No Contant info</p>';
+                        }
+                        ?>
 
                     </div>
                 </div>
@@ -104,26 +119,7 @@ require '../private/includes/header.php'; ?>
 
         <div class="row justify-content-center text-center margin-adder-bot">
 
-            <div class="col-3">
-                <h5 class="card-title">
-                    <?php
-
-                        $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
-
-                        $newResult = $mysqli->query($newPlaceQuery);
-
-                        foreach ($newResult as $row) {
-                            echo $row['title'];
-                        }
-
-
-
-
-                    ?></h5>
-                <img class="img-others" src="<?php echo $row['image_path'] ?>">
-            </div>
-
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
                 <h5 class="card-title">
                     <?php
 
@@ -136,13 +132,11 @@ require '../private/includes/header.php'; ?>
                     }
 
 
-
-
                     ?></h5>
-                <img class="img-others" src="<?php echo $row['image_path']?>">
+                <img class="img-fluid fixedSize" src="<?php echo $row['image_path'] ?>">
             </div>
 
-            <div class="col-3">
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
                 <h5 class="card-title">
                     <?php
 
@@ -155,14 +149,30 @@ require '../private/includes/header.php'; ?>
                     }
 
 
+                    ?></h5>
+                <img class="img-fluid fixedSize" src="<?php echo $row['image_path'] ?>">
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+                <h5 class="card-title">
+                    <?php
+
+                    $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
+
+                    $newResult = $mysqli->query($newPlaceQuery);
+
+                    foreach ($newResult as $row) {
+                        echo $row['title'];
+                    }
 
 
                     ?></h5>
-                <a href= <?php
+                <a href=<?php
 
                 echo '"info/restaurant_info.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
                 ?>>
-                    <img class="img-others" src="<?php echo $row['image_path']?>">
+                    <img class="img-fluid fixedSize" src="<?php echo $row['image_path']
+                    ?>">
                 </a>
             </div>
 

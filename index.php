@@ -35,42 +35,35 @@ require_once 'private/includes/header.php';
         </div>
 
 
-            <div class="carousel-item">
-                <a class="fillerTag" href="events.php?category=places">
-                    <img class="d-block img-fluid"
-                        <?php
-                        // bildet viser paa alle pcer utenom jarand sin pc........
-                        $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
-                        if ($result = $mysqli->query($sql)) {
-                            foreach ($result as $row) {
-                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
-                            }
-
-                        }
-                        ?>>
-                </a>
-                <div class="carousel-caption">
-                    <h3>Places</h3>
-                </div>
+        <div class="carousel-item">
+            <a class="fillerTag" href="events.php?category=places">
+                <img class="d-block img-fluid"
+                    <?php
+                    $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                    }
+                    ?>>
+            </a>
+            <div class="carousel-caption">
+                <h3>Places</h3>
+            </div>
 
             </div>
 
 
-            <div class="carousel-item">
-                <a class="fillerTag" href="events.php?category=drink">
-                    <img class="d-block img-fluid"
-                        <?php
-
-                        $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
-                        if ($result = $mysqli->query($sql)) {
-                            foreach ($result as $row) {
-
-                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
-                            }
-
-                        }
-                        ?>>
-                </a>
+        <div class="carousel-item">
+            <a class="fillerTag" href="events.php?category=drink">
+                <img class="d-block img-fluid"
+                    <?php
+                    $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                    }
+                    ?>>
+            </a>
 
 
                     <div class="carousel-caption">
@@ -79,24 +72,20 @@ require_once 'private/includes/header.php';
 
             </div>
 
-            <div class="carousel-item">
-                <a class="fillerTag" href="events.php?category=food">
-                    <img class="d-block img-fluid"
-                        <?php
-
-                        $sql = "SELECT *  FROM food ORDER BY score DESC  LIMIT 1 ;";
-                        if ($result = $mysqli->query($sql)) {
-                            foreach ($result as $row) {
-
-                                echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
-                            }
-
-                        }
-                        ?>>
-                        </a>
-                    <div class="carousel-caption">
-                        <h3>Food</h3>
-                    </div>
+        <div class="carousel-item">
+            <a class="fillerTag" href="events.php?category=food">
+                <img class="d-block img-fluid"
+                    <?php
+                    $sql = "SELECT *  FROM food ORDER BY score DESC  LIMIT 1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                    }
+                    ?>>
+            </a>
+            <div class="carousel-caption">
+                <h3>Food</h3>
+            </div>
 
             </div>
 
@@ -129,7 +118,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
+                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             }
         }
 
@@ -147,16 +136,14 @@ require_once 'private/includes/header.php';
                     echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
-                }
-
-                ?>
+                } ?>
             </div>
         </a>
         <a style="color: black; text-decoration: none;" href= <?php
         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
+                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             }
         }
 
@@ -181,7 +168,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
+                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             }
         }
 
@@ -208,7 +195,7 @@ require_once 'private/includes/header.php';
         $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
         if ($result = $mysqli->query($sql)) {
             foreach ($result as $row) {
-                echo '"info/restaurant_info.php?id=' . $row['id'] .'&type='.$row['type']. '"';
+                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             }
         }
 
