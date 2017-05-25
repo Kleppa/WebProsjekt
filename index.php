@@ -31,7 +31,7 @@ require_once 'private/includes/header.php';
                         ?>>
                 </a>
                 <div class="carousel-caption">
-                    <h3>Barer</h3>
+                    <h3>Events</h3>
                 </div>
             </div>
 
@@ -51,7 +51,7 @@ require_once 'private/includes/header.php';
                         ?>>
                 </a>
                 <div class="carousel-caption">
-                    <h3>Steder</h3>
+                    <h3>Places</h3>
                 </div>
 
             </div>
@@ -75,7 +75,7 @@ require_once 'private/includes/header.php';
 
 
                     <div class="carousel-caption">
-                        <h3> The park</h3>
+                        <h3> Things to do</h3>
                     </div>
 
             </div>
@@ -96,7 +96,7 @@ require_once 'private/includes/header.php';
                         ?>>
                         </a>
                     <div class="carousel-caption">
-                        <h3>Concert this week!</h3>
+                        <h3>Food</h3>
                     </div>
 
             </div>

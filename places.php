@@ -10,7 +10,7 @@ require_once 'private/includes/header.php'; ?>
     <div class="container margin-adder">
         <div class="row">
             <?php
-            $sql = "SELECT places.*,types.type FROM places LEFT JOIN types ON places.type=types.id;";
+            $sql = "SELECT places.* FROM places LEFT JOIN types ON places.type=types.id;";
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {

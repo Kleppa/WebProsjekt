@@ -26,7 +26,7 @@
                        id="edit"><i class="material-icons" style="color: white;">edit</i></a>
                     <a href="<?php echo server_root(1) ?>/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
                        class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
-                    <a href="#" class="btn btn-secondary">+</a>
+                    <a href="#" class="btn btn-secondary"><i class="material-icons">note_add</i></a>
                 </div> <!-- btn-group -->
             </div> <!-- text-right wrapper -->
 

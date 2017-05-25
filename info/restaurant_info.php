@@ -5,14 +5,14 @@ require_once '../private/phpscripts/functions.php';
 
 $pagetitle = 'Restaurant';
 
-if(!(isset($_GET['id']))){
+if (!(isset($_GET['id']))) {
     redirect('../places.php');
 }
 $sql = "SELECT * FROM places WHERE id = {$_GET['id']};";
 $sql2 = "SELECT * FROM events WHERE id = {$_GET['id']};";
-$result=$mysqli->query($sql);
-$result2=$mysqli->query($sql2);
-$finalResult="";
+$result = $mysqli->query($sql);
+$result2 = $mysqli->query($sql2);
+$finalResult = "";
 
 require '../private/includes/header.php'; ?>
 
@@ -21,37 +21,38 @@ require '../private/includes/header.php'; ?>
             <?php
             foreach ($result as $row) {
 
-                if ($_GET['id']===$row['id'] && $_GET['type']===$row['type']) {
-                    $finalResult=$row;
+                if ($_GET['id'] === $row['id'] && $_GET['type'] === $row['type']) {
+                    $finalResult = $row;
                 }
             }
-            foreach ($result2 as $row){
-                if ($_GET['id']===$row['id'] && $_GET['type']===$row['type']){
-                    $finalResult=$row;
+            foreach ($result2 as $row) {
+                if ($_GET['id'] === $row['id'] && $_GET['type'] === $row['type']) {
+                    $finalResult = $row;
                 }
             }
+
             ?>
         </div> <!-- card-columns -->
 
-    <div class="row justify-content-center"><h2 class="card-title">
-            <?php echo $finalResult['title'] ?></h2></div>
+        <div class="row justify-content-center"><h2 class="card-title">
+                <?php echo $finalResult['title'] ?></h2></div>
 
         <div class="row justify-content-center no-gutters">
             <div class="col-7">
 
                 <!-- Tab panes -->
-                        <img class="img-fluid" id="bildeboks"
-                             src="<?php echo $finalResult['image_path'].'"'.'alt="'.$finalResult['title']; ?>"/>
-                        </div>
+                <img class="img-fluid" id="bildeboks"
+                     src="<?php echo $finalResult['image_path'] . '"' . 'alt="' . $finalResult['title']; ?>"/>
+            </div>
 
-                        <div class="col-3">
-                            <div style="height: 300px; width: 300px"   id="map"></div>
-                        </div>
+            <div class="col-3">
+                <div style="height: 300px; width: 300px" id="map"></div>
+            </div>
 
 
-                </div>
+        </div>
 
-            <div class="row justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-sm-8">
 
                 <ul class="nav nav-tabs justify-content-center">
@@ -105,28 +106,72 @@ require '../private/includes/header.php'; ?>
 
             <div class="col-3">
                 <h5 class="card-title">
-                    <?php echo $row['title'] ?></h5>
-                <img class="img-fluid" src="http://placehold.it/200x300">
+                    <?php
+
+                        $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
+
+                        $newResult = $mysqli->query($newPlaceQuery);
+
+                        foreach ($newResult as $row) {
+                            echo $row['title'];
+                        }
+
+
+
+
+                    ?></h5>
+                <img class="img-fluid" src="<?php echo $row['image_path'] ?>">
             </div>
 
             <div class="col-3">
                 <h5 class="card-title">
-                    <?php echo $row['title'] ?></h5>
-                <img class="img-fluid" src="http://placehold.it/200x300">
+                    <?php
+
+                    $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
+
+                    $newResult = $mysqli->query($newPlaceQuery);
+
+                    foreach ($newResult as $row) {
+                        echo $row['title'];
+                    }
+
+
+
+
+                    ?></h5>
+                <img class="img-fluid" src="<?php echo $row['image_path']?>">
             </div>
 
             <div class="col-3">
                 <h5 class="card-title">
-                    <?php echo $row['title'] ?></h5>
-                <img class="img-fluid" src="http://placehold.it/200x300">
+                    <?php
+
+                    $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
+
+                    $newResult = $mysqli->query($newPlaceQuery);
+
+                    foreach ($newResult as $row) {
+                        echo $row['title'];
+                    }
+
+
+
+
+                    ?></h5>
+                <a href=<?php
+
+                echo '"info/restaurant_info.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+                ?>>
+                    <img class="img-fluid" src="<?php echo $row['image_path']?>">
+                </a>
             </div>
 
             <!-- Alle bildene her skal fetches -->
 
         </div>
     </div>
-<script>
-            function initMap() {
+    <script>
+        function initMap() {
             var westerdals = {lat: 59.9160168, lng: 10.7597406};
             var map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 15,
@@ -143,7 +188,7 @@ require '../private/includes/header.php'; ?>
 
         }
 
-</script>
+    </script>
 
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
