@@ -54,6 +54,25 @@ require_once 'private/includes/header.php';
 
 
         <div class="carousel-item">
+            <a class="fillerTag" href="events.php?category=drink">
+                <img class="d-block img-fluid"
+                    <?php
+                    $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                    }
+                    ?>>
+            </a>
+
+
+                    <div class="carousel-caption">
+                        <h3> XXXX</h3>
+                    </div>
+
+            </div>
+
+        <div class="carousel-item">
             <a class="fillerTag" href="events.php?category=food">
                 <img class="d-block img-fluid"
                     <?php
