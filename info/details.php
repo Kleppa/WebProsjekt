@@ -12,7 +12,8 @@ $sql = "SELECT * FROM places WHERE id = {$_GET['id']};";
 $sql2 = "SELECT * FROM events WHERE id = {$_GET['id']};";
 $result = $mysqli->query($sql);
 $result2 = $mysqli->query($sql2);
-$finalResult = "";
+$finalResult="";
+
 $boolean=false;
 
 require '../private/includes/header.php'; ?>
@@ -20,17 +21,19 @@ require '../private/includes/header.php'; ?>
     <div class="container margin-adder">
         <div class="row">
             <?php
+
             foreach ($result as $row) {
 
                 if ($_GET['id'] === $row['id'] && $_GET['type'] === $row['type']) {
-                    $finalResult = $row;
+
                     $boolean=true;
                     $pagetitle = $row['title'];
+                    $finalResult=$row;
                 }
             }
             foreach ($result2 as $row) {
                 if ($_GET['id'] === $row['id'] && $_GET['type'] === $row['type']) {
-                    $finalResult = $row;
+                    $finalResult=$row;
                     $pagetitle = $row['title'];
                 }
             }
@@ -39,14 +42,14 @@ require '../private/includes/header.php'; ?>
         </div> <!-- card-columns -->
 
         <div class="row justify-content-center"><h2 class="card-title">
-                <?php echo $finalResult['title'] ?></h2></div>
+                <?php echo $row['title'] ?></h2></div>
 
         <div class="row justify-content-center no-gutters">
             <div class="col-7">
 
                 <!-- Tab panes -->
                 <img class="img-fluid" id="bildeboks"
-                     src="<?php echo $finalResult['image_path'] . '"' . 'alt="' . $finalResult['title']; ?>"/>
+                     src="<?php echo $row['image_path'] . '"' . 'alt="' . $row['title']; ?>"/>
             </div>
 
             <div class="col-3">
@@ -62,15 +65,15 @@ require '../private/includes/header.php'; ?>
                 <ul class="nav nav-tabs justify-content-center">
 
                     <li class="nav-item">
-                        <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Fine Orde</a>
+                        <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Description</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Spesialiter</a>
+                        <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Worth Mentioning</a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="#kontakt" class="nav-link" role="tab" data-toggle="tab">Kontakt Oss</a>
+                        <a href="#kontakt" class="nav-link" role="tab" data-toggle="tab">Contact</a>
                     </li>
 
 
@@ -79,25 +82,32 @@ require '../private/includes/header.php'; ?>
 
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="info">
-                        <p class="card-text"><?php echo $finalResult['description'] ?></p>
+                        <p class="card-text"><?php echo $row['description'] ?></p>
                     </div>
 
                     <div role="tabpanel" class="tab-pane" id="spesial">
-                        <p>2 Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-                            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. </p>
+                        <p> <?php echo $finalResult['pros'] ?></p>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="kontakt">
                         <?php
-
                         if ($boolean) {
-                        <p class="card-text">Adresse: <?php echo $finalResult['address']; ?></p>
-                        <p class="card-text">Telefon: <?php echo $finalResult['phone']; ?></p>
-                        <p class="card-text">Åpningstider: <?php echo $finalResult['opening_hours']; ?></p>
-                        <p class="card-text">Nettsted: <?php echo $finalResult['url']; ?></p>
-                        $openingHours = openingHoursToAssoc($finalResult['opening_hours'], 2);
+                                $openingHours = openingHoursToAssoc($finalResult['opening_hours'], 2);
+
+
+                            $str=<<<HTML
+
+                        
+                        <p class="card-text">Adresse: {$finalResult['address']} </p>
+                        
+                        <p class="card-text">Telefon:  {$finalResult['phone']}</p>
+
+                        <p class="card-text">Nettsted:  {$finalResult['url']}</p>
+                        
+                        
+HTML;
+                            echo $str;
+
+                        echo 'Opening Hours: ';
                         echo 'M:' . $openingHours['monday_from'] . '-' . $openingHours['monday_to'];
                         echo ' T:' . $openingHours['tuesday_from'] . '-' . $openingHours['tuesday_to'];
                         echo ' O:' . $openingHours['wednesday_from'] . '-' . $openingHours['wednesday_to'];
@@ -209,4 +219,4 @@ require '../private/includes/header.php'; ?>
     <script src="../css/js/tests/tabsBar.js"></script>
 
 
-<?php require '../private/includes/footer.php';
+<?php require '../private/includes/footer.php';?>

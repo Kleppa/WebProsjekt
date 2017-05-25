@@ -17,7 +17,7 @@ Carbon::setLocale('no');
                style="text-decoration: none; color: black">
                 <h2 class="card-title"><?php echo $row['title']; ?></h2>
             </a>
-            <p class="card-text"><?php echo $row['description']; ?></p>
+            <p class="card-text"><?php echo $row['description'].' - '. $row['pros']; ?></p>
 
         </div> <!-- card-block -->
 
@@ -25,15 +25,28 @@ Carbon::setLocale('no');
             <p><?php echo $date->diffForHumans() ?></p>
 
             <div class="text-right">
-                <div class="btn-group">'
                 <?php
-                if(false) {
+                $server_root1=server_root(1);
+                $str = <<<HTML
+                
+                <div class="btn-group">
+                
+                    <a href="{$server_root1}/admin/manage_place.php?id={$row['id']}"
+                       class="btn btn-info"
+                       id="edit"><i class="material-icons" style="color: white;">edit</i></a>
+                    <a href="{$server_root1}/private/form_processors/remove_entry.php?id= {$row['id']}"
+                       class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
+                    <a href="#" class="btn btn-secondary">+</a>
+                    </div>  
+HTML;
+                if(loggedIn()) {
+                    echo $str;
+                }
+                ?> <!-- btn-group -->
 
-                    echo '<a href="'. server_root(1) .'/admin/manage_place.php?id=' . $row['id'] . ';' . '"' . 'class="btn btn-info"id="edit">' . '<i class="material-icons" style="color: white;">edit</i></a>' .
-                        '<a href="' . server_root(1) . '/private/form_processors/remove_entry.php?id=' . $row['id'] .
-                        'class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>' .
-                        '<a href="#" class="btn btn-secondary">+</a>';
-                }?> </div><!-- btn-group -->
+
+
+
             </div> <!-- text-right wrapper -->
 
         </div> <!-- card-footer -->

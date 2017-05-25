@@ -8,7 +8,7 @@
                style="text-decoration:none; color:black;">
                 <h2 class="card-title"><?php echo $row['title'] ?></h2>
             </a>
-            <p class="card-text"><?php echo $row['description'] ?></p>
+            <p class="card-text"><?php echo $row['description'].' - '.$row['pros'] ?></p>
 
         </div> <!-- card-block -->
 
