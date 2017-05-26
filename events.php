@@ -10,7 +10,7 @@ require_once 'private/includes/header.php'; ?>
     <div class="container margin-adder">
         <div class="row">
             <?php
-            $sql = "SELECT events.* FROM events LEFT JOIN types ON types.id = events.type;";
+            $sql = "SELECT events.* FROM events LEFT JOIN types ON types.id = events.type ORDER BY score DESC ";
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
@@ -21,6 +21,7 @@ require_once 'private/includes/header.php'; ?>
 
         <a href="admin/manage_event.php">
             <?php
+
             if (loggedIn()) {
 
                 echo '<div class="float-button circle d-flex align-content-between" id = "addbtn" >';

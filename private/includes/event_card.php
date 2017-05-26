@@ -5,7 +5,7 @@ $date = new Carbon($row['datetime']);
 Carbon::setLocale('no');
 ?>
 
-<div class="col-xl-3 col-md-4 col-sm-6 col-xs-12 mb-3">
+<div class="col-xl-4 col-sm-6 col-xs-12 mb-3">
     <div class="card">
         <a href="<?php echo server_root(1); ?>/info/details.php?id=<?php echo $row['id']; ?>&type=<?php echo $row['type']; ?>">
             <img class="card-img-top img-fluid" src="<?php echo $row['image_path']; ?>"
@@ -26,19 +26,36 @@ Carbon::setLocale('no');
 
             <div class="text-right">
                 <?php
+
                 $server_root1=server_root(1);
+                echo '<div class="btn-group">';
+
+                $scoreform=<<<FORM
+                <form action="{$server_root1}/private/form_processors/score_updater.php" method="post">
+                <input type="hidden" name="URI" value="{$_SERVER['REQUEST_URI']}"/>
+                <input type="hidden" name="id" value="{$row['id']}"/>
+                <input type="hidden" name="type" value="{$row['type']}"/>
+                <input type="submit" name="submit" id="submit" class="material-icons btn btn-success" value="thumb_up"/>
+              
+                 </form>
+                   
+FORM;
+                echo $scoreform;
                 $str = <<<HTML
                 
-                <div class="btn-group">
+                
                 
                     <a href="{$server_root1}/admin/manage_place.php?id={$row['id']}"
                        class="btn btn-info"
                        id="edit"><i class="material-icons" style="color: white;">edit</i></a>
                     <a href="{$server_root1}/private/form_processors/remove_entry.php?id= {$row['id']}"
                        class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
-                    <a href="#" class="btn btn-secondary">+</a>
-                    </div>  
+                    <a href="#" class="btn btn-secondary">note_add</a>
+                   
 HTML;
+                echo '</div>';
+                //Score script
+
                 if(loggedIn()) {
                     echo $str;
                 }

@@ -1,4 +1,4 @@
-<div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 mb-3">
+<div class="col-xl-4 col-xs-12 mb-3">
     <div class="card mb-3">
         <a href="<?php echo server_root(1); ?>/info/details.php?id=<?php echo $row['id']; ?>&type=<?php echo $row['type']; ?>">
             <img class="card-img-top img-fluid" <?php echo 'src="' . $row['image_path'] . '"' . 'alt="' . $row['title'] . '"' ?>>
@@ -8,7 +8,7 @@
                style="text-decoration:none; color:black;">
                 <h4 class="card-title"><?php echo $row['title'] ?></h4>
             </a>
-            <p class="card-text"><?php echo $row['description'].' - '.$row['pros'] ?></p>
+            <p class="card-text"><?php echo $row['description'] . ' - ' . $row['pros'] ?></p>
 
         </div> <!-- card-block -->
 
@@ -17,17 +17,32 @@
             <p class="card-text"><?php echo $row['address']; ?></p>
 
             <div class="text-right">
-                <div class="btn-group">
-                    <a href="<?php echo server_root(1) ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
-                       class="btn btn-info"
-                       id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                    <a href="<?php echo server_root(1) ?>/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
-                       class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
-                    <a href="#" class="btn btn-secondary"><i class="material-icons">note_add</i></a>
-                </div> <!-- btn-group -->
-            </div> <!-- text-right wrapper -->
 
-        </div> <!-- card-footer -->
 
-    </div> <!-- card -->
+                <?php
+                $server_root1 = server_root(1);
+
+                echo '<div class="btn-group">';
+
+                $scoreform = <<<FORM
+                <form action="{$server_root1}/private/form_processors/score_updater.php" method="post">
+                <input type="hidden" name="URI" value="{$_SERVER['REQUEST_URI']}"/>
+                <input type="hidden" name="id" value="{$row['id']}"/>
+                <input type="hidden" name="type" value="{$row['type']}"/>
+                <input type="submit" name="submit" id="submit" class="material-icons btn btn-success" value="thumb_up"/>
+              
+                 </form>
+                   
+FORM;
+                echo $scoreform;
+                if (loggedIn()) {
+                    echo $str;
+                }
+                ?>
+            </div> <!-- btn-group -->
+        </div> <!-- text-right wrapper -->
+
+    </div> <!-- card-footer -->
+
+</div> <!-- card -->
 </div>
