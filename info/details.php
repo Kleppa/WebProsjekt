@@ -19,7 +19,7 @@ $boolean = false;
 
 require '../private/includes/header.php'; ?>
 
-
+<div class="container">
     <div class="row margin-adder">
         <?php
 
@@ -193,7 +193,7 @@ HTML;
         <!-- Alle bildene her skal fetches -->
 
     </div>
-
+</div>
 <script>
     function initMap() {
         var westerdals = {lat: 59.9160168, lng: 10.7597406};
