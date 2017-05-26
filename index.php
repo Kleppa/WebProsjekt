@@ -115,7 +115,7 @@ require_once 'private/includes/header.php';
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-3 col-sm-6">
             <a style="color: black; text-decoration: none;" href= <?php
             $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
             if ($result = $mysqli->query($sql)) {
@@ -141,7 +141,7 @@ require_once 'private/includes/header.php';
                 } ?>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class=" col-lg-3 col-md-3 col-sm-6">
             <a style="color: black; text-decoration: none;" href= <?php
             $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
             if ($result = $mysqli->query($sql)) {
@@ -167,7 +167,7 @@ require_once 'private/includes/header.php';
                 ?>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-3 col-sm-6">
             <a style="color: black; text-decoration: none;" href= <?php
             $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
             if ($result = $mysqli->query($sql)) {
