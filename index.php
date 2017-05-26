@@ -131,7 +131,7 @@ require_once 'private/includes/header.php';
                 $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:100%;width:100%"';
                     }
                     echo 'style="min-width: 100%;min-height:100%">';
                     echo '<h4>' . $row['title'] . '</h4>';
@@ -155,7 +155,7 @@ require_once 'private/includes/header.php';
                 <img class="img-fluid" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
                     }
 
                     echo '<h4>' . $row['title'] . '</h4>';
@@ -180,9 +180,9 @@ require_once 'private/includes/header.php';
                 <img class="img-fluid" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
                     }
-
+                        //NO STYLES HERE OYOOO
                     echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
@@ -207,7 +207,7 @@ require_once 'private/includes/header.php';
                 <img class="img-fluid" <?php $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
                     }
 
                     echo '<h4>' . $row['title'] . '</h4>';

@@ -5,10 +5,11 @@ require_once 'vendor/autoload.php';
 require_once 'private/phpscripts/db_connector.php';
 require_once 'private/phpscripts/functions.php';
 require_once 'private/includes/header.php';
-
+var_dump($_SESSION['4 event'])
 ?>
 
     <!-- content -->
+
     <div class="container margin-adder">
         <div class="row">
             <?php
