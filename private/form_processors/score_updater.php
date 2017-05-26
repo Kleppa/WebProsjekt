@@ -24,7 +24,7 @@ if (isset($_POST['id']) && isset($_POST['URI']) && isset($_POST['type'])) {
     $result = $mysqli->query("Select * from places WHERE ID = {$_POST['id']};");
     $row = mysqli_fetch_assoc($result);
 
-    if ($_SESSION[$_POST['id'].' places'] != "Already Voted" && $_SESSION[$_POST['type'].' places'] != "Already Voted") {
+    if ($_SESSION[$_POST['id'].' place'] != "Already Voted" && $_SESSION[$_POST['type'].' place'] != "Already Voted") {
         if ($row['id'] == $_POST['id'] && $row['type'] == $_POST['type']) {
             $_SESSION[$_POST['id'].' place']="Already Voted";
             $_SESSION[$_POST['type'].' place']="Already voted";
