@@ -1,5 +1,5 @@
 <?php
-
+$pagetitle='home';
 require_once 'vendor/autoload.php';
 require_once 'private/phpscripts/functions.php';
 require_once 'private/phpscripts/db_connector.php';

@@ -34,6 +34,18 @@
                  </form>
                    
 FORM;
+                $str = <<<HTML
+                
+                
+                
+                    <a href="{$server_root1}/admin/manage_place.php?id={$row['id']}"
+                       class="btn btn-info"
+                       id="edit"><i class="material-icons" style="color: white;">edit</i></a>
+                    <a href="{$server_root1}/private/form_processors/remove_entry.php?id= {$row['id']}"
+                       class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
+                    <a href="#" class="btn btn-secondary">note_add</a>
+                   
+HTML;
                 echo $scoreform;
                 if (loggedIn()) {
                     echo $str;
