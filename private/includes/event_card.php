@@ -15,9 +15,9 @@ Carbon::setLocale('no');
         <div class="card-block">
             <a href="<?php echo server_root(1) . '/info/details.php?id=' . $row['id']; ?>"
                style="text-decoration: none; color: black">
-                <h2 class="card-title"><?php echo $row['title']; ?></h2>
+                <h4 class="card-title"><?php echo $row['title']; ?></h4>
             </a>
-            <p class="card-text"><?php echo $row['description']; ?></p>
+            <p class="card-text"><?php echo $row['description'].' - '. $row['pros']; ?></p>
 
         </div> <!-- card-block -->
 
@@ -25,14 +25,28 @@ Carbon::setLocale('no');
             <p><?php echo $date->diffForHumans() ?></p>
 
             <div class="text-right">
+                <?php
+                $server_root1=server_root(1);
+                $str = <<<HTML
+                
                 <div class="btn-group">
-                    <a href="<?php echo server_root(1) ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
+                
+                    <a href="{$server_root1}/admin/manage_place.php?id={$row['id']}"
                        class="btn btn-info"
                        id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                    <a href="<?php echo server_root(1) ?>/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
+                    <a href="{$server_root1}/private/form_processors/remove_entry.php?id= {$row['id']}"
                        class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
                     <a href="#" class="btn btn-secondary">+</a>
-                </div> <!-- btn-group -->
+                    </div>  
+HTML;
+                if(loggedIn()) {
+                    echo $str;
+                }
+                ?> <!-- btn-group -->
+
+
+
+
             </div> <!-- text-right wrapper -->
 
         </div> <!-- card-footer -->

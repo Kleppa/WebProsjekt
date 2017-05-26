@@ -6,9 +6,9 @@
         <div class="card-block">
             <a href="<?php echo server_root(1) . '/info/details.php?id=' . $row['id']; ?>"
                style="text-decoration:none; color:black;">
-                <h2 class="card-title"><?php echo $row['title'] ?></h2>
+                <h4 class="card-title"><?php echo $row['title'] ?></h4>
             </a>
-            <p class="card-text"><?php echo $row['description'] ?></p>
+            <p class="card-text"><?php echo $row['description'].' - '.$row['pros'] ?></p>
 
         </div> <!-- card-block -->
 

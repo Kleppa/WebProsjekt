@@ -146,12 +146,14 @@ p {
     font-style: normal;
 }
 
-h2 {
+h4 {
     font-family: "PlayfairDisplay-Regular";
     font-size: 40px;
 }
 
+
 h3 {
+
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
 
@@ -191,4 +193,8 @@ h6 {
 @font-face {
     font-family: PlayfairDisplay-Regular;
     src: url(../private/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
+}
+.fixedSize{
+    min-width: 100%;
+    min-height:100%
 }

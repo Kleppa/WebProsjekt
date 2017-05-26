@@ -10,7 +10,7 @@ require_once 'private/includes/header.php'; ?>
     <div class="container margin-adder">
         <div class="row">
             <?php
-            $sql = "SELECT events.*,types.type FROM events LEFT JOIN types ON types.id = events.type;";
+            $sql = "SELECT events.* FROM events LEFT JOIN types ON types.id = events.type;";
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
@@ -20,9 +20,14 @@ require_once 'private/includes/header.php'; ?>
         </div> <!-- card-columns -->
 
         <a href="admin/manage_event.php">
-            <div class="float-button circle d-flex align-content-between" id="addbtn">
-                <i class="material-icons" style="color: white;">add</i>
-            </div>
+            <?php
+            if (loggedIn()) {
+
+                echo '<div class="float-button circle d-flex align-content-between" id = "addbtn" >';
+                echo '<i class="material-icons" style = "color: white;" > add</i ></div >';
+            }
+                ?>
+
         </a>
     </div> <!-- container -->
 
