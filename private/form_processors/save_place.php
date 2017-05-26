@@ -5,43 +5,71 @@ require_once '../phpscripts/functions.php';
 require_once '../phpscripts/validation_functions.php';
 
 if (isset($_POST['submit'])) {
-
-    $openingHours = $_POST['monday-time-from'];
-    $openingHours .= ',' . $_POST['monday-time-to'];
-    $openingHours .= ',' . $_POST['tuesday-time-from'];
-    $openingHours .= ',' . $_POST['tuesday-time-to'];
-    $openingHours .= ',' . $_POST['wednesday-time-from'];
-    $openingHours .= ',' . $_POST['wednesday-time-to'];
-    $openingHours .= ',' . $_POST['thursday-time-from'];
-    $openingHours .= ',' . $_POST['thursday-time-to'];
-    $openingHours .= ',' . $_POST['friday-time-from'];
-    $openingHours .= ',' . $_POST['friday-time-to'];
-    $openingHours .= ',' . $_POST['saturday-time-from'];
-    $openingHours .= ',' . $_POST['saturday-time-to'];
-    $openingHours .= ',' . $_POST['sunday-time-from'];
-    $openingHours .= ',' . $_POST['sunday-time-to'];
+    $openingHours = '';
+    if (isset($_POST['closed_check_monday'])) {
+        $openingHours .= 'closed-closed';
+    } else {
+        $openingHours .= $_POST['monday_time_from'] . '-' . $_POST['monday_time_to'];
+    }
+    $openingHours .= ',';
+    if (isset($_POST['closed_check_tuesday'])) {
+        $openingHours .= 'closed-closed';
+    } else {
+        $openingHours .= $_POST['tuesday_time_from'] . '-' . $_POST['tuesday_time_to'];
+    }
+    $openingHours .= ',';
+    if (isset($_POST['closed_check_wednesday'])) {
+        $openingHours .= 'closed-closed';
+    } else {
+        $openingHours .= $_POST['wednesday_time_from'] . '-' . $_POST['wednesday_time_to'];
+    }
+    $openingHours .= ',';
+    if (isset($_POST['closed_check_thursday'])) {
+        $openingHours .= 'closed-closed';
+    } else {
+        $openingHours .= $_POST['thursday_time_from'] . '-' . $_POST['thursday_time_to'];
+    }
+    $openingHours .= ',';
+    if (isset($_POST['closed_check_friday'])) {
+        $openingHours .= 'closed-closed';
+    } else {
+        $openingHours .= $_POST['friday_time_from'] . '-' . $_POST['friday_time_to'];
+    }
+    $openingHours .= ',';
+    if (isset($_POST['closed_check_saturday'])) {
+        $openingHours .= 'closed-closed';
+    } else {
+        $openingHours .= $_POST['saturday_time_from'] . '-' . $_POST['saturday_time_to'];
+    }
+    $openingHours .= ',';
+    if (isset($_POST['closed_check_sunday'])) {
+        $openingHours .= 'closed-closed';
+    } else {
+        $openingHours .= $_POST['sunday_time_from'] . '-' . $_POST['sunday_time_to'];
+    }
 
     $title = mysqlPrep($_POST['title']);
     $desc = mysqlPrep($_POST['description']);
+    $pros = mysqlPrep($_POST['pros']);
     $address = mysqlPrep($_POST['street'] . ',' . $_POST['zip'] . ',' . $_POST['city']);
     $openingHours = mysqlPrep($openingHours);
     $phone = mysqlPrep($_POST['tel']);
     $url = mysqlPrep($_POST['url']);
     $imagePath = mysqlPrep($_POST['img']);
-    $u20 = ($_POST['u20'] == 'on') ? 1 : 0;
+    $imageText = mysqlPrep($_POST['img_text']);
+    $u20 = (isset($_POST['u20'])) ? 1 : 0;
 
     $sql = isset($_GET['id']) ?
-        "UPDATE places SET title = '{$title}', description = '{$desc}', address = '{$address}', 
+        "UPDATE places SET title = '{$title}', description = '{$desc}', pros = '{$pros}', address = '{$address}', 
         opening_hours = '{$openingHours}', phone = '{$phone}', url = '{$url}', 
-        category = {$_POST['category']}, image_path = '{$imagePath}', u20= {$_POST['u20']} 
-        WHERE id={$_GET['id']};"
+        category = {$_POST['category']}, image_path = '{$imagePath}', img_text = '{$imageText}', u20 = $u20 
+        WHERE id = {$_GET['id']};"
         :
-        "INSERT INTO places (title, description, address, opening_hours, phone, url, category, 
-        image_path, u20) VALUES ('{$title}', '{$desc}', '{$address}', '{$openingHours}', '{$phone}', 
-        '{$url}', {$_POST['category']}, '{$imagePath}', {$u20});";
+        "INSERT INTO places (title, description, pros, address, opening_hours, phone, url, category, 
+        image_path, img_text, u20) VALUES ('{$title}', '{$desc}', '{$pros}', '{$address}', '{$openingHours}', '{$phone}', 
+        '{$url}', {$_POST['category']}, '{$imagePath}', '{$imageText}', {$u20});";
 
     if ($result = $mysqli->query($sql)) {
-        mysqli_free_result($result);
         $mysqli->close();
         redirect(server_root() . '/admin/admin.php');
     } else {
