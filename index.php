@@ -115,44 +115,46 @@ require_once 'private/includes/header.php';
     </div>
 
     <div class="row justify-content-center">
-        <a style="color: black; text-decoration: none;" href= <?php
-        $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
-        if ($result = $mysqli->query($sql)) {
-            foreach ($result as $row) {
-                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+        <div class="col-md-3">
+            <a style="color: black; text-decoration: none;" href= <?php
+            $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
+            if ($result = $mysqli->query($sql)) {
+                foreach ($result as $row) {
+                    echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+                }
             }
-        }
 
 
-        ?>>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
-                <img class="img-fluid" <?php
+            ?>>
+
+                <img class="img-fluid img-others" <?php
 
                 $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:100%;width:100%"';
+                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
                     }
-                    echo 'style="min-width: 100%;min-height:100%">';
+
                     echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
                 } ?>
-            </div>
-        </a>
-        <a style="color: black; text-decoration: none;" href= <?php
-        $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
-        if ($result = $mysqli->query($sql)) {
-            foreach ($result as $row) {
-                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a style="color: black; text-decoration: none;" href= <?php
+            $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
+            if ($result = $mysqli->query($sql)) {
+                foreach ($result as $row) {
+                    echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+                }
             }
-        }
 
 
-        ?>>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
+            ?>>
 
-                <img class="img-fluid" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
+
+                <img class="img-fluid img-others" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
                         echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
@@ -163,21 +165,22 @@ require_once 'private/includes/header.php';
 
                 }
                 ?>
-            </div>
-        </a>
-        <a style="color: black; text-decoration: none;" href= <?php
-        $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
-        if ($result = $mysqli->query($sql)) {
-            foreach ($result as $row) {
-                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a style="color: black; text-decoration: none;" href= <?php
+            $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
+            if ($result = $mysqli->query($sql)) {
+                foreach ($result as $row) {
+                    echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+                }
             }
-        }
 
 
-        ?>>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
+            ?>>
 
-                <img class="img-fluid" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
+
+                <img class="img-fluid img-others" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
                         echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
@@ -188,23 +191,22 @@ require_once 'private/includes/header.php';
 
                 }
                 ?>
-            </div>
-        </a>
+            </a>
+        </div>
 
-
-        <a style="color: black; text-decoration: none;" href= <?php
-        $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
-        if ($result = $mysqli->query($sql)) {
-            foreach ($result as $row) {
-                echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+        <div class="col-md-3">
+            <a style="color: black; text-decoration: none;" href= <?php
+            $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
+            if ($result = $mysqli->query($sql)) {
+                foreach ($result as $row) {
+                    echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
+                }
             }
-        }
 
 
-        ?>>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-xs-12 ">
+            ?>>
 
-                <img class="img-fluid" <?php $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
+                <img class="img-fluid img-others" <?php $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
                         echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
@@ -215,8 +217,8 @@ require_once 'private/includes/header.php';
 
                 }
                 ?>
-            </div>
-        </a>
+            </a>
+        </div>
     </div>
 </div>
 
