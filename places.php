@@ -10,7 +10,7 @@ require_once 'private/includes/header.php'; ?>
     <div class="container margin-adder">
         <div class="row">
             <?php
-            $sql = "SELECT * FROM places";
+            $sql = "SELECT * FROM places ";
             if (isset($_GET['category'])) {
                 $cat = explode(",", $_GET['category']);
                 $sql .= " WHERE category = {$cat[0]}";
@@ -19,7 +19,7 @@ require_once 'private/includes/header.php'; ?>
                         $sql .= " OR category = {$cat[$i]}";
                 }
             }
-            $sql .= " ORDER BY score ASC;";
+            $sql .= " ORDER BY score DESC;";
 
             if ($result = $mysqli->query($sql)) {
                 foreach ($result as $row) {
