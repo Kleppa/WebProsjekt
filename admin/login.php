@@ -3,18 +3,19 @@ session_start();
 require_once '../vendor/autoload.php';
 require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
-if (!(loggedIn())) {
-    redirect(server_root(1) . '/admin/login.php');
-}
+require_once '../private/includes/header.php';
 
-$pagetitle = 'Add Admin..';
-require '../private/includes/header.php';
-
+$pagetitle = 'Admin Login';
 ?>
-
     <div class="container margin-adder">
+
+        <?php if (!empty($_SESSION['errors'])) {
+            echo '<div class="alert alert-danger"><strong>Error!</strong> ' . $_SESSION['errors'] . '</div>';
+            $_SESSION['errors'] = '';
+        } ?>
+
         <form name="test" method="post"
-              action="<?php echo server_root() ?>/private/form_processors/save_admin.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
+              action="/private/form_processors/login.php">
 
             <!-- USERNAME -->
             <div class="form-group row">
@@ -31,21 +32,16 @@ require '../private/includes/header.php';
                     <input type="password" name="password" class="form-control" id="password"
                            placeholder="Password">
                 </div>
-                <label for="password_repeat" class="col-12 col-md-3 col-form-label">Repeat password:</label>
-                <div class="col-12 col-md-9">
-                    <input type="password" name="password_repeat" class="form-control" id="password_repeat"
-                           placeholder="Password">
-                </div>
             </div>
 
             <!-- SUBMIT -->
             <div class="row">
-                <div class="col offset-md-2 mb-3">
-                    <input type="submit" name="submit" class="btn btn-primary" id="submit"/>
+                <div class="col offset-md-3 mb-3">
+                    <input type="submit" name="submit" class="btn btn-primary" id="submit" value="Login"/>
                 </div>
             </div>
         </form>
 
     </div>
 
-<?php require '../private/includes/footer.php';
+<?php require_once '../private/includes/footer.php';

@@ -3,6 +3,9 @@ session_start();
 require_once '../vendor/autoload.php';
 require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
+if (!(loggedIn())) {
+    redirect(server_root(1) . '/admin/login.php');
+}
 
 $pagetitle = 'Add Place..';
 require_once '../private/includes/header.php';
