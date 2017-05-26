@@ -1,10 +1,13 @@
 <?php
+session_start();
 require_once '../vendor/autoload.php';
 require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
 
 $pagetitle = 'Add Admin..';
-require '../private/includes/header.php' ?>
+require '../private/includes/header.php';
+
+?>
 
     <div class="container margin-adder">
         <form name="test" method="post"

@@ -1,4 +1,5 @@
 <?php
+
 require_once 'vendor/autoload.php';
 require_once 'private/phpscripts/functions.php';
 require_once 'private/phpscripts/db_connector.php';
@@ -124,8 +125,8 @@ require_once 'private/includes/header.php';
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
-                <img class="mb-3" <?php
+            <div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
+                <img class="img-fluid" <?php
 
                 $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
@@ -149,14 +150,14 @@ require_once 'private/includes/header.php';
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
 
-                <img class="mb-3" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
+                <img class="img-fluid" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
                         echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
                     }
-                    echo 'style="min-width: 100%;min-height:100%">';
+
                     echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
@@ -174,14 +175,14 @@ require_once 'private/includes/header.php';
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-xs-12">
 
-                <img class="mb-3" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
+                <img class="img-fluid" <?php $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
                         echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
                     }
-                    echo 'style="min-width: 100%;min-height:100%">';
+
                     echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
@@ -201,14 +202,14 @@ require_once 'private/includes/header.php';
 
 
         ?>>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12 ">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-xs-12 ">
 
-                <img class="mb-3" <?php $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
+                <img class="img-fluid" <?php $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
                         echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"style="height:218px;width:218px"';
                     }
-                    echo 'style="min-width: 100%;min-height:100%">';
+
                     echo '<h4>' . $row['title'] . '</h4>';
                     echo '<p>' . $row['description'] . '</p>';
 
