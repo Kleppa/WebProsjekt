@@ -30,7 +30,7 @@ if (isset($_POST['id']) && isset($_POST['URI']) && isset($_POST['type'])) {
             $_SESSION[$_POST['type'].' place']="Already voted";
             $mysqli->query("UPDATE places set score=score + 1 where id={$row['id']}");
             redirect(server_root(1) . $_POST['URI']);
-        }//
+        }
     }
     redirect(server_root(1).$_POST['URI']);
 
