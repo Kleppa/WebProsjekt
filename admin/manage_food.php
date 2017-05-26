@@ -2,14 +2,13 @@
 require_once '../vendor/autoload.php';
 require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
+
 if (isset($_GET['id'])) {
-
-    $sql = 'SELECT * FROM food ';
-
-    if ($editResult = $mysqli->query($sql)) {
-
-    }
+    $sql = 'SELECT * FROM food WHERE id=' . $_GET['id'] . ';';
+    $resultSet = $mysqli->query($sql);
+    $editResult = mysqli_fetch_assoc($resultSet);
 }
+
 $pagetitle = 'Add Food..';
 require '../private/includes/header.php'; ?>
 
@@ -22,16 +21,9 @@ require '../private/includes/header.php'; ?>
                 <label for="name" class="col-12 col-md-3 col-form-label">Name:</label>
                 <div class="col">
                     <input type="text" name="name" class="form-control" id="name" value="<?php
-                    if (isset($_GET['id'])) {
-                        $editResult2 = $mysqli->query("SELECT id, title FROM food;");
-
-                        foreach ($editResult2 as $item) {
-                            if ($_GET['id'] === $item['id']) {
-                                echo $item['title'];
-                            }
-                        }
-                    }
-                    ?>">
+                    if (isset($editResult)) {
+                        echo $editResult['title'];
+                    } ?>">
                 </div>
             </div>
 

@@ -2,16 +2,21 @@
 require_once '../vendor/autoload.php';
 require_once '../private/phpscripts/db_connector.php';
 require_once '../private/phpscripts/functions.php';
-use Carbon\Carbon;
+
 if (isset($_GET['id'])) {
 
     $sql = "SELECT * FROM events WHERE id={$_GET['id']};";
-    $editResult = $mysqli->query($sql);
-    $row = mysqli_fetch_assoc($editResult);
-    echo str_replace(' ', 'T', $row['datetime']);
-    $datetime = new Carbon($row['datetime']);
-    $datetime->format('DD/MM/YYYY/HH/MM'); //TODO: fix;
-    echo $datetime;
+    $resultSet = $mysqli->query($sql);
+    $editResult = mysqli_fetch_assoc($resultSet);
+
+    $dateTime = explode(' ', $editResult['datetime']);
+    $newDate = explode('-', $dateTime[0]);
+    $date = [
+        'year' => $newDate[0],
+        'month' => $newDate[1],
+        'day' => $newDate[2],
+    ];
+    $time = $dateTime[1];
 }
 
 $pagetitle = 'Add Event..';
@@ -29,12 +34,9 @@ require '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="title" class="col-12 col-md-3 col-form-label">Title:</label>
                 <div class="col">
-                    <input type="text" name="title" class="form-control" id="title" value=" <?php
+                    <input type="text" name="title" class="form-control" id="title" value="<?php
                     if (isset($editResult)) {
-                        $row = mysqli_fetch_assoc($editResult);
-                        if ($_GET['id'] === $row['id']) {
-                            echo $row['title'];
-                        }
+                        echo $editResult['title'];
                     } ?>">
                 </div>
 
@@ -65,10 +67,9 @@ require '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="datetime-local" class="col-12 col-md-3 col-form-label">Date:</label>
                 <div class="col">
-                    <input type="datetime-local" class="form-control" id="datetime-local" value="<?php
+                    <input type="datetime-local" name="datetime" class="form-control" id="datetime-local" value="<?php
                     if (isset($editResult)) {
-                        $row = mysqli_fetch_assoc($editResult);
-                        echo str_replace(' ', 'T', $row['datetime']);
+                        echo $date['year'] . '-' . $date['month'] . '-' . $date['day'] . 'T' . $time;
                     } else echo '2017-01-01T12:00:00'; ?>">
                 </div>
             </div>
@@ -78,13 +79,23 @@ require '../private/includes/header.php'; ?>
                 <label for="description" class="col-12 col-md-3 col-form-label">Description:</label>
                 <div class="col-md-9 col-12">
                         <textarea class="form-control" name="description" rows="4"
-                                  id="description" placeholder="Description">
-                            <?php
+                                  id="description" placeholder="Description"><?php
                             if (isset($editResult)) {
-                                $row = mysqli_fetch_assoc($editResult);
-                                echo $row['description'];
-                            }
-                            ?>
+                                echo $editResult['description'];
+                            } ?>
+                        </textarea>
+                </div>
+            </div>
+
+            <!-- PROS -->
+            <div class="form-group row">
+                <label for="pros" class="col-12 col-md-3 col-form-label">Pros:</label>
+                <div class="col-md-9 col-12">
+                        <textarea class="form-control" name="pros" rows="2"
+                                  id="pros" placeholder="Pros"><?php
+                            if (isset($editResult)) {
+                                echo $editResult['pros'];
+                            } ?>
                         </textarea>
                 </div>
             </div>
@@ -95,13 +106,38 @@ require '../private/includes/header.php'; ?>
                 <div class="col">
                     <input type="url" name="image_path" class="form-control" id="img" value="<?php
                     if (isset($editResult)) {
-                        $row = mysqli_fetch_assoc($editResult);
-                        echo $row['image_path'];
+                        echo $editResult['image_path'];
                     }
                     ?>">
                 </div>
 
             </div>
+
+            <!-- PRICE -->
+            <fieldset class="form-group">
+                <div class="row">
+                    <label for="price" class="col-12 col-md-3 col-form-label">Price:</label>
+                    <div class="col-4 col-md-3 col-lg-2">
+                        <input type="number" step="any" min="0" name="price" class="form-control form-control-sm mb-2"
+                               id="price" value="<?php
+                        if (isset($editResult)) {
+                            echo $editResult['price'];
+                        } ?>" placeholder="00.00">
+                    </div>
+
+                    <div class="col-2 col-md-3 col-lg-5 form-check form-check-inline">
+                        <label for="is-free" class="text-muted">
+                            <input class="form-check-input text-muted" type="checkbox" name="is_free" id="is-free"
+                                   value="1" <?php if (isset($editResult)) {
+                                if ($editResult['is_free'] == '1') {
+                                    echo 'checked';
+                                }
+                            } ?>>
+                            Free
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
 
             <!-- SUBMIT -->
             <div class="row">

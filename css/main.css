@@ -194,7 +194,3 @@ h6 {
     font-family: PlayfairDisplay-Regular;
     src: url(../private/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
 }
-.fixedSize{
-    min-width: 100%;
-    min-height:100%
-}
