@@ -12,7 +12,6 @@ if (isset($_GET['id'])) {
 
     $resultSet = $mysqli->query($sql);
     $editResult = $resultSet->fetch_assoc();
-
 } ?>
 
     <div class="container margin-adder">
@@ -38,6 +37,18 @@ if (isset($_GET['id'])) {
                                   id="description" placeholder="Description"><?php
                             if (isset($editResult)) {
                                 echo $editResult['description'];
+                            } ?></textarea>
+                </div>
+            </div>
+
+            <!-- PROS -->
+            <div class="form-group row">
+                <label for="pros" class="col-12 col-md-3 col-form-label">Pros:</label>
+                <div class="col-md-9 col-12">
+                        <textarea class="form-control" name="pros" rows="2"
+                                  id="pros" placeholder="Pros"><?php
+                            if (isset($editResult)) {
+                                echo $editResult['pros'];
                             } ?></textarea>
                 </div>
             </div>
@@ -111,31 +122,47 @@ if (isset($_GET['id'])) {
                         'sunday'
                     ];
 
-                    if (isset($editResult)) $openingHours = openingHoursToAssoc($editResult);
+                    if (isset($editResult)) $openingHours = openingHoursToAssoc($editResult['opening_hours']);
 
                     foreach ($weekdays as $weekday) {
+                        $closed = false;
                         $out = '<label for="' . $weekday . '-time-from" class="col-12 col-md-3 col-form-label">' . ucfirst($weekday) . ':</label >';
                         $out .= '<div class="col-4 col-md-3 col-lg-2">';
-                        $out .= '<input type="time" name="' . $weekday . '-time-from" class="form-control form-control-sm mb-2" 
+                        $out .= '<input type="time" name="' . $weekday . '_time_from" class="form-control form-control-sm mb-2" 
                                 id="' . $weekday . '-time-from" value="';
                         if (isset($openingHours)) {
-                            $out .= $openingHours[$weekday . '_from'];
+                            if ($openingHours[$weekday . '_from'] === 'closed') {
+                                $closed = true;
+                            }
+                            if ($closed) {
+                                $out .= '';
+                            } else {
+                                $out .= $openingHours[$weekday . '_from'];
+                            }
                         } else {
                             $out .= '08:00:00';
                         }
                         $out .= '"></div>';
                         $out .= '<label for="' . $weekday . '-time-to" class="col-form-label sr-only" > ' . ucfirst($weekday) . 'time to </label>';
                         $out .= '<div class="col-4 col-md-3 col-lg-2">';
-                        $out .= '<input type="time" name="' . $weekday . '-time-to" class="form-control form-control-sm mb-2"
+                        $out .= '<input type="time" name="' . $weekday . '_time_to" class="form-control form-control-sm mb-2"
                                 id="' . $weekday . '-time-to" value="';
                         if (isset($openingHours)) {
-                            $out .= $openingHours[$weekday . '_to'];
+                            if ($closed) {
+                                $out .= '';
+                            } else {
+                                $out .= $openingHours[$weekday . '_to'];
+                            }
                         } else {
                             $out .= '20:00:00';
                         }
                         $out .= '"></div><div class="col-2 col-md-3 col-lg-5 form-check form-check-inline">';
                         $out .= '<label for="closed-check-' . $weekday . '" class="text-muted">';
-                        $out .= '<input class="form-check-input text-muted" type="checkbox" id="closed-check-' . $weekday . '" value="closed" > Stengt';
+                        $out .= '<input class="form-check-input text-muted" type="checkbox" name="closed_check_' . $weekday . '" id="closed-check-' . $weekday . '" value="1"';
+                        if ($closed) {
+                            $out .= ' checked';
+                        }
+                        $out .= '> Stengt';
                         $out .= '</label></div>';
                         echo $out;
                     } ?>
@@ -167,7 +194,7 @@ if (isset($_GET['id'])) {
 
             <!-- IMAGE -->
             <div class="form-group row">
-                <label for="img" class="col-12 col-md-3 col-form-label">Website:</label>
+                <label for="img" class="col-12 col-md-3 col-form-label">Image:</label>
                 <div class="col-12 col-md-9">
                     <input type="url" name="img" class="form-control" id="img"
                            placeholder="http://url/image.png" value="<?php
@@ -177,12 +204,24 @@ if (isset($_GET['id'])) {
                 </div>
             </div>
 
+            <!-- IMAGE-TEXT -->
+            <div class="form-group row">
+                <label for="img-text" class="col-12 col-md-3 col-form-label">Image text:</label>
+                <div class="col-12 col-md-9">
+                    <input type="text" name="img_text" class="form-control" id="img-text"
+                           placeholder="Image text" value="<?php
+                    if (isset($editResult)) {
+                        echo $editResult['img_text'];
+                    } ?>">
+                </div>
+            </div>
+
             <!-- U20 -->
             <div class="col-10 offset-md-3 form-check form-check-inline">
                 <label for="u20_check" class="text-muted">Alkoholservering under 20</label>
-                <input class="form-check-input-right text-muted" name="u20" type="checkbox" value="1"
+                <input class="form-check-input-right text-muted" name="u20" type="checkbox" value="true"
                        id="u20_check"<?php
-                if (isset($editResult) && ($editResult['u20'] === 1)) {
+                if (isset($editResult) && ($editResult['u20'] == 1)) {
                     echo ' checked';
                 }
                 ?>>
