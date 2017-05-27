@@ -36,9 +36,11 @@ Carbon::setLocale('no');
                         <a href="<?php echo server_root(); ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
                            class="btn btn-info"
                            id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                        <a href="<?php echo server_root(); ?>/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
-                           class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
+                        <a class="btn btn-danger">
+                            <i class="material-icons" style="color: white;">delete</i>
+                        </a>
                     </div>
+
                 <?php } ?> <!-- btn-group -->
 
             </div> <!-- text-right wrapper -->
