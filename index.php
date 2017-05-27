@@ -32,8 +32,7 @@ require_once 'private/includes/header.php';
             <div class="carousel-item">
                 <a class="fillerTag" href="events.php?category=places">
                     <img class="d-block img-fluid" src="<?php
-                    $sql = "SELECT *  FROM places WHERE category= 1 OR category= 5 ORDER BY score DESC  LIMIT 1,1 ;";
-                    if ($result = $mysqli->query($sql)) {
+                    if ($result = $mysqli->query("SELECT *  FROM places WHERE category= 1 OR category= 5 ORDER BY score DESC  LIMIT 1,1 ;")) {
                     $row = mysqli_fetch_assoc($result);
                     echo server_root() . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>">
                     <?php } ?>
