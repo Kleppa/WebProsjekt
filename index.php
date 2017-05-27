@@ -23,7 +23,7 @@ require_once 'private/includes/header.php';
             <div class="carousel-item active">
                 <a class="fillerTag" href="events.php">
                     <div class="fill">
-                        <img class="d-block img-fluid" src="img/places/speech.jpg" alt="Wenture-Info-Page">
+                        <img class="d-block img-fluid" src="img/wenture/wenture-front-shadow.jpg" alt="Wenture-Info-Page">
                     </div>
                 </a>
                 <div class="carousel-caption">

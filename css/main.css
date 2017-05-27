@@ -18,7 +18,7 @@ body {
     margin-bottom: 100px;
 }
 
-/* Header.php */
+/* Header */
 .navbar {
     opacity: 0.9;
     background-color: white;
@@ -143,14 +143,14 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+ /*"a" taggen brukes på undertitler */
 a {
     font-family: "Raleway-Regular";
     font-style: normal;
     text-decoration: none;
     color: black;
 }
-
+/* "p" taggen brukes på brødtekst*/
 p {
     font-family: "Raleway-Regular";
     font-style: normal;
@@ -185,6 +185,13 @@ h6 {
     bottom: 32px;
     right: 32px;
 }
+#shadeSides{
+
+    -webkit-box-shadow: 5px 3px 15px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow:5px 3px 15px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 5px 3px 15px 1px rgba(0, 0, 0, 0.2);
+}
+
 
 #addbtn {
     position: fixed;

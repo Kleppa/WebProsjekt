@@ -1,10 +1,10 @@
 <div class="col-xl-4 col-lg-4 col-md-6 col-xs-12 mb-3">
-    <div class="card mb-3">
+    <div class="card mb-3"id="shadeSides">
         <a href="<?php echo server_root(1); ?>/info/details.php?id=<?php echo $row['id']; ?>&type=<?php echo $row['type']; ?>">
             <img class="card-img-top img-fluid" src="<?php echo server_root(1) . $row['image_path']; ?>"
                  alt="<?php echo $row['title']; ?>">
         </a>
-        <div class="card-block">
+        <div class="card-block" style="background-color: ">
             <a href="<?php echo server_root(1) . '/info/details.php?id=' . $row['id']; ?>"
                style="text-decoration:none; color:black;">
                 <h4 class="card-title"><?php echo $row['title'] ?></h4>
@@ -14,7 +14,7 @@
         </div> <!-- card-block -->
 
         <?php ?>
-        <div class="card-footer text-muted">
+        <div class="card-footer text-muted" >
             <p class="card-text"><?php echo $row['address']; ?></p>
 
             <div class="d-flex justify-content-between">
