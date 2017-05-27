@@ -172,6 +172,12 @@ h6 {
     font-family: "Raleway-Regular";
     font-size: large;
 }
+.btn-success{
+    background-color: #FC5185;
+}
+.btn-success:hover{
+    background-color: #FC5185;
+}
 
 #vpnKey {
     position: absolute;
