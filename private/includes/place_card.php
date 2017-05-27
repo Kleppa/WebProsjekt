@@ -24,7 +24,7 @@
                 $likebtnStatus='btn-success';
 
 
-                if(isset($_SESSION[$row['id'].' place']) && isset($_SESSION[$row['type'].' place'])){
+                if(isset($_SESSION[$row['id'].' event']) && isset($_SESSION[$row['type'].' event'])){
                     $likebtnStatus='btn-info';
                 }
 

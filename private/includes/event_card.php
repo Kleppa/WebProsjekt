@@ -33,6 +33,8 @@ Carbon::setLocale('no');
 
 
                 if(isset($_SESSION[$row['id'].' event']) && isset($_SESSION[$row['type'].' event'])){
+                    var_dump($_SESSION[$row['id']. ' event']. 'SHITCUNT '.$_SESSION[$row['type'].' event']);
+
                     $likebtnStatus='btn-info';
                 }
 
