@@ -41,16 +41,16 @@ require '../private/includes/header.php'; ?>
         ?>
     </div> <!-- card-columns -->
 
-    <div class="row justify-content-center"><h4 class="card-title">
+    <div class="row justify-content-center mb-2"><h4 class="card-title">
             <?php echo $row['title'] ?></h4></div>
 
-    <div class="row justify-content-center no-gutters">
+    <div class="row justify-content-center no-gutters mb-3">
         <div class="col-8">
 
             <!-- Tab panes -->
             <div class="fill">
                 <img class="img-fluid" style="height:350px" id="bildeboks"
-                     src="<?php echo $row['image_path'] . '"' . 'alt="' . $row['title']; ?>"/>
+                     src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title']; ?>"/>
             </div>
         </div>
 
@@ -134,7 +134,7 @@ HTML;
 
     <div class="row justify-content-center text-center margin-adder-bot">
 
-        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+        <div class="col-lg-4 col-md-6 col-xs-12">
             <h5 class="card-title">
                 <?php
 
@@ -156,7 +156,7 @@ HTML;
             </a>
         </div>
 
-        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+        <div class="col-lg-4 col-md-6 col-xs-12">
             <h5 class="card-title">
                 <?php
 
@@ -178,7 +178,7 @@ HTML;
             </a>
         </div>
 
-        <div class="col-xl-3 col-lg-4 col-md-6 col-xs-12">
+        <div class="col-lg-4 col-md-6 col-xs-12">
             <h5 class="card-title">
                 <?php
 
