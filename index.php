@@ -26,7 +26,7 @@ require_once 'private/includes/header.php';
                     $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
                     if ($result = $mysqli->query($sql)) {
                         $row = mysqli_fetch_assoc($result);
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                     }
                     ?>>
             </a>
@@ -41,7 +41,7 @@ require_once 'private/includes/header.php';
                     $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
                     if ($result = $mysqli->query($sql)) {
                         $row = mysqli_fetch_assoc($result);
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                     }
                     ?>>
             </a>
@@ -56,7 +56,7 @@ require_once 'private/includes/header.php';
                     $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
                     if ($result = $mysqli->query($sql)) {
                         $row = mysqli_fetch_assoc($result);
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                     }
                     ?>>
             </a>
@@ -73,7 +73,7 @@ require_once 'private/includes/header.php';
                     $sql = "SELECT *  FROM food ORDER BY score DESC  LIMIT 1 ;";
                     if ($result = $mysqli->query($sql)) {
                         $row = mysqli_fetch_assoc($result);
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
                     }
                     ?>>
             </a>
@@ -119,7 +119,7 @@ require_once 'private/includes/header.php';
                 $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
                 if ($result = $mysqli->query($sql)) {
                     foreach ($result as $row) {
-                        echo 'src="' . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
+                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '">';
                     }
 
                     echo '<h4>' . $row['title'] . '</h4>';
@@ -158,8 +158,6 @@ require_once 'private/includes/header.php';
                     echo '"info/details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
                 }
             }
-
-
             ?>>
 
 
@@ -199,4 +197,5 @@ require_once 'private/includes/header.php';
         </div>
     </div>
 </div>
+
 <?php require_once 'private/includes/footer.php'; ?>
