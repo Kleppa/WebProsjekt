@@ -22,10 +22,11 @@ require_once 'private/includes/header.php';
 
             <div class="carousel-item active">
                 <a class="fillerTag" href="events.php">
-                    <img class="d-block img-fluid" src="img/wenture/wenture-front-shadow.jpg" alt="Wenture-Info-Page">
+                    <img class="d-block img-fluid" src="<?php echo server_root(1);?>/img/wenture/pexels-photo-247915.jpg" alt="Wenture-Info-Page">
                 </a>
                 <div class="carousel-caption">
-                    <h3></h3>
+                    <h4 id="wentureCaption">Wenture</h4>
+                    <h3>Student Handbook For Westerdals</h3>
                 </div>
             </div>
 
