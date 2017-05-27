@@ -36,13 +36,17 @@ body {
 }
 
 #navbar .nav-link:not(.active-nav):hover {
-    background-color: #3FC1C9;
+    background-color:  #364F6B;
     color: white;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
+.active-nav:hover{
+    color:white;
 
+}
 .active-nav {
-    background-color: #364F6B;
+    text-decoration: none;
+    background-color: #3FC1C9;
     color: white;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
 }
@@ -106,6 +110,7 @@ body {
 
 .nav-tabs a:hover {
     background: #3FC1C9;
+
 }
 
 .img-others{

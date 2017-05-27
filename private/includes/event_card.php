@@ -24,13 +24,14 @@ Carbon::setLocale('no');
         <div class="card-footer text-muted">
             <p><?php echo $date->diffForHumans() ?></p>
 
-            <div class="text-right">
+            <div class="d-flex justify-content-between">
+
+
                 <?php
+                $server_root1 = server_root(1);
 
-                $server_root1=server_root(1);
-                echo '<div class="btn-group">';
 
-                $scoreform=<<<FORM
+                $scoreform = <<<FORM
                 <form action="{$server_root1}/private/form_processors/score_updater.php" method="post">
                 <input type="hidden" name="URI" value="{$_SERVER['REQUEST_URI']}"/>
                 <input type="hidden" name="id" value="{$row['id']}"/>
@@ -42,27 +43,20 @@ Carbon::setLocale('no');
 FORM;
                 echo $scoreform;
                 $str = <<<HTML
-                
-                
-                
+
+                    <div class="btn-group">
                     <a href="{$server_root1}/admin/manage_place.php?id={$row['id']}"
                        class="btn btn-info"
                        id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                    <a href="{$server_root1}/private/form_processors/remove_entry.php?id= {$row['id']}"
+                    <a href="{$server_root1}/private/form_processors/remove_entry.php?id={$row['id']}"
                        class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
-                    <a href="#" class="btn btn-secondary">note_add</a>
-                   
+                    <a href="#" class=" material-icons btn btn-secondary">note_add</a>
+                   </div>
 HTML;
-                echo '</div>';
-                //Score script
-
                 if(loggedIn()) {
                     echo $str;
                 }
                 ?> <!-- btn-group -->
-
-
-
 
             </div> <!-- text-right wrapper -->
 

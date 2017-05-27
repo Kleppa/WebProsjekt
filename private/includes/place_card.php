@@ -16,13 +16,12 @@
         <div class="card-footer text-muted">
             <p class="card-text"><?php echo $row['address']; ?></p>
 
-            <div class="text-right">
+            <div class="d-flex justify-content-between">
 
 
                 <?php
                 $server_root1 = server_root(1);
 
-                echo '<div class="btn-group">';
 
                 $scoreform = <<<FORM
                 <form action="{$server_root1}/private/form_processors/score_updater.php" method="post">
@@ -34,24 +33,24 @@
                  </form>
                    
 FORM;
+
                 $str = <<<HTML
-                
-                
-                
+
+                    <div class="btn-group">
                     <a href="{$server_root1}/admin/manage_place.php?id={$row['id']}"
                        class="btn btn-info"
                        id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                    <a href="{$server_root1}/private/form_processors/remove_entry.php?id= {$row['id']}"
+                    <a href="{$server_root1}/private/form_processors/remove_entry.php?id={$row['id']}"
                        class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
-                    <a href="#" class="btn btn-secondary">note_add</a>
-                   
+                    <a href="#" class=" material-icons btn btn-secondary">note_add</a>
+                   </div>
 HTML;
                 echo $scoreform;
                 if (loggedIn()) {
                     echo $str;
                 }
                 ?>
-            </div> <!-- btn-group -->
+           <!-- btn-group -->
         </div> <!-- text-right wrapper -->
 
     </div> <!-- card-footer -->

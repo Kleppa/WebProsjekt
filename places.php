@@ -6,9 +6,23 @@ require_once 'private/phpscripts/functions.php';
 
 $pagetitle = 'Places';
 require_once 'private/includes/header.php'; ?>
+    <div class="row justify-content-center margin-adder"
 
+    ><h4 class="card-title">
+            <?php
+            if($_SERVER['REQUEST_URI']=='/places.php?category=1,5') {
+
+
+                echo 'Places To Find A Drink';
+            }else if($_SERVER['REQUEST_URI']=='/places.php?category=3,6'){
+                echo 'Places To Find Something To Eat';
+
+            }
+        ?>
+        </h4>
+    </div>
     <!-- content -->
-    <div class="container margin-adder">
+    <div class="container">
         <div class="row">
             <?php
             $sql = "SELECT * FROM places ";
