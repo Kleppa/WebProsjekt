@@ -3,46 +3,27 @@ session_start();
 require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';
 require_once '../phpscripts/functions.php';
-require_once '../phpscripts/validation_functions.php';
 
-
-if (isset($_POST['id']) && isset($_POST['URI']) && isset($_POST['type'])) {
-
-    $result = $mysqli->query("Select * from events WHERE ID = {$_POST['id']};");
-    $row = mysqli_fetch_assoc($result);
-
-    if ($_SESSION[$_POST['id'].' event'] != "Already Voted" && $_SESSION[$_POST['type'].' event'] !="Already Voted" ) {
-
-        if ($row['id'] == $_POST['id'] && $row['type'] == $_POST['type']) {
-
-            $_SESSION[$_POST['id'].' event']="Already Voted";
-            $_SESSION[$_POST['type'].' event']="Already Voted";
-            $mysqli->query("UPDATE events set score=score + 1 where id={$row['id']}");
-            redirect(server_root(1) . $_POST['URI']);
-
-        }
+if (isset($_GET['id']) && isset($_GET['ref']) && isset($_GET['type'])) {
+    if (isset($_SESSION['like_flag_id_' . $_GET['id'] . '_type_' . $_GET['type']])) {
+        echo 'already set';
+        redirect(server_root(1) . $_GET['ref']);
     }
 
-    $result = $mysqli->query("Select * from places WHERE ID = {$_POST['id']};");
-    $row = mysqli_fetch_assoc($result);
-
-    if ($_SESSION[$_POST['id'].' place'] != "Already Voted" && $_SESSION[$_POST['type'].' place'] != "Already Voted") {
-
-        if ($row['id'] == $_POST['id'] && $row['type'] == $_POST['type']) {
-
-            $_SESSION[$_POST['id'].' place']="Already Voted";
-            $_SESSION[$_POST['type'].' place']="Already Voted";
-            $mysqli->query("UPDATE places set score=score + 1 where id={$row['id']}");
-            redirect(server_root(1) . $_POST['URI']);
+    if ($_GET['type'] == 5) {
+        if ($mysqli->query("UPDATE events SET score = score + 1 WHERE id = {$_GET['id']};")) {
+            $_SESSION['like_flag_id_' . $_GET['id'] . '_type_' . $_GET['type']] = 1;
+            redirect(server_root(1) . $_GET['ref']);
         }
+        redirect(server_root(1) . $_GET['ref']);
+    } else if ($_GET['type'] == 2) {
+        if ($mysqli->query("UPDATE places SET score = score + 1 WHERE id = {$_GET['id']};")) {
+            $_SESSION['like_flag_id_' . $_GET['id'] . '_type_' . $_GET['type']] = 1;
+            redirect(server_root(1) . $_GET['ref']);
+        }
+        redirect(server_root(1) . $_GET['ref']);
+    } else {
+        redirect(server_root(1) . $_GET['ref']);
     }
-    redirect(server_root(1).$_POST['URI']);
-
 }
-/**
- * Created by PhpStorm.
- * User: Kleppa
- * Date: 26/05/2017
- * Time: 14:50
- */
-?>
+redirect(server_root() . '/');

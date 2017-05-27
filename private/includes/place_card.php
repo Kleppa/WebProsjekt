@@ -18,47 +18,25 @@
 
             <div class="d-flex justify-content-between">
 
+                <?php $like_status_flag = (isset($_SESSION['like_flag' . '_id_' . $row['id'] . '_type_' . $row['type']]))
+                    ? 'btn-info' : 'btn-success'; ?>
 
-                <?php
-                $server_root1 = server_root(1);
-                $likebtnStatus='btn-success';
+                <a href="<?php echo server_root(1); ?>/private/form_processors/score_updater.php?id=<?php echo $row['id']; ?>&type=<?php echo $row['type']; ?>&ref=<?php echo $_SERVER['REQUEST_URI']; ?>"
+                   class="btn <?php echo $like_status_flag; ?>"><i class="material-icons">thumb_up</i></a>
 
-
-                if(isset($_SESSION[$row['id'].' place']) && isset($_SESSION[$row['type'].' place'])){
-                    $likebtnStatus='btn-info';
-                }
-
-                $scoreform = <<<FORM
-                <form action="{$server_root1}/private/form_processors/score_updater.php" method="post">
-                <input type="hidden" name="URI" value="{$_SERVER['REQUEST_URI']}"/>
-                <input type="hidden" name="id" value="{$row['id']}"/>
-                <input type="hidden" name="type" value="{$row['type']}"/>
-                <input type="submit" name="submit" id="submit" class="material-icons btn {$likebtnStatus}" value="thumb_up"/>
-              
-                 </form>
-                   
-FORM;
-
-                $str = <<<HTML
-
+                <?php if (loggedIn()) { ?>
                     <div class="btn-group">
-                    <a href="{$server_root1}/admin/manage_place.php?id={$row['id']}"
-                       class="btn btn-info"
-                       id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                    <a href="{$server_root1}/private/form_processors/remove_entry.php?id={$row['id']}"
-                       class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
-                    <a href="#" class=" material-icons btn btn-secondary">note_add</a>
-                   </div>
-HTML;
-                echo $scoreform;
-                if (loggedIn()) {
-                    echo $str;
-                }
-                ?>
-           <!-- btn-group -->
-        </div> <!-- text-right wrapper -->
+                        <a href="<?php echo server_root(); ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
+                           class="btn btn-info"
+                           id="edit"><i class="material-icons" style="color: white;">edit</i></a>
+                        <a href="<?php echo server_root(); ?>/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
+                           class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
+                    </div>
+                <?php } ?>
+                <!-- btn-group -->
+            </div> <!-- text-right wrapper -->
 
-    </div> <!-- card-footer -->
+        </div> <!-- card-footer -->
 
-</div> <!-- card -->
+    </div> <!-- card -->
 </div>
