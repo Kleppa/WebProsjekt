@@ -9,10 +9,9 @@ $pagetitle = 'Restaurant';
 if (!(isset($_GET['id']))) {
     redirect('../places.php');
 }
-$sql = "SELECT * FROM places WHERE id = {$_GET['id']};";
-$sql2 = "SELECT * FROM events WHERE id = {$_GET['id']};";
-$result = $mysqli->query($sql);
-$result2 = $mysqli->query($sql2);
+
+$result = $mysqli->query("SELECT * FROM places WHERE id = {$_GET['id']};");
+$result2 = $mysqli->query("SELECT * FROM events WHERE id = {$_GET['id']};");
 $finalResult = "";
 
 $boolean = false;
@@ -46,14 +45,16 @@ require '../private/includes/header.php'; ?>
             <?php echo $row['title'] ?></h4></div>
 
     <div class="row justify-content-center no-gutters">
-        <div class="col-7">
+        <div class="col-8">
 
             <!-- Tab panes -->
-            <img class="img-fluid"  id="bildeboks"
-                 src="<?php echo $row['image_path'] . '"' . 'alt="' . $row['title']; ?>"/>
+            <div class="fill">
+                <img class="img-fluid" style="height:350px" id="bildeboks"
+                     src="<?php echo $row['image_path'] . '"' . 'alt="' . $row['title']; ?>"/>
+            </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-4">
             <div id="map"></div>
         </div>
 
@@ -61,7 +62,7 @@ require '../private/includes/header.php'; ?>
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-sm-8">
+        <div class="col-8">
 
             <ul class="nav nav-tabs justify-content-center">
 
@@ -81,7 +82,7 @@ require '../private/includes/header.php'; ?>
             </ul>
 
 
-            <div class="tab-content">
+            <div class="tab-content m-4">
                 <div role="tabpanel" class="tab-pane active" id="info">
                     <p class="card-text"><?php echo $row['description'] ?></p>
                 </div>
@@ -147,8 +148,11 @@ HTML;
 
 
                 ?></h5>
-            <a href="details.php?id=<?php echo $row['id'].'&type='.$row['type']?>">
-            <img class=" img-others" src="<?php echo $row['image_path'].'"'.'alt="'.$row['title'] ?>">
+            <a href="details.php?id=<?php echo $row['id'] . '&type=' . $row['type'] ?>">
+                <div class="fill" style="height:196px">
+                    <img class=" img-others"
+                         src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
+                </div>
             </a>
         </div>
 
@@ -166,8 +170,11 @@ HTML;
 
 
                 ?></h5>
-            <a href="details.php?id=<?php echo $row['id'].'&type='.$row['type']?>">
-            <img class="img-others" src="<?php echo $row['image_path'].'"'.'alt="'.$row['title']  ?>">
+            <a href="details.php?id=<?php echo $row['id'] . '&type=' . $row['type'] ?>">
+                <div class="fill" style="height:196px">
+                    <img class="img-others"
+                         src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
+                </div>
             </a>
         </div>
 
@@ -186,7 +193,10 @@ HTML;
 
             echo '"details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
             ?>>
-                <img class="img-others" src="<?php echo $row['image_path'].'"'.'alt="'.$row['title']  ?>">
+                <div class="fill" style="height:196px">
+                    <img class="img-others"
+                         src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
+                </div>
             </a>
         </div>
 

@@ -43,7 +43,9 @@
             Wenture
         </a>
         <div id="navbar" class="navbar-collapse collapse">
-            <?php if(!isset($pagetitle)){$pagetitle="";}?>
+            <?php if (!isset($pagetitle)) {
+                $pagetitle = "";
+            } ?>
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="<?php echo server_root(1) . '/'; ?>">Home</a>
                 <a class="nav-item nav-link<?php if ($pagetitle == 'Places' && $_SERVER['REQUEST_URI'] == server_root(1) . '/places.php?category=3,6') {
@@ -60,20 +62,16 @@
 
 
             </div>
-            <?php $serverroot = server_root(1);
-
-            if(loggedIn()) {
-                $str=<<<DOC
-                    <form action="/private/phpscripts/logout.php" method="post" class="nav-item ml-2">
-                     <input type="hidden" name="username" value="{$_SESSION['username']}"> 
-                     <input type="hidden" name="URI" value="{$_SERVER['REQUEST_URI']}">
-                    <input type="submit" name="logout" id="submit" class="material-icons btn" value="lock" style="background-color: transparent;"/>
-              
-                 </form>
-DOC;
-                echo $str;
-            }
-            ?>
+            <?php
+            if (loggedIn()) { ?>
+                <form action="<?php echo server_root(1); ?>/private/phpscripts/logout.php" method="post"
+                      class="nav-item ml-2">
+                    <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
+                    <input type="hidden" name="URI" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+                    <input type="submit" name="logout" id="submit" class="material-icons btn" value="lock"
+                           style="background-color: transparent;"/>
+                </form>
+            <?php } ?>
 
             <!--Navbar-nav-->
         </div>

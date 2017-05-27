@@ -25,8 +25,7 @@ require_once 'private/includes/header.php';
                     <img class="d-block img-fluid" src="<?php echo server_root(1);?>/img/wenture/pexels-photo-247915.jpg" alt="Wenture-Info-Page">
                 </a>
                 <div class="carousel-caption">
-                    <h4 id="wentureCaption">Wenture</h4>
-                    <h3>Student Handbook For Westerdals</h3>
+                    <h3></h3>
                 </div>
             </div>
 
