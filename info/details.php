@@ -98,11 +98,11 @@ require '../private/includes/header.php'; ?>
                         $str = <<<HTML
 
                         
-                        <p class="card-text">Adresse: {$finalResult['address']} </p>
+                        <p class="card-text">Adress: {$finalResult['address']} </p>
                         
-                        <p class="card-text">Telefon:  {$finalResult['phone']}</p>
+                        <p class="card-text">Phone:  {$finalResult['phone']}</p>
 
-                        <p class="card-text">Nettsted:  {$finalResult['url']}</p>
+                        <p class="card-text">Webpage:  {$finalResult['url']}</p>
                         
                         
 HTML;
