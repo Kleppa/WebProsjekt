@@ -138,14 +138,14 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+ /*"a" taggen brukes på undertitler */
 a {
     font-family: "Raleway-Regular";
     font-style: normal;
     text-decoration: none;
     color: black;
 }
-
+/* "p" taggen brukes på brødtekst*/
 p {
     font-family: "Raleway-Regular";
     font-style: normal;
