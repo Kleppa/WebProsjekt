@@ -8,13 +8,12 @@ $pagetitle = 'Events';
 require_once 'private/includes/header.php';
 ?>
     <!-- content -->
-    <div class="row justify-content-center margin-adder"
-
-    ><h4 class="card-title">
+    <div class="row justify-content-center margin-adder">
+        <h4 class="card-title mb-4">
             <?php
-                if($_SERVER['REQUEST_URI']=='/events.php'){
-                    echo 'Activities Near Campus!';
-                }
+            if ($_SERVER['REQUEST_URI'] == '/events.php') {
+                echo 'Activities Near Campus!';
+            }
             ?></h4>
     </div>
     <div class="container">

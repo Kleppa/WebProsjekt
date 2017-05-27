@@ -8,7 +8,7 @@ $pagetitle = 'Places';
 require_once 'private/includes/header.php'; ?>
     <div class="row justify-content-center margin-adder"
 
-    ><h4 class="card-title">
+    ><h4 class="card-title mb-4">
             <?php
             if($_SERVER['REQUEST_URI']=='/places.php?category=1,5') {
 
