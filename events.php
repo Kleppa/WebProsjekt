@@ -12,7 +12,7 @@ require_once 'private/includes/header.php';
     ><h4 class="card-title">
             <?php
                 if($_SERVER['REQUEST_URI']=='/events.php'){
-                    echo 'Activities Near You!';
+                    echo 'Activities Near Campus!';
                 }
             ?></h4>
     </div>

@@ -21,14 +21,19 @@
 
                 <?php
                 $server_root1 = server_root(1);
+                $likebtnStatus='btn-success';
 
+
+                if(isset($_SESSION[$row['id'].' place']) && isset($_SESSION[$row['type'].' place'])){
+                    $likebtnStatus='btn-info';
+                }
 
                 $scoreform = <<<FORM
                 <form action="{$server_root1}/private/form_processors/score_updater.php" method="post">
                 <input type="hidden" name="URI" value="{$_SERVER['REQUEST_URI']}"/>
                 <input type="hidden" name="id" value="{$row['id']}"/>
                 <input type="hidden" name="type" value="{$row['type']}"/>
-                <input type="submit" name="submit" id="submit" class="material-icons btn btn-success" value="thumb_up"/>
+                <input type="submit" name="submit" id="submit" class="material-icons btn {$likebtnStatus}" value="thumb_up"/>
               
                  </form>
                    

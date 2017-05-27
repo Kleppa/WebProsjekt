@@ -29,6 +29,12 @@ Carbon::setLocale('no');
 
                 <?php
                 $server_root1 = server_root(1);
+                $likebtnStatus='btn-success';
+
+
+                if(isset($_SESSION[$row['id'].' event']) && isset($_SESSION[$row['type'].' event'])){
+                    $likebtnStatus='btn-info';
+                }
 
 
                 $scoreform = <<<FORM
@@ -36,7 +42,7 @@ Carbon::setLocale('no');
                 <input type="hidden" name="URI" value="{$_SERVER['REQUEST_URI']}"/>
                 <input type="hidden" name="id" value="{$row['id']}"/>
                 <input type="hidden" name="type" value="{$row['type']}"/>
-                <input type="submit" name="submit" id="submit" class="material-icons btn btn-success" value="thumb_up"/>
+                <input type="submit" name="submit" id="submit" class="material-icons btn {$likebtnStatus}" value="thumb_up"/>
               
                  </form>
                    

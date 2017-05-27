@@ -21,7 +21,47 @@ require_once 'private/includes/header.php';
 
         <div class="carousel-item active">
             <a class="fillerTag" href="events.php">
+                <img class="d-block img-fluid" src="img/places/speech.jpg" alt="Wenture-Info-Page">
+            </a>
+            <div class="carousel-caption">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a class="fillerTag" href="events.php?category=places">
                 <img class="d-block img-fluid"
+                    <?php
+                    $sql = "SELECT *  FROM places WHERE category= 1 OR category= 5 ORDER BY score DESC  LIMIT 1,1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                    }
+                    ?>>
+            </a>
+            <div class="carousel-caption">
+                <h3>Places To Find A Drink!</h3>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a class="fillerTag" href="events.php?category=drink">
+                <img class="d-block img-fluid"
+                    <?php
+                    $sql = "SELECT *  FROM places WHERE category =3 OR category=6 ORDER BY score DESC  LIMIT 1,1 ;";
+                    if ($result = $mysqli->query($sql)) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
+                    }
+                    ?>>
+            </a>
+            <div class="carousel-caption">
+                <h3> Places To Find Something To Eat!</h3>
+            </div>
+
+        </div>
+
+        <div class="carousel-item">
+            <a class="fillerTag" href="events.php?category=food">
+                <img class="d-block img-fluid"
+
                     <?php
                     $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;";
                     if ($result = $mysqli->query($sql)) {
@@ -31,54 +71,7 @@ require_once 'private/includes/header.php';
                     ?>>
             </a>
             <div class="carousel-caption">
-                <h3>Events</h3>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <a class="fillerTag" href="events.php?category=places">
-                <img class="d-block img-fluid"
-                    <?php
-                    $sql = "SELECT *  FROM places ORDER BY score DESC  LIMIT 1 ;";
-                    if ($result = $mysqli->query($sql)) {
-                        $row = mysqli_fetch_assoc($result);
-                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
-                    }
-                    ?>>
-            </a>
-            <div class="carousel-caption">
-                <h3>Places</h3>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <a class="fillerTag" href="events.php?category=drink">
-                <img class="d-block img-fluid"
-                    <?php
-                    $sql = "SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1 ;";
-                    if ($result = $mysqli->query($sql)) {
-                        $row = mysqli_fetch_assoc($result);
-                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
-                    }
-                    ?>>
-            </a>
-            <div class="carousel-caption">
-                <h3> XXXX</h3>
-            </div>
-
-        </div>
-
-        <div class="carousel-item">
-            <a class="fillerTag" href="events.php?category=food">
-                <img class="d-block img-fluid"
-                    <?php
-                    $sql = "SELECT *  FROM food ORDER BY score DESC  LIMIT 1 ;";
-                    if ($result = $mysqli->query($sql)) {
-                        $row = mysqli_fetch_assoc($result);
-                        echo 'src="' . server_root() . $row['image_path'] . '"' . ' alt="' . $row['title'] . '"';
-                    }
-                    ?>>
-            </a>
-            <div class="carousel-caption">
-                <h3>Food</h3>
+                <h3>Activities Near Campus!</h3>
             </div>
         </div>
     </div> <!-- Carousel inner box -->
