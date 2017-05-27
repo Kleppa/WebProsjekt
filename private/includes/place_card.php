@@ -1,7 +1,8 @@
 <div class="col-xl-4 col-lg-4 col-md-6 col-xs-12 mb-3">
     <div class="card mb-3">
         <a href="<?php echo server_root(1); ?>/info/details.php?id=<?php echo $row['id']; ?>&type=<?php echo $row['type']; ?>">
-            <img class="card-img-top img-fluid" <?php echo 'src="' . $row['image_path'] . '"' . 'alt="' . $row['title'] . '"' ?>>
+            <img class="card-img-top img-fluid" src="<?php echo server_root(1) . $row['image_path']; ?>"
+                 alt="<?php echo $row['title']; ?>">
         </a>
         <div class="card-block">
             <a href="<?php echo server_root(1) . '/info/details.php?id=' . $row['id']; ?>"

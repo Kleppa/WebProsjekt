@@ -200,7 +200,7 @@ if (isset($_GET['id'])) {
             <div class="form-group row">
                 <label for="img" class="col-12 col-md-3 col-form-label">Image:</label>
                 <div class="col-12 col-md-9">
-                    <input type="url" name="img" class="form-control" id="img"
+                    <input type="text" name="img" class="form-control" id="img"
                            placeholder="http://url/image.png" value="<?php
                     if (isset($editResult)) {
                         echo $editResult['image_path'];
