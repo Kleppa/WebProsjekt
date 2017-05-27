@@ -13,8 +13,8 @@
             echo ' - ' . ucfirst($pagetitle);
         } ?></title>
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="<?php echo server_root(1); ?>/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo server_root(1); ?>/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
