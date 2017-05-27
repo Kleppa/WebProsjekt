@@ -5,9 +5,7 @@ require_once 'vendor/autoload.php';
 require_once 'private/phpscripts/db_connector.php';
 require_once 'private/phpscripts/functions.php';
 require_once 'private/includes/header.php';
-
 ?>
-
     <!-- content -->
     <div class="row justify-content-center margin-adder"
 
@@ -16,7 +14,6 @@ require_once 'private/includes/header.php';
                 if($_SERVER['REQUEST_URI']=='/events.php'){
                     echo 'Activities Near You!';
                 }
-
             ?></h4>
     </div>
     <div class="container">
@@ -40,7 +37,6 @@ require_once 'private/includes/header.php';
                 echo '<i class="material-icons" style = "color: white;" > add</i ></div >';
             }
             ?>
-
         </a>
     </div> <!-- container -->
 

@@ -12,11 +12,9 @@ require_once 'private/includes/header.php'; ?>
             <?php
             if($_SERVER['REQUEST_URI']=='/places.php?category=1,5') {
 
-
                 echo 'Places To Find A Drink';
             }else if($_SERVER['REQUEST_URI']=='/places.php?category=3,6'){
                 echo 'Places To Find Something To Eat';
-
             }
         ?>
         </h4>
