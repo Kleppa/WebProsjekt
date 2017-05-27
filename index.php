@@ -47,7 +47,7 @@ require_once 'private/includes/header.php';
                     <img class="d-block img-fluid" src="<?php
                     if ($result = $mysqli->query("SELECT *  FROM places WHERE category =3 OR category=6 ORDER BY score DESC  LIMIT 1,1;")) {
                     $row = mysqli_fetch_assoc($result);
-                    echo server_root() . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>"> <!-- img -->
+                    echo server_root(1) . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>"> <!-- img -->
                     <?php } ?>
                 </a>
                 <div class="carousel-caption">
@@ -60,7 +60,7 @@ require_once 'private/includes/header.php';
                     <img class="d-block img-fluid" src="<?php
                     if ($result = $mysqli->query("SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;")) {
                     $row = mysqli_fetch_assoc($result);
-                    echo server_root() . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>"> <!-- img -->
+                    echo server_root(1) . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>"> <!-- img -->
                     <?php } ?>
                 </a>
                 <div class="carousel-caption">
@@ -97,7 +97,7 @@ require_once 'private/includes/header.php';
                 $row = mysqli_fetch_assoc($result);
                 echo 'info/details.php?id=' . $row['id'] . '&type=' . $row['type']; ?>">
 
-                    <img class="img-fluid img-others" src="<?php echo server_root() . $row['image_path'] ?>"
+                    <img class="img-fluid img-others" src="<?php echo server_root(1) . $row['image_path'] ?>"
                          alt="<?php echo $row['title']; ?>"> <!-- img -->
 
                     <h4><?php echo $row['title']; ?></h4>
@@ -145,7 +145,7 @@ require_once 'private/includes/header.php';
                 $row = mysqli_fetch_assoc($result);
                 echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
 
-                    <img class="img-fluid img-others" src="<?php echo $row['image_path']; ?>"
+                    <img class="img-fluid img-others" src="<?php echo server_root(1) . $row['image_path']; ?>"
                          alt="<?php echo $row['title']; ?>">
 
                     <h4><?php echo $row['title']; ?></h4>
