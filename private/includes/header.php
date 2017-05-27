@@ -46,16 +46,17 @@
             <?php if(!isset($pagetitle)){$pagetitle="";}?>
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="<?php echo server_root(1) . '/'; ?>">Home</a>
+                <a class="nav-item nav-link<?php if ($pagetitle == 'Places' && $_SERVER['REQUEST_URI'] == server_root(1) . '/places.php?category=3,6') {
+                    echo ' active-nav';
+                } ?>" href="<?php echo server_root(1) . '/places.php?category=3,6'; ?>">Food</a>
                 <a class="nav-item nav-link <?php if ($pagetitle == 'Places' && $_SERVER['REQUEST_URI'] == server_root(1) . '/places.php?category=1,5') {
                     echo ' active-nav';
                 } ?>"
-                   href="<?php echo server_root(1) . '/places.php?category=1,5'; ?>">Drink</a>
-                <a class="nav-item nav-link<?php if ($pagetitle == 'Places' && $_SERVER['REQUEST_URI'] == server_root(1) . '/places.php?category=3,6') {
-                    echo ' active-nav';
-                } ?>" href="<?php echo server_root(1) . '/places.php?category=3,6'; ?>">Eat</a>
+                   href="<?php echo server_root(1) . '/places.php?category=1,5'; ?>">Pubs & Bars</a>
+
                 <a class="nav-item nav-link<?php if ($pagetitle == 'Events') {
                     echo ' active-nav';
-                } ?>" href="<?php echo server_root(1) . '/events.php'; ?> ">Chill</a>
+                } ?>" href="<?php echo server_root(1) . '/events.php'; ?> ">Activities</a>
 
 
             </div>
