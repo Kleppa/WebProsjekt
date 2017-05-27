@@ -1,9 +1,10 @@
 <?php
 session_start();
-$pagetitle = 'Events';
+
 require_once 'vendor/autoload.php';
 require_once 'private/phpscripts/db_connector.php';
 require_once 'private/phpscripts/functions.php';
+$pagetitle = 'Events';
 require_once 'private/includes/header.php';
 ?>
     <!-- content -->

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 
+
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -42,15 +43,40 @@
             Wenture
         </a>
         <div id="navbar" class="navbar-collapse collapse">
+            <?php if(!isset($pagetitle)){$pagetitle="";}?>
             <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link" href="<?php echo server_root(1) . '/'; ?>">Home</a>
-                <a class="nav-item nav-link <?php if($pagetitle== 'Places'&& $_SERVER['REQUEST_URI']==server_root(1).'/places.php?category=1,5'){echo ' active-nav';}?>"
+                <a class="nav-item nav-link <?php if ($pagetitle == 'Places' && $_SERVER['REQUEST_URI'] == server_root(1) . '/places.php?category=1,5') {
+                    echo ' active-nav';
+                } ?>"
                    href="<?php echo server_root(1) . '/places.php?category=1,5'; ?>">Drink</a>
-                <a class="nav-item nav-link<?php if($pagetitle== 'Places'&& $_SERVER['REQUEST_URI']==server_root(1).'/places.php?category=3,6'){echo ' active-nav';}?>" href="<?php echo server_root(1) . '/places.php?category=3,6'; ?>">Eat</a>
-                <a class="nav-item nav-link<?php if($pagetitle== 'Events'){echo ' active-nav';}?>" href="<?php echo server_root(1) . '/events.php'; ?> ">Chill</a>
+                <a class="nav-item nav-link<?php if ($pagetitle == 'Places' && $_SERVER['REQUEST_URI'] == server_root(1) . '/places.php?category=3,6') {
+                    echo ' active-nav';
+                } ?>" href="<?php echo server_root(1) . '/places.php?category=3,6'; ?>">Eat</a>
+                <a class="nav-item nav-link<?php if ($pagetitle == 'Events') {
+                    echo ' active-nav';
+                } ?>" href="<?php echo server_root(1) . '/events.php'; ?> ">Chill</a>
 
-            </div> <!--Navbar-nav-->
+
+            </div>
+            <?php $serverroot = server_root(1);
+
+            if(loggedIn()) {
+                $str=<<<DOC
+                    <form action="/private/phpscripts/logout.php" method="post" class="nav-item ml-2">
+                     <input type="hidden" name="username" value="{$_SESSION['username']}"> 
+                     <input type="hidden" name="URI" value="{$_SERVER['REQUEST_URI']}">
+                    <input type="submit" name="logout" id="submit" class="material-icons btn" value="lock" style="background-color: transparent;"/>
+              
+                 </form>
+DOC;
+                echo $str;
+            }
+            ?>
+
+            <!--Navbar-nav-->
         </div>
 
     </div><!--Container-->
+
 </nav><!--Navbar -->
