@@ -13,7 +13,7 @@ require '../private/includes/header.php'
             <div class="row justify-content-center no-gutters">
                 <div class="col-7">
 
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center mb-3">
                         <h1>WENTURE</h1>
                     </div>
 

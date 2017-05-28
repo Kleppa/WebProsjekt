@@ -161,6 +161,11 @@ p {
     font-style: normal;
 }
 
+h1 {
+    font-family: "Raleway-Regular", sans-serif;
+    font-size: 40px;
+}
+
 h2 {
     font-size: 35px;
     font-weight: bold;
