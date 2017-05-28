@@ -13,9 +13,6 @@ This project requires the Carbon library for date handling.
 #### php.ini
 
 Enable the following extensions:
->php_mbstring.dll
-
->php_openssl.dll
 
 >php_pdo_mysqli.dll
 
