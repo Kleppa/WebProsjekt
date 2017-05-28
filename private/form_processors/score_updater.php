@@ -9,7 +9,7 @@ $type = mysqlPrep($_GET['type']);
 
 if (isset($id) && isset($ref) && isset($type)) {
     if (isset($_SESSION['like_flag_id_' . $id . '_type_' . $type])) {
-        echo 'already set';
+
         redirect($ref);
     }
 
