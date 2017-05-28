@@ -25,10 +25,10 @@ require '../private/includes/header.php'
                                    <p> Our vision for Wenture is all about the experience students have off campus and when they are going out to explore the city. Our website is filled with the best locations around Westerdals, and with this we can show the students the best places to chill or have drink.
                                    </p>
 
-                                    <p>We also have a rating system where you can up vote places you like, and when places receive the votes they will move up on the page. In that way, we keep the hottest locations on top, ready to be explored!
+                                    <p>We also have a rating system where you can up vote places you like and then our overview pages will sort the event/places from highest to lowest score. In that way, we keep the hottest locations on top, ready to be explored!
                                 </p>
 
-                                <p>If you’re out of luck with finding new places to visit, our handbook might be the thing for you.</p>
+                                <p>If you’re out of luck when coming to finding new places to visit, our handbook might be the thing for you.</p>
 
                                 <p>Bon voyage, Wenturer!</p>
 
