@@ -11,15 +11,16 @@ if (!(loggedIn())) {
 }
 
 if (isset($_GET['id'])) {
+    $type = mysqlPrep($_GET['type']);
 
     $sql = "DELETE FROM {$_GET['type']} WHERE id = {$_GET['id']}";
 
     if ($result = $mysqli->query($sql)) {
-        $result->free();
         $mysqli->close();
-        redirect(server_root() . '/admin/admin.php');
+        redirect($_SERVER['HTTP_REFERER']);
     } else {
         $mysqli->close();
+        $_SESSION['messages'] = '<div class="alert alert-danger"><strong>Error! </strong>Query error. Check with a server manager.</div>';
         redirect(server_root() . '/admin/admin.php');
     }
 } else {

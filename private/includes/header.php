@@ -32,7 +32,7 @@
 
 <nav class="navbar navbar-toggleable-sm fixed-top" id="custom-navbar">
     <div class="container">
-        <button type="button" class="navbar-toggle collapsed btn btn-secondary hidden-md-up" id="menyknapp"
+        <button type="button" class="navbar-toggle collapsed btn btn-secondary hidden-md-up mr-4" id="menyknapp"
                 data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="#navbar">
             Menu
             <span class="sr-only">Toggle navigation</span>

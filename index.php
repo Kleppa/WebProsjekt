@@ -111,7 +111,7 @@ require_once 'private/includes/header.php';
                              alt="<?php echo $row['title']; ?>"> <!-- img -->
                     </div>
                     <h3><?php echo $row['title']; ?></h3>
-                    <p><?php echo $row['description']; ?></p>
+                    <p><?php echo $row['pros']; ?></p>
 
                     <?php } ?>
                 </a>
@@ -127,7 +127,7 @@ require_once 'private/includes/header.php';
                              alt="<?php echo $row['title']; ?>">
                     </div>
                     <h3><?php echo $row['title']; ?></h3>
-                    <p><?php echo $row['description']; ?></p>
+                    <p><?php echo $row['pros']; ?></p>
 
                     <?php } ?>
                 </a>
@@ -144,7 +144,7 @@ require_once 'private/includes/header.php';
                              alt="<?php echo $row['title']; ?>"> <!-- img -->
                     </div>
                     <h3><?php echo $row['title']; ?></h3>
-                    <p><?php echo $row['description']; ?></p>
+                    <p><?php echo $row['pros']; ?></p>
 
                     <?php } ?>
                 </a>
@@ -160,7 +160,7 @@ require_once 'private/includes/header.php';
                              alt="<?php echo $row['title']; ?>">
                     </div>
                     <h3><?php echo $row['title']; ?></h3>
-                    <p><?php echo $row['description']; ?></p>
+                    <p><?php echo $row['pros']; ?></p>
                     <?php } ?>
                 </a>
             </div> <!-- trending-place -->

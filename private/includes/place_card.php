@@ -37,8 +37,8 @@
                            id="edit"><i class="material-icons" style="color: white;">edit</i></a>
                         <a class="btn btn-danger"
                            onclick="return confirm('Are you sure you want to delete this item?');"
-                           href="<?php echo server_root(1) . '/private/form_processors/remove_entry.php?id=' . $row['id'] . '&type=places' ?>">
-                           class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
+                           href="<?php echo server_root(1) . '/private/form_processors/remove_entry.php?id=' . $row['id'] . '&type=places' ?>"><i
+                                    class="material-icons" style="color: white;">delete</i></a>
                     </div> <!-- btn-group -->
                 <?php } ?>
 
