@@ -29,7 +29,8 @@ require_once 'private/includes/header.php';
         if (loggedIn()) { ?>
             <a href="admin/manage_event.php">
                 <div class="float-button circle d-flex align-content-between" id="addbtn">
-                    <i class="material-icons" style="color: white;">add</i></div>
+                    <i class="material-icons" style="color: white;">add</i>
+                </div>
             </a>
         <?php } ?>
     </div> <!-- container -->

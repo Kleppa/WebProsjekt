@@ -1,20 +1,13 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Kleppa
- * Date: 27/05/2017
- * Time: 15:11
- */
 require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';
 require_once '../phpscripts/functions.php';
 require_once '../phpscripts/validation_functions.php';
 session_start();
 
-
-    if(isset($_POST['username'])){
+// if logged in, sets the username in the session to null and sends the user back to the request site
+if (isset($_SESSION['username']) && ($_SESSION['username'] != null)) {
         $_SESSION['username']=null;
 
-        redirect($_POST['URI']);
+    redirect($_SERVER['HTTP_REFERER']);
     }
-?>

@@ -128,8 +128,6 @@ body {
     height:180px;
 }
 
-
-
 /* EVEN CSS */
 .material-icons.md-48 {
     font-size: 48px;
@@ -143,11 +141,12 @@ body {
 
 .float-button {
     z-index: 1;
-    right: 19px;
+    right: 15px;
     bottom: 30px;
     align-items: center;
     justify-content: center;
 }
+
  /*"a" taggen brukes på undertitler */
 a {
     font-family: "Raleway-Regular", sans-serif;
@@ -204,7 +203,7 @@ h6 {
 
 #addbtn {
     position: fixed;
-    bottom: 0;
+    bottom: 30px;
     background-color: deeppink;
 }
 

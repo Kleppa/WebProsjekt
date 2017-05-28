@@ -1,6 +1,8 @@
 <?php
 $errors = [];
 
+// input field validations
+
 function fieldnameAsText($string)
 {
     $string = ucfirst(str_replace("_", " ", $string));

@@ -1,4 +1,6 @@
 <?php
+// Increments like score by 1 and prevents user from liking multiple times in the same session
+
 session_start();
 require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';

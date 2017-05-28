@@ -12,6 +12,11 @@ require_once '../private/includes/header.php';
 $pagetitle = 'Admin Dashboard';
 ?>
     <div class="container margin-adder">
+        <?php if (!empty($_SESSION['messages'])) {
+            echo $_SESSION['messages'];
+            $_SESSION['messages'] = '';
+        } ?>
+
         <div class="row">
             <div class="col-12">
                 <h4 class="mb-3">Administration Page</h4>

@@ -1,4 +1,6 @@
 <?php
+// Logs the user in by setting the username field in the current session.
+
 session_start();
 require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';

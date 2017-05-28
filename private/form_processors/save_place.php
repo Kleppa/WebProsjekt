@@ -1,4 +1,6 @@
 <?php
+// Saves or adds a place based on fields supplied by manage_place.php
+
 session_start();
 require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';

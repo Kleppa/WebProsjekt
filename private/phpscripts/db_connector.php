@@ -1,4 +1,7 @@
 <?php
+
+// Connects to the database and readies for queries.
+
 $port = 3306;
 $host = 'tek.westerdals.no';
 $name = 'gabreve1_pro101v17gr12';

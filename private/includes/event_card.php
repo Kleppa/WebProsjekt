@@ -1,4 +1,5 @@
 <?php
+// Generates a 'card' based on supplied database data
 use Carbon\Carbon;
 
 $date = new Carbon($row['datetime']);
@@ -13,7 +14,7 @@ Carbon::setLocale('no');
         </a>
 
         <div class="card-block">
-            <a href="<?php echo server_root(1) . '/info/details.php?id=' . $row['id']; ?>"
+            <a href="<?php echo server_root(1) . '/info/details.php?id=' . $row['id']; ?>&type=<?php echo $row['type']; ?>"
                style="text-decoration: none; color: black">
                 <h4 class="card-title"><?php echo $row['title']; ?></h4>
             </a>
@@ -32,6 +33,7 @@ Carbon::setLocale('no');
                    class="btn <?php echo $like_status_flag; ?>"><i class="material-icons">thumb_up</i></a>
 
                 <?php if (loggedIn()) { ?>
+                    <!-- Administration buttons -->
                     <div class="btn-group">
                         <a href="<?php echo server_root(); ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
                            class="btn btn-info"
@@ -40,10 +42,9 @@ Carbon::setLocale('no');
                             <i class="material-icons" style="color: white;">delete</i>
                         </a>
                     </div>
-
                 <?php } ?> <!-- btn-group -->
 
-            </div> <!-- text-right wrapper -->
+            </div> <!-- justify-content -->
 
         </div> <!-- card-footer -->
 

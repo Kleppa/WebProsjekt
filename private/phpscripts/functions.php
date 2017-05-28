@@ -4,6 +4,7 @@ use Carbon\Carbon;
 
 Carbon::setLocale('no');
 
+// various functions
 
 function redirect($url)
 {

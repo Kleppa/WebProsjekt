@@ -10,35 +10,15 @@ if (!(isset($_GET['id']))) {
     redirect('../places.php');
 }
 
-$result = $mysqli->query("SELECT * FROM places WHERE id = {$_GET['id']};");
-$result2 = $mysqli->query("SELECT * FROM events WHERE id = {$_GET['id']};");
-$finalResult = "";
+$result = $mysqli->query("SELECT * FROM types WHERE id = {$_GET['type']};") or die;
+$row = mysqli_fetch_assoc($result);
 
-$boolean = false;
+$result = $mysqli->query("SELECT * FROM {$row['type']} WHERE id = {$_GET['id']};") or die;
+$row = mysqli_fetch_assoc($result);
 
 require '../private/includes/header.php'; ?>
 
-<div class="container">
-    <div class="row margin-adder">
-        <?php
-
-        foreach ($result as $row) {
-
-            if ($_GET['id'] === $row['id'] && $_GET['type'] === $row['type']) {
-
-                $boolean = true;
-                $pagetitle = $row['title'];
-                $finalResult = $row;
-            }
-        }
-        foreach ($result2 as $row) {
-            if ($_GET['id'] === $row['id'] && $_GET['type'] === $row['type']) {
-                $finalResult = $row;
-                $pagetitle = $row['title'];
-            }
-        } ?>
-    </div> <!-- card-columns -->
-
+    <div class="container margin-adder">
     <div class="row justify-content-center mb-2">
         <h4 class="card-title"><?php echo $row['title'] ?></h4>
     </div>
@@ -49,13 +29,12 @@ require '../private/includes/header.php'; ?>
             <div class="fill" style="height:300px">
                 <img src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title']; ?>"/>
             </div>
-        </div>
+        </div> <!-- col -->
 
         <div class="col-md-6 col-lg-4 col-12">
             <div id="map" style="height:300px"></div>
-        </div>
-
-    </div>
+        </div> <!-- col -->
+    </div> <!-- justify-content -->
 
     <div class="row justify-content-center">
         <div class="col-md-8 col-12">
@@ -72,23 +51,23 @@ require '../private/includes/header.php'; ?>
                 </li>
             </ul>
 
-
             <div class="tab-content m-4">
                 <div role="tabpanel" class="tab-pane active" id="info">
                     <p class="card-text"><?php echo $row['description'] ?></p>
-                </div>
+                </div> <!-- tab-pane -->
 
                 <div role="tabpanel" class="tab-pane" id="spesial">
-                    <p> <?php echo $finalResult['pros'] ?></p>
-                </div>
+                    <p> <?php echo $row['pros'] ?></p>
+                </div> <!-- tab-pane -->
+
                 <div role="tabpanel" class="tab-pane" id="kontakt">
                     <?php if ($_GET['type'] == 2){ ?>
-                    <p class="card-text">Adress: <?php echo $finalResult['address']; ?></p>
-                    <p class="card-text">Phone: <?php echo $finalResult['phone']; ?></p>
-                    <p class="card-text">Webpage: <?php echo $finalResult['url']; ?></p>
+                    <p class="card-text">Adress: <?php echo $row['address']; ?></p>
+                    <p class="card-text">Phone: <?php echo $row['phone']; ?></p>
+                    <p class="card-text">Webpage: <?php echo $row['url']; ?></p>
                     <p class="card-text"><?php
 
-                        $openingHours = openingHoursToAssoc($finalResult['opening_hours'], 2);
+                        $openingHours = openingHoursToAssoc($row['opening_hours'], 2);
 
                         echo 'Opening Hours: </br>';
                         echo 'M:' . $openingHours['monday_from'] . '-' . $openingHours['monday_to'];
@@ -101,18 +80,31 @@ require '../private/includes/header.php'; ?>
                         } else {
                             echo '<p class="card-text">No Contant info</p>';
                         } ?></p>
-                </div>
-            </div>
+                </div> <!-- tab-pane -->
+            </div> <!-- tab content -->
 
-        </div>
-    </div>
+        </div> <!-- col -->
+    </div> <!-- justify-content -->
 
 
     <div class="row justify-content-center">
-        <h6> - Other Cool Places - </h6></div>
-    <!--Bilder skal fetches-->
+        <h6> - Other Cool Places - </h6>
+    </div>
 
     <div class="row justify-content-center text-center margin-adder-bot">
+        <div class="col-lg-4 col-md-6 col-xs-12">
+            <h5 class="card-title"><?php
+                $newResult = $mysqli->query("SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;");
+                $row = mysqli_fetch_assoc($newResult);
+                echo $row['title'];
+                ?></h5>
+            <a href="details.php<?php echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
+                <div class="fill" style="height:196px">
+                    <img class="img-others"
+                         src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
+                </div> <!-- fill -->
+            </a>
+        </div> <!-- col -->
 
         <div class="col-lg-4 col-md-6 col-xs-12">
             <h5 class="card-title"><?php
@@ -121,26 +113,12 @@ require '../private/includes/header.php'; ?>
                 echo $row['title'];
                 ?></h5>
             <a href="details.php<?php echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
-                <div class="" style="height:196px">
+                <div class="fill" style="height:196px">
                     <img class="img-others"
                          src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
-                </div>
+                </div> <!-- fill -->
             </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-xs-12">
-            <h5 class="card-title"><?php
-                $newResult = $mysqli->query("SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;");
-                $row = mysqli_fetch_assoc($newResult);
-                echo $row['title'];
-                ?></h5>
-            <a href="details.php<?php echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
-                <div class="" style="height:196px">
-                    <img class="img-others"
-                         src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
-                </div>
-            </a>
-        </div>
+        </div> <!-- col -->
 
         <div class="col-lg-4 col-md-6 col-xs-12">
             <h5><?php
@@ -149,17 +127,16 @@ require '../private/includes/header.php'; ?>
                 echo $row['title'];
                 ?></h5>
             <a href="details.php<?php echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
-                <div class="" style="height:196px">
+                <div class="fill" style="height:196px">
                     <img class="img-others"
                          src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
                 </div>
             </a>
-        </div>
+        </div> <!-- col -->
 
-        <!-- Alle bildene her skal fetches -->
+    </div> <!-- row -->
+    </div> <!-- content -->
 
-    </div>
-</div>
 <script>
     function initMap() {
         var westerdals = {lat: 59.9160168, lng: 10.7597406};
@@ -167,7 +144,6 @@ require '../private/includes/header.php'; ?>
             zoom: 15,
             scrollwheel: false,
             center: westerdals
-
         });
 
         var marker = new google.maps.Marker({
@@ -175,15 +151,11 @@ require '../private/includes/header.php'; ?>
             map: map,
             title: "Fjerdingen"
         });
-
     }
-
 </script>
 
-<script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap">
-</script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC62IwxRCQtl6aUXJdO2KLeGb7zVwBGayE&callback=initMap"></script>
 <script src="../css/js/tests/tabsBar.js"></script>
 
-
-<?php require '../private/includes/footer.php'; ?>
+<?php require '../private/includes/footer.php';

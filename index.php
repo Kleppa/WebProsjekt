@@ -34,7 +34,7 @@ require_once 'private/includes/header.php';
             </div>
 
             <div class="carousel-item">
-                <a class="fillerTag" href="events.php?category=places">
+                <a class="fillerTag" href="places.php?category=1,5">
                     <div class="fill">
                         <img src="<?php
                         if ($result = $mysqli->query("SELECT *  FROM places WHERE category= 1 OR category= 5 ORDER BY score DESC  LIMIT 1,1 ;")) {
@@ -49,7 +49,7 @@ require_once 'private/includes/header.php';
             </div> <!-- carousel-item -->
 
             <div class="carousel-item">
-                <a class="fillerTag" href="events.php?category=drink">
+                <a class="fillerTag" href="places.php?category=3,6">
                     <div class="fill">
                         <img src="<?php
                         if ($result = $mysqli->query("SELECT *  FROM places WHERE category =3 OR category=6 ORDER BY score DESC  LIMIT 1,1;")) {
@@ -64,7 +64,7 @@ require_once 'private/includes/header.php';
             </div> <!-- carousel-item -->
 
             <div class="carousel-item i">
-                <a class="fillerTag" href="events.php?category=food">
+                <a class="fillerTag" href="events.php">
                     <div class="fill">
                         <img src="<?php
                         if ($result = $mysqli->query("SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;")) {

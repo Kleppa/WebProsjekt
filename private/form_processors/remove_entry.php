@@ -1,4 +1,6 @@
 <?php
+// Removes  an entry from the database
+
 session_start();
 require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';

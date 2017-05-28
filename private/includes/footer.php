@@ -1,7 +1,11 @@
 <footer class="footer">
     <div class="container d-flex justify-content-between">
         <span class="text-muted">Wenture &copy</span>
-        <?php if (loggedIn()) echo '<a class="text-muted" href="' . server_root(1) . '/admin/admin.php">Admin Area</a>'; ?>
+        <?php if (loggedIn()) {
+            echo '<a class="text-muted" href="' . server_root(1) . '/admin/admin.php">Admin Area</a>';
+        } else {
+            echo '<a class="text-muted" href="' . server_root(1) . '/admin/login.php">Admin Login</a>';
+        } ?>
         <?php echo '<a class="text-muted" href="' . server_root(1) . '/info/about.php">About Wenture</a>'; ?>
     </div>
 </footer>

@@ -68,13 +68,9 @@
             </div>
             <?php
             if (loggedIn()) { ?>
-                <form action="<?php echo server_root(1); ?>/private/phpscripts/logout.php" method="post"
-                      class="nav-item ml-2">
-                    <input type="hidden" name="username" value="<?php echo $_SESSION['username']; ?>">
-                    <input type="hidden" name="URI" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
-                    <input type="submit" name="logout" id="submit" class="material-icons btn" value="lock"
-                           style="background-color: transparent;"/>
-                </form>
+                <a class="btn btn-secondary" href="<?php echo server_root(1); ?>/private/phpscripts/logout.php">
+                    <i class="material-icons">lock</i>
+                </a>
             <?php } ?>
 
             <!--Navbar-nav-->
