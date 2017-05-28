@@ -1,6 +1,7 @@
 <footer class="footer">
-    <div class="container">
+    <div class="container d-flex justify-content-between">
         <span class="text-muted">Wenture &copy</span>
+        <?php if (loggedIn()) echo '<span class="text-muted"><a href="' . server_root(1) . '/admin/admin.php">Admin Area</a></span>'; ?>
     </div>
 </footer>
 

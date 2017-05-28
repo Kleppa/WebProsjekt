@@ -22,10 +22,13 @@ require_once 'private/includes/header.php';
 
             <div class="carousel-item active">
                 <a class="fillerTag" href="events.php">
-                    <img class="d-block img-fluid" src="img/places/speech.jpg" alt="Wenture-Info-Page">
+                    <img class="d-block img-fluid"
+                         src="<?php echo server_root(1); ?>/img/wenture/pexels-photo-247915.jpg"
+                         alt="Wenture-Info-Page">
                 </a>
                 <div class="carousel-caption">
-                    <h3></h3>
+                    <h2 id="wentureCaption">Wenture</h2>
+                    <h3>Student Handbook For Westerdals</h3>
                 </div>
             </div>
 
@@ -96,10 +99,10 @@ require_once 'private/includes/header.php';
                 if ($result = $mysqli->query("SELECT *  FROM events ORDER BY score DESC  LIMIT 1;")) {
                 $row = mysqli_fetch_assoc($result);
                 echo 'info/details.php?id=' . $row['id'] . '&type=' . $row['type']; ?>">
-
-                    <img class="img-fluid img-others" src="<?php echo server_root(1) . $row['image_path'] ?>"
-                         alt="<?php echo $row['title']; ?>"> <!-- img -->
-
+                    <div class="fill mb-2" style="height:196px;">
+                        <img src="<?php echo server_root(1) . $row['image_path'] ?>"
+                             alt="<?php echo $row['title']; ?>"> <!-- img -->
+                    </div>
                     <h4><?php echo $row['title']; ?></h4>
                     <p><?php echo $row['description']; ?></p>
 
@@ -112,10 +115,10 @@ require_once 'private/includes/header.php';
                 if ($result = $mysqli->query("SELECT *  FROM places ORDER BY score DESC  LIMIT 1;")) {
                 $row = mysqli_fetch_assoc($result);
                 echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
-
-                    <img class="img-fluid img-others" src="<?php echo server_root(1) . $row['image_path']; ?>"
-                         alt="<?php echo $row['title']; ?>">
-
+                    <div class="fill mb-2" style="height:196px;">
+                        <img src="<?php echo server_root(1) . $row['image_path']; ?>"
+                             alt="<?php echo $row['title']; ?>">
+                    </div>
                     <h4><?php echo $row['title']; ?></h4>
                     <p><?php echo $row['description']; ?></p>
 
@@ -129,9 +132,10 @@ require_once 'private/includes/header.php';
                 $row = mysqli_fetch_assoc($result);
                 echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
 
-                    <img class="img-fluid img-others" src="<?php echo server_root(1) . $row['image_path']; ?>"
-                         alt="<?php echo $row['title']; ?>"> <!-- img -->
-
+                    <div class="fill mb-2" style="height:196px;">
+                        <img src="<?php echo server_root(1) . $row['image_path']; ?>"
+                             alt="<?php echo $row['title']; ?>"> <!-- img -->
+                    </div>
                     <h4><?php echo $row['title']; ?></h4>
                     <p><?php echo $row['description']; ?></p>
 
@@ -144,10 +148,10 @@ require_once 'private/includes/header.php';
                 if ($result = $mysqli->query("SELECT *  FROM events ORDER BY score DESC  LIMIT 1,1;")) {
                 $row = mysqli_fetch_assoc($result);
                 echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
-
-                    <img class="img-fluid img-others" src="<?php echo server_root(1) . $row['image_path']; ?>"
-                         alt="<?php echo $row['title']; ?>">
-
+                    <div class="fill mb-2" style="height:196px;">
+                        <img src="<?php echo server_root(1) . $row['image_path']; ?>"
+                             alt="<?php echo $row['title']; ?>">
+                    </div>
                     <h4><?php echo $row['title']; ?></h4>
                     <p><?php echo $row['description']; ?></p>
 

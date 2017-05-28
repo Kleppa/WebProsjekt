@@ -16,23 +16,21 @@ if (isset($_POST['submit']) && ($_POST['username'] || $_POST['username'])) {
 
     if ($result = $mysqli->query($sql)) {
         $row = mysqli_fetch_assoc($result);
-        $hashed_pass = $row['password'];
-        $check = password_verify("{$password}", "{$hashed_pass}");
-        echo "{$password}" . "{$hashed_pass}";
-        var_dump($check);
-        if (password_verify("{$password}", "{$hashed_pass}")) {
+
+        if (password_verify("{$password}", "{$row['password']}")) {
             $_SESSION['username'] = $username;
             $mysqli->close();
             redirect(server_root() . '/admin/admin.php');
         }
-        $_SESSION['errors'] .= 'Password or username is incorrect.err1';
+        $_SESSION['errors'] .= 'Password or username is incorrect.';
         $mysqli->close();
-        //redirect(server_root() . '/admin/login.php');
+        redirect(server_root() . '/admin/login.php');
     } else {
-        $_SESSION['errors'] .= 'Password or username is incorrect.err2';
+        $_SESSION['errors'] .= 'Password or username is incorrect.';
         $mysqli->close();
         redirect(server_root() . '/admin/login.php');
     }
-    $_SESSION['errors'] .= 'Missing username or password.err3';
-    //redirect(server_root() . '/admin/login.php');
+    $_SESSION['errors'] .= 'Missing username or password.';
+    redirect(server_root() . '/admin/login.php');
 }
+redirect(server_root() . '/admin/login.php');

@@ -6,7 +6,7 @@ Carbon::setLocale('no');
 ?>
 
 <div class="col-xl-4 col-sm-6 col-xs-12 mb-3">
-    <div class="card">
+    <div class="card" id="shadeSides">
         <a href="<?php echo server_root(1); ?>/info/details.php?id=<?php echo $row['id']; ?>&type=<?php echo $row['type']; ?>">
             <img class="card-img-top img-fluid" src="<?php echo server_root(1) . $row['image_path']; ?>"
                  alt="<?php echo $row['title']; ?>">
@@ -36,9 +36,11 @@ Carbon::setLocale('no');
                         <a href="<?php echo server_root(); ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
                            class="btn btn-info"
                            id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                        <a href="<?php echo server_root(); ?>/private/form_processors/remove_entry.php?id=<?php echo $row['id']; ?>"
-                           class="btn btn-danger"><i class="material-icons" style="color: white;">delete</i></a>
+                        <a class="btn btn-danger">
+                            <i class="material-icons" style="color: white;">delete</i>
+                        </a>
                     </div>
+
                 <?php } ?> <!-- btn-group -->
 
             </div> <!-- text-right wrapper -->

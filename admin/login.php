@@ -15,7 +15,7 @@ $pagetitle = 'Admin Login';
         } ?>
 
         <form name="test" method="post"
-              action="/private/form_processors/login.php">
+              action="<?php echo server_root(1); ?>/private/form_processors/login.php">
 
             <!-- USERNAME -->
             <div class="form-group row">
