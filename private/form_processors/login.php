@@ -22,15 +22,15 @@ if (isset($_POST['submit']) && ($_POST['username'] || $_POST['username'])) {
             $mysqli->close();
             redirect(server_root() . '/admin/admin.php');
         }
-        $_SESSION['errors'] .= 'Password or username is incorrect.';
+        $_SESSION['messages'] .= 'Password or username is incorrect.';
         $mysqli->close();
         redirect(server_root() . '/admin/login.php');
     } else {
-        $_SESSION['errors'] .= 'Password or username is incorrect.';
+        $_SESSION['messages'] .= 'Password or username is incorrect.';
         $mysqli->close();
         redirect(server_root() . '/admin/login.php');
     }
-    $_SESSION['errors'] .= 'Missing username or password.';
+    $_SESSION['messages'] .= 'Missing username or password.';
     redirect(server_root() . '/admin/login.php');
 }
 redirect(server_root() . '/admin/login.php');

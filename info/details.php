@@ -10,8 +10,8 @@ if (!(isset($_GET['id']))) {
     redirect('../places.php');
 }
 
-$result = $mysqli->query("SELECT * FROM places WHERE id = {$_GET['id']};");
-$result2 = $mysqli->query("SELECT * FROM events WHERE id = {$_GET['id']};");
+$result = $mysqli->query("SELECT * FROM places WHERE id = {$_GET['id']} LIMIT 1;");
+$result2 = $mysqli->query("SELECT * FROM events WHERE id = {$_GET['id']} LIMIT 1;");
 $finalResult = "";
 
 $boolean = false;
@@ -36,17 +36,15 @@ require '../private/includes/header.php'; ?>
                 $finalResult = $row;
                 $pagetitle = $row['title'];
             }
-        }
-
-        ?>
+        } ?>
     </div> <!-- card-columns -->
 
-    <div class="row justify-content-center mb-2"><h4 class="card-title">
-            <?php echo $row['title'] ?></h4></div>
+    <div class="row justify-content-center mb-2">
+        <h4 class="card-title"><?php echo $row['title'] ?></h4>
+    </div>
 
     <div class="row justify-content-center no-gutters mb-3">
-        <div class="col-8">
-
+        <div class="col-md-8 col-12">
             <!-- Tab panes -->
             <div class="fill">
                 <img class="img-fluid" style="height:350px" id="bildeboks"
@@ -54,31 +52,25 @@ require '../private/includes/header.php'; ?>
             </div>
         </div>
 
-        <div class="col-4">
-            <div id="map"></div>
+        <div class="col-md-4 col-12">
+            <div id="map" style="height:300px"></div>
         </div>
-
 
     </div>
 
     <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-md-8 col-12">
 
             <ul class="nav nav-tabs justify-content-center">
-
                 <li class="nav-item">
                     <a href="#info" class="nav-link active" role="tab" data-toggle="tab">Description</a>
                 </li>
-
                 <li class="nav-item">
-                    <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Worth Mentioning</a>
+                    <a href="#spesial" class="nav-link" role="tab" data-toggle="tab">Kudos</a>
                 </li>
-
                 <li class="nav-item">
                     <a href="#kontakt" class="nav-link" role="tab" data-toggle="tab">Contact</a>
                 </li>
-
-
             </ul>
 
 
@@ -91,36 +83,25 @@ require '../private/includes/header.php'; ?>
                     <p> <?php echo $finalResult['pros'] ?></p>
                 </div>
                 <div role="tabpanel" class="tab-pane" id="kontakt">
-                    <?php
-                    if ($boolean) {
+                    <?php if ($_GET['type'] == 2){ ?>
+                    <p class="card-text">Adress: <?php echo $finalResult['address']; ?></p>
+                    <p class="card-text">Phone: <?php echo $finalResult['phone']; ?></p>
+                    <p class="card-text">Webpage: <?php echo $finalResult['url']; ?></p>
+                    <p class="card-text"><?php
+
                         $openingHours = openingHoursToAssoc($finalResult['opening_hours'], 2);
-
-
-                        $str = <<<HTML
-
-                        
-                        <p class="card-text">Adress: {$finalResult['address']} </p>
-                        
-                        <p class="card-text">Phone:  {$finalResult['phone']}</p>
-
-                        <p class="card-text">Webpage:  {$finalResult['url']}</p>
-                        
-                        
-HTML;
-                        echo $str;
 
                         echo 'Opening Hours: ';
                         echo 'M:' . $openingHours['monday_from'] . '-' . $openingHours['monday_to'];
                         echo ' T:' . $openingHours['tuesday_from'] . '-' . $openingHours['tuesday_to'];
-                        echo ' O:' . $openingHours['wednesday_from'] . '-' . $openingHours['wednesday_to'];
+                        echo ' W:' . $openingHours['wednesday_from'] . '-' . $openingHours['wednesday_to'];
                         echo ' T:' . $openingHours['thursday_from'] . '-' . $openingHours['thursday_to'];
                         echo ' F:' . $openingHours['friday_from'] . '-' . $openingHours['friday_to'];
                         echo ' S:' . $openingHours['saturday_from'] . '-' . $openingHours['saturday_to'];
                         echo ' S:' . $openingHours['sunday_from'] . '-' . $openingHours['sunday_to'];
-                    } else {
-                        echo '<p class="card-text">No Contant info</p>';
-                    }
-                    ?>
+                        } else {
+                            echo '<p class="card-text">No Contant info</p>';
+                        } ?></p>
                 </div>
             </div>
 

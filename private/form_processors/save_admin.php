@@ -24,9 +24,11 @@ if (isset($_POST['submit'])) {
             redirect(server_root() . '/admin/admin.php');
         } else {
             $mysqli->close();
+            $_SESSION['messages'] = 'Username already exists.';
             redirect(server_root() . '/admin/manage_admin.php');
         }
     } else {
+        $_SESSION['messages'] = 'Passwords need to match.';
         redirect(server_root() . '/admin/manage_admin.php');
     }
 } else {

@@ -9,9 +9,18 @@ if (isset($_POST['submit'])) {
 
     $title = mysqlPrep($_POST['title']);
     $desc = mysqlPrep($_POST['description']);
-    $price = (isset($_POST['is_free'])) ? '00.00' : mysqlPrep($_POST['price']);
+    $price = (isset($_POST['price'])) ? '00.00' : mysqlPrep($_POST['price']);
     $imagePath = mysqlPrep($_POST['image_path']);
     $pros = mysqlPrep($_POST['pros']);
+
+    validatePresences(['title', 'description', 'image_path', 'pros']);
+    validateMaxLength(['title' => 30]);
+    if (count($errors) > 0) {
+        foreach ($errors as $error) {
+            $_SESSION['messages'] .= '<div class="alert alert-danger"><strong>Error! </strong>' . $error . '</div>';
+        }
+        redirect(server_root(1) . $_SERVER['REQUEST_URI']);
+    }
 
     $datetime = explode('T', $_POST['datetime']);
     $date = $datetime[0];

@@ -8,36 +8,30 @@ $pagetitle = 'Events';
 require_once 'private/includes/header.php';
 ?>
     <!-- content -->
-    <div class="row justify-content-center margin-adder">
-        <h4 class="card-title mb-4">
-            <?php
-            if ($_SERVER['REQUEST_URI'] == '/events.php') {
-                echo 'Activities Near Campus!';
-            }
-            ?></h4>
-    </div>
     <div class="container">
+        <div class="row justify-content-center margin-adder">
+            <h4 class="card-title mb-4"><?php
+                if ($_SERVER['REQUEST_URI'] == '/events.php') {
+                    echo 'Activities Near Campus!';
+                } ?></h4>
+        </div>
+
         <div class="row">
             <?php
-            $sql = "SELECT events.* FROM events LEFT JOIN types ON types.id = events.type ORDER BY score DESC ";
-
-            if ($result = $mysqli->query($sql)) {
+            if ($result = $mysqli->query("SELECT events.* FROM events LEFT JOIN types ON types.id = events.type ORDER BY score DESC;")) {
                 foreach ($result as $row) {
                     require 'private/includes/event_card.php';
                 }
             } ?>
         </div> <!-- card-columns -->
 
-        <a href="admin/manage_event.php">
-            <?php
-
-            if (loggedIn()) {
-
-                echo '<div class="float-button circle d-flex align-content-between" id = "addbtn" >';
-                echo '<i class="material-icons" style = "color: white;" > add</i ></div >';
-            }
-            ?>
-        </a>
+        <?php
+        if (loggedIn()) { ?>
+            <a href="admin/manage_event.php">
+                <div class="float-button circle d-flex align-content-between" id="addbtn">
+                    <i class="material-icons" style="color: white;">add</i></div>
+            </a>
+        <?php } ?>
     </div> <!-- container -->
 
 <?php require_once 'private/includes/footer.php';

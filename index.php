@@ -22,53 +22,60 @@ require_once 'private/includes/header.php';
 
             <div class="carousel-item active">
                 <a class="fillerTag" href="events.php">
-                    <img class="d-block img-fluid"
-                         src="<?php echo server_root(1); ?>/img/wenture/pexels-photo-247915.jpg"
-                         alt="Wenture-Info-Page">
+                    <div class="fill">
+                        <img src="<?php echo server_root(1); ?>/img/wenture/pexels-photo-247915.jpg"
+                             alt="Wenture-Info-Page">
+                    </div>
+                    <div class="carousel-caption">
+                        <h2>Wenture</h2>
+                        <h3>Student Handbook For Westerdals</h3>
+                    </div>
                 </a>
-                <div class="carousel-caption">
-                    <h2 id="wentureCaption">Wenture</h2>
-                    <h3>Student Handbook For Westerdals</h3>
-                </div>
             </div>
 
             <div class="carousel-item">
                 <a class="fillerTag" href="events.php?category=places">
-                    <img class="d-block img-fluid" src="<?php
-                    if ($result = $mysqli->query("SELECT *  FROM places WHERE category= 1 OR category= 5 ORDER BY score DESC  LIMIT 1,1 ;")) {
-                    $row = mysqli_fetch_assoc($result);
-                    echo server_root() . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>">
-                    <?php } ?>
+                    <div class="fill">
+                        <img src="<?php
+                        if ($result = $mysqli->query("SELECT *  FROM places WHERE category= 1 OR category= 5 ORDER BY score DESC  LIMIT 1,1 ;")) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo server_root() . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>">
+                        <?php } ?>
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Places To Find A Drink!</h3>
+                    </div>
                 </a>
-                <div class="carousel-caption">
-                    <h3>Places To Find A Drink!</h3>
-                </div>
             </div> <!-- carousel-item -->
 
             <div class="carousel-item">
                 <a class="fillerTag" href="events.php?category=drink">
-                    <img class="d-block img-fluid" src="<?php
-                    if ($result = $mysqli->query("SELECT *  FROM places WHERE category =3 OR category=6 ORDER BY score DESC  LIMIT 1,1;")) {
-                    $row = mysqli_fetch_assoc($result);
-                    echo server_root(1) . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>"> <!-- img -->
-                    <?php } ?>
+                    <div class="fill">
+                        <img src="<?php
+                        if ($result = $mysqli->query("SELECT *  FROM places WHERE category =3 OR category=6 ORDER BY score DESC  LIMIT 1,1;")) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo server_root(1) . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>"> <!-- img -->
+                        <?php } ?>
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Places To Find Something To Eat!</h3>
+                    </div>
                 </a>
-                <div class="carousel-caption">
-                    <h3>Places To Find Something To Eat!</h3>
-                </div>
             </div> <!-- carousel-item -->
 
             <div class="carousel-item i">
                 <a class="fillerTag" href="events.php?category=food">
-                    <img class="d-block img-fluid" src="<?php
-                    if ($result = $mysqli->query("SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;")) {
-                    $row = mysqli_fetch_assoc($result);
-                    echo server_root(1) . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>"> <!-- img -->
-                    <?php } ?>
+                    <div class="fill">
+                        <img src="<?php
+                        if ($result = $mysqli->query("SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;")) {
+                        $row = mysqli_fetch_assoc($result);
+                        echo server_root(1) . $row['image_path']; ?>" alt="<?php echo $row['title']; ?>"> <!-- img -->
+                        <?php } ?>
+                    </div>
+                    <div class="carousel-caption">
+                        <h3>Activities Near Campus!</h3>
+                    </div>
                 </a>
-                <div class="carousel-caption">
-                    <h3>Activities Near Campus!</h3>
-                </div>
             </div> <!-- carousel-item -->
 
         </div> <!-- Carousel inner box -->
@@ -154,7 +161,6 @@ require_once 'private/includes/header.php';
                     </div>
                     <h4><?php echo $row['title']; ?></h4>
                     <p><?php echo $row['description']; ?></p>
-
                     <?php } ?>
                 </a>
             </div> <!-- trending-place -->

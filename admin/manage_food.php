@@ -17,6 +17,11 @@ $pagetitle = 'Add Food..';
 require '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
+        <?php if (!empty($_SESSION['messages'])) {
+            echo '<div class="alert alert-warning"><strong>Error!</strong> ' . $_SESSION['messages'] . '</div>';
+            $_SESSION['messages'] = '';
+        } ?>
+
         <form method="post"
               action="<?php echo server_root() ?>/private/form_processors/save_food.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 
@@ -61,14 +66,12 @@ require '../private/includes/header.php'; ?>
                 <label for="description" class="col-12 col-md-3 col-form-label">Description:</label>
                 <div class="col-md-9 col-12">
                         <textarea class="form-control" name="description" rows="4"
-                                  id="description" placeholder="Description"><?php
+                                  id="description"><?php
                             if (!empty($editResult)) {
                                 foreach ($editResult as $item) {
                                     echo $item['description'];
                                 }
-                            }
-
-                            ?></textarea>
+                            } ?></textarea>
                 </div>
             </div>
 

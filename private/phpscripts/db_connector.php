@@ -6,6 +6,7 @@ $username = 'gabreve1_admin';
 $password = 't{QMdZOxXBi(';
 
 $mysqli = new mysqli($host, $username, $password, $name);
+$mysqli->set_charset("utf8");
 
 // ---- debugging ----
 if($mysqli->connect_errno) {

@@ -11,6 +11,11 @@ $pagetitle = 'Add Category..';
 require '../private/includes/header.php' ?>
 
     <div class="container margin-adder">
+        <?php if (!empty($_SESSION['messages'])) {
+            echo '<div class="alert alert-warning"><strong>Error!</strong> ' . $_SESSION['messages'] . '</div>';
+            $_SESSION['messages'] = '';
+        } ?>
+
         <form method="post"
               action="<?php echo server_root() ?>/private/form_processors/save_category.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 

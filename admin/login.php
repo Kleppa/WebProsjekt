@@ -9,9 +9,9 @@ $pagetitle = 'Admin Login';
 ?>
     <div class="container margin-adder">
 
-        <?php if (!empty($_SESSION['errors'])) {
-            echo '<div class="alert alert-danger"><strong>Error!</strong> ' . $_SESSION['errors'] . '</div>';
-            $_SESSION['errors'] = '';
+        <?php if (!empty($_SESSION['messages'])) {
+            echo '<div class="alert alert-danger"><strong>Error!</strong> ' . $_SESSION['messages'] . '</div>';
+            $_SESSION['messages'] = '';
         } ?>
 
         <form name="test" method="post"

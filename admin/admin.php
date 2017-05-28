@@ -12,10 +12,14 @@ require_once '../private/includes/header.php';
 $pagetitle = 'Admin Dashboard';
 ?>
     <div class="container margin-adder">
-        <a class="btn btn-primary" href="manage_admin.php">Create admin</a>
-        <a class="btn btn-primary" href="manage_event.php">Create event</a>
-        <a class="btn btn-primary" href="manage_food.php">Create food-item</a>
-        <a class="btn btn-primary" href="manage_place.php">Create place</a>
+        <div class="row">
+            <div class="col">
+                <a class="btn btn-primary mb-2" href="manage_admin.php">Create admin</a>
+                <a class="btn btn-primary mb-2" href="manage_event.php">Create event</a>
+                <a class="btn btn-primary mb-2" href="manage_food.php">Create food-item</a>
+                <a class="btn btn-primary mb-2" href="manage_place.php">Create place</a>
+            </div>
+        </div>
     </div>
 
 <?php require_once '../private/includes/footer.php';

@@ -31,6 +31,11 @@ $extra_scripts = ['datepicker' => '<script src="https://cdnjs.cloudflare.com/aja
 require '../private/includes/header.php'; ?>
 
     <div class="container margin-adder">
+        <?php if (!empty($_SESSION['messages'])) {
+            echo $_SESSION['messages'];
+            $_SESSION['messages'] = '';
+        } ?>
+
         <form method="post"
               action="<?php echo server_root() ?>/private/form_processors/save_event.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 
@@ -38,7 +43,7 @@ require '../private/includes/header.php'; ?>
             <div class="form-group row">
                 <label for="title" class="col-12 col-md-3 col-form-label">Title:</label>
                 <div class="col">
-                    <input type="text" name="title" class="form-control" id="title" value="<?php
+                    <input type="text" name="title" class="form-control" id="title" placeholder="Title" value="<?php
                     if (isset($editResult)) {
                         echo $editResult['title'];
                     } ?>">
@@ -86,8 +91,7 @@ require '../private/includes/header.php'; ?>
                                   id="description" placeholder="Description"><?php
                             if (isset($editResult)) {
                                 echo $editResult['description'];
-                            } ?>
-                        </textarea>
+                            } ?></textarea>
                 </div>
             </div>
 
@@ -99,16 +103,16 @@ require '../private/includes/header.php'; ?>
                                   id="pros" placeholder="Pros"><?php
                             if (isset($editResult)) {
                                 echo $editResult['pros'];
-                            } ?>
-                        </textarea>
+                            } ?></textarea>
                 </div>
             </div>
 
             <!-- IMAGE -->
             <div class="form-group row">
-                <label for="img" class="col-12 col-md-3 col-form-label">Title:</label>
+                <label for="img" class="col-12 col-md-3 col-form-label">Image:</label>
                 <div class="col">
-                    <input type="url" name="image_path" class="form-control" id="img" value="<?php
+                    <input type="text" name="image_path" class="form-control" id="img"
+                           placeholder="http://url/image.png" value="<?php
                     if (isset($editResult)) {
                         echo $editResult['image_path'];
                     }
