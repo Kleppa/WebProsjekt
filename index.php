@@ -58,7 +58,7 @@ require_once 'private/includes/header.php';
                 </div>
             </div> <!-- carousel-item -->
 
-            <div class="carousel-item">
+            <div class="carousel-item i">
                 <a class="fillerTag" href="events.php?category=food">
                     <img class="d-block img-fluid" src="<?php
                     if ($result = $mysqli->query("SELECT *  FROM events ORDER BY score DESC  LIMIT 1 ;")) {
