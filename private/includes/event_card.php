@@ -38,7 +38,9 @@ Carbon::setLocale('no');
                         <a href="<?php echo server_root(); ?>/admin/manage_place.php?id=<?php echo $row['id']; ?>"
                            class="btn btn-info"
                            id="edit"><i class="material-icons" style="color: white;">edit</i></a>
-                        <a class="btn btn-danger">
+                        <a class="btn btn-danger"
+                           onclick="return confirm('Are you sure you want to delete this item?');"
+                           href="<?php echo server_root(1) . '/private/form_processors/remove_entry.php?id=' . $row['id'] . '&type=events' ?>">
                             <i class="material-icons" style="color: white;">delete</i>
                         </a>
                     </div>

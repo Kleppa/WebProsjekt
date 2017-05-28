@@ -6,6 +6,9 @@ require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';
 require_once '../phpscripts/functions.php';
 require_once '../phpscripts/validation_functions.php';
+if (!(loggedIn())) {
+    redirect(server_root(1) . '/admin/login.php');
+}
 
 if (isset($_POST['submit'])) {
     validatePresences(['username', 'password', 'password_repeat']);

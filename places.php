@@ -11,9 +11,9 @@ require_once 'private/includes/header.php'; ?>
     <div class="container">
         <div class="row justify-content-center margin-adder">
             <h4 class="card-title mb-4"><?php
-                if ($_SERVER['REQUEST_URI'] == '/places.php?category=1,5') {
+                if ($_SERVER['REQUEST_URI'] == server_root(1) . '/places.php?category=1,5') {
                     echo 'Places To Find A Drink!';
-                } else if ($_SERVER['REQUEST_URI'] == '/places.php?category=3,6') {
+                } else if ($_SERVER['REQUEST_URI'] == server_root(1) . '/places.php?category=3,6') {
                     echo 'Places To Find Something To Eat!';
                 }
                 ?></h4>

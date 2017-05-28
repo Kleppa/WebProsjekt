@@ -8,6 +8,9 @@ require_once '../phpscripts/functions.php';
 $id = mysqlPrep($_GET['id']);
 $ref = mysqlPrep($_GET['ref']);
 $type = mysqlPrep($_GET['type']);
+if (!(loggedIn())) {
+    redirect(server_root(1) . '/admin/login.php');
+}
 
 if (isset($id) && isset($ref) && isset($type)) {
     if (isset($_SESSION['like_flag_id_' . $id . '_type_' . $type])) {

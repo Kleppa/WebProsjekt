@@ -6,6 +6,9 @@ require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';
 require_once '../phpscripts/functions.php';
 require_once '../phpscripts/validation_functions.php';
+if (!(loggedIn())) {
+    redirect(server_root(1) . '/admin/login.php');
+}
 
 if (isset($_POST['submit'])) {
 
@@ -30,11 +33,11 @@ if (isset($_POST['submit'])) {
 
     $sql = isset($_GET['id']) ?
         "UPDATE events SET title = '{$title}', place = {$_POST['place']}, `datetime` = '{$date} {$time}',
-        description = '{$desc}', is_free = {$_POST['is_free']}, price = '{$price}', image_path = '{$imagePath}'
+        description = '{$desc}', pros = {$pros}, is_free = {$_POST['is_free']}, price = '{$price}', image_path = '{$imagePath}'
         WHERE id={$_GET['id']};"
         :
-        "INSERT INTO events (title, place, datetime, description, is_free, price, image_path) 
-        VALUES ('{$title}', {$_POST['place']}, '{$date}', '{$desc}', {$_POST['is_free']},
+        "INSERT INTO events (title, place, datetime, description, pros, is_free, price, image_path) 
+        VALUES ('{$title}', {$_POST['place']}, '{$date}', '{$desc}', '{$pros}',{$_POST['is_free']},
         '{$price}', '{$imagePath}');";
 
     if ($result = $mysqli->query($sql)) {

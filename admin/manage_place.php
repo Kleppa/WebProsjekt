@@ -25,7 +25,7 @@ if (isset($_GET['id'])) {
         } ?>
 
         <form method="post"
-              action="<?php echo server_root(1) ?>/private/form_processors/save_place.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
+              action="<?php echo server_root(1); ?>/private/form_processors/save_place.php<?php if (isset($_GET['id'])) echo '?id=' . $_GET['id']; ?>">
 
             <!-- NAME -->
             <div class="form-group row">

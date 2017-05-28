@@ -6,15 +6,18 @@ require_once '../../vendor/autoload.php';
 require_once '../phpscripts/db_connector.php';
 require_once '../phpscripts/functions.php';
 require_once '../phpscripts/validation_functions.php';
+if (!(loggedIn())) {
+    redirect(server_root(1) . '/admin/login.php');
+}
 
 if (isset($_POST['submit'])) {
-    validatePresences(['title', 'description', 'street', 'city', 'zip', 'img', 'img_text', 'image_path', 'pros']);
+    validatePresences(['title', 'description', 'street', 'city', 'zip', 'img', 'img_text', 'pros']);
     validateMaxLength(['title' => 30, 'street' => 30, 'city' => 30, 'zip' => 4, 'img_text' => 50, 'pros' => 70]);
     if (count($errors) > 0) {
         foreach ($errors as $error) {
             $_SESSION['messages'] .= '<div class="alert alert-danger"><strong>Error! </strong>' . $error . '</div>';
         }
-        redirect(server_root(1) . $_SERVER['REQUEST_URI']);
+        redirect($_SERVER['HTTP_REFERER']);
     }
 
     $openingHours = '';
