@@ -13,10 +13,12 @@ $pagetitle = 'Admin Dashboard';
 ?>
     <div class="container margin-adder">
         <div class="row">
+            <div class="col-12">
+                <h4 class="mb-3">Administration Page</h4>
+            </div>
             <div class="col">
                 <a class="btn btn-primary mb-2" href="manage_admin.php">Create admin</a>
                 <a class="btn btn-primary mb-2" href="manage_event.php">Create event</a>
-                <a class="btn btn-primary mb-2" href="manage_food.php">Create food-item</a>
                 <a class="btn btn-primary mb-2" href="manage_place.php">Create place</a>
             </div>
         </div>

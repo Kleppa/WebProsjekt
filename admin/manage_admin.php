@@ -14,7 +14,7 @@ require '../private/includes/header.php';
 
     <div class="container margin-adder">
         <?php if (!empty($_SESSION['messages'])) {
-            echo '<div class="alert alert-warning"><strong>Error!</strong> ' . $_SESSION['messages'] . '</div>';
+            echo $_SESSION['messages'];
             $_SESSION['messages'] = '';
         } ?>
 

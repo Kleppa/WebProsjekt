@@ -10,8 +10,8 @@ if (!(isset($_GET['id']))) {
     redirect('../places.php');
 }
 
-$result = $mysqli->query("SELECT * FROM places WHERE id = {$_GET['id']} LIMIT 1;");
-$result2 = $mysqli->query("SELECT * FROM events WHERE id = {$_GET['id']} LIMIT 1;");
+$result = $mysqli->query("SELECT * FROM places WHERE id = {$_GET['id']};");
+$result2 = $mysqli->query("SELECT * FROM events WHERE id = {$_GET['id']};");
 $finalResult = "";
 
 $boolean = false;
@@ -44,15 +44,14 @@ require '../private/includes/header.php'; ?>
     </div>
 
     <div class="row justify-content-center no-gutters mb-3">
-        <div class="col-md-8 col-12">
+        <div class="col-md-6 col-lg-8 col-12">
             <!-- Tab panes -->
-            <div class="fill">
-                <img class="img-fluid" style="height:350px" id="bildeboks"
-                     src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title']; ?>"/>
+            <div class="fill" style="height:300px">
+                <img src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title']; ?>"/>
             </div>
         </div>
 
-        <div class="col-md-4 col-12">
+        <div class="col-md-6 col-lg-4 col-12">
             <div id="map" style="height:300px"></div>
         </div>
 
@@ -91,7 +90,7 @@ require '../private/includes/header.php'; ?>
 
                         $openingHours = openingHoursToAssoc($finalResult['opening_hours'], 2);
 
-                        echo 'Opening Hours: ';
+                        echo 'Opening Hours: </br>';
                         echo 'M:' . $openingHours['monday_from'] . '-' . $openingHours['monday_to'];
                         echo ' T:' . $openingHours['tuesday_from'] . '-' . $openingHours['tuesday_to'];
                         echo ' W:' . $openingHours['wednesday_from'] . '-' . $openingHours['wednesday_to'];
@@ -116,43 +115,13 @@ require '../private/includes/header.php'; ?>
     <div class="row justify-content-center text-center margin-adder-bot">
 
         <div class="col-lg-4 col-md-6 col-xs-12">
-            <h5 class="card-title">
-                <?php
-
-                $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
-
-                $newResult = $mysqli->query($newPlaceQuery);
-
-                foreach ($newResult as $row) {
-                    echo $row['title'];
-                }
-
-
+            <h5 class="card-title"><?php
+                $newResult = $mysqli->query("SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;");
+                $row = mysqli_fetch_assoc($newResult);
+                echo $row['title'];
                 ?></h5>
-            <a href="details.php?id=<?php echo $row['id'] . '&type=' . $row['type'] ?>">
-                <div class="fill" style="height:196px">
-                    <img class=" img-others"
-                         src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
-                </div>
-            </a>
-        </div>
-
-        <div class="col-lg-4 col-md-6 col-xs-12">
-            <h5 class="card-title">
-                <?php
-
-                $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
-
-                $newResult = $mysqli->query($newPlaceQuery);
-
-                foreach ($newResult as $row) {
-                    echo $row['title'];
-                }
-
-
-                ?></h5>
-            <a href="details.php?id=<?php echo $row['id'] . '&type=' . $row['type'] ?>">
-                <div class="fill" style="height:196px">
+            <a href="details.php<?php echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
+                <div class="" style="height:196px">
                     <img class="img-others"
                          src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
                 </div>
@@ -160,21 +129,27 @@ require '../private/includes/header.php'; ?>
         </div>
 
         <div class="col-lg-4 col-md-6 col-xs-12">
-            <h5 class="card-title">
-                <?php
+            <h5 class="card-title"><?php
+                $newResult = $mysqli->query("SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;");
+                $row = mysqli_fetch_assoc($newResult);
+                echo $row['title'];
+                ?></h5>
+            <a href="details.php<?php echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
+                <div class="" style="height:196px">
+                    <img class="img-others"
+                         src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
+                </div>
+            </a>
+        </div>
 
-                $newPlaceQuery = "SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;";
-
-                $newResult = $mysqli->query($newPlaceQuery);
-
-                foreach ($newResult as $row) {
-                    echo $row['title'];
-                } ?></h5>
-            <a href= <?php
-
-            echo '"details.php?id=' . $row['id'] . '&type=' . $row['type'] . '"';
-            ?>>
-                <div class="fill" style="height:196px">
+        <div class="col-lg-4 col-md-6 col-xs-12">
+            <h5><?php
+                $newResult = $mysqli->query("SELECT * FROM places WHERE id NOT LIKE {$_GET['id']} ORDER BY RAND() LIMIT 1;");
+                $row = mysqli_fetch_assoc($newResult);
+                echo $row['title'];
+                ?></h5>
+            <a href="details.php<?php echo '?id=' . $row['id'] . '&type=' . $row['type']; ?>">
+                <div class="" style="height:196px">
                     <img class="img-others"
                          src="<?php echo server_root(1) . $row['image_path'] . '"' . 'alt="' . $row['title'] ?>">
                 </div>

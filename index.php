@@ -110,7 +110,7 @@ require_once 'private/includes/header.php';
                         <img src="<?php echo server_root(1) . $row['image_path'] ?>"
                              alt="<?php echo $row['title']; ?>"> <!-- img -->
                     </div>
-                    <h4><?php echo $row['title']; ?></h4>
+                    <h3><?php echo $row['title']; ?></h3>
                     <p><?php echo $row['description']; ?></p>
 
                     <?php } ?>
@@ -126,7 +126,7 @@ require_once 'private/includes/header.php';
                         <img src="<?php echo server_root(1) . $row['image_path']; ?>"
                              alt="<?php echo $row['title']; ?>">
                     </div>
-                    <h4><?php echo $row['title']; ?></h4>
+                    <h3><?php echo $row['title']; ?></h3>
                     <p><?php echo $row['description']; ?></p>
 
                     <?php } ?>
@@ -143,7 +143,7 @@ require_once 'private/includes/header.php';
                         <img src="<?php echo server_root(1) . $row['image_path']; ?>"
                              alt="<?php echo $row['title']; ?>"> <!-- img -->
                     </div>
-                    <h4><?php echo $row['title']; ?></h4>
+                    <h3><?php echo $row['title']; ?></h3>
                     <p><?php echo $row['description']; ?></p>
 
                     <?php } ?>
@@ -159,7 +159,7 @@ require_once 'private/includes/header.php';
                         <img src="<?php echo server_root(1) . $row['image_path']; ?>"
                              alt="<?php echo $row['title']; ?>">
                     </div>
-                    <h4><?php echo $row['title']; ?></h4>
+                    <h3><?php echo $row['title']; ?></h3>
                     <p><?php echo $row['description']; ?></p>
                     <?php } ?>
                 </a>
