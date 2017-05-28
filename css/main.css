@@ -173,7 +173,6 @@ h6 {
     font-size: large;
 }
 
-
 #vpnKey {
     position: absolute;
     text-shadow: -1.5px 0 black, 0 1.5px black, 1.5px 0 black, 0 -1.5px black;
@@ -208,4 +207,17 @@ h6 {
 @font-face {
     font-family: PlayfairDisplay-Regular;
     src: url(../private/fonts/Playfair_Display/PlayfairDisplay-Regular.ttf);
+}
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden
+}
+
+.fill img {
+    flex-shrink: 0;
+    min-width: 100%;
+    max-height: 100%;
 }
